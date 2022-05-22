@@ -1,4 +1,4 @@
-# 5gbrasil MAIN DEV - OK
-OK
-enviando via dev
-tudo ok por aqui
+# 5gbrasil - OK
+
+subindo projeto para a branch dev
+
