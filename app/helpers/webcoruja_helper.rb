@@ -1,0 +1,2 @@
+module WebcorujaHelper
+end

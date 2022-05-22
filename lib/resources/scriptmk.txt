@@ -1,0 +1,170 @@
+:local ClientesOnline [/ppp active print count-only];
+:local TempodeAtividade [/system resource get uptime];
+:local CPULoad [/system resource get cpu-load];
+:local CPUTemperatura [/system health get cpu-temperature];
+:local Hora [/system clock get time];
+:local Nome [/system identity get name];
+:local QtdVlans [/interface vlan print count-only]
+
+
+:local SendText "$ClientesOnline+$TempodeAtividade+$CPULoad+$CPUTemperatura+$Hora+$Nome+$QtdVlans";
+
+/tool fetch url="http://45.174.216.22:3001/application/\?infomk=$SendText";
+
+
+
+:local p0 [/ppp active print count-only];
+:local p1 [/system resource get uptime];
+:local p2 [/system resource get cpu-load];
+:local p3 [/system health get cpu-temperature];
+:local p4 [/system clock get time];
+:local p5 [/system identity get name];
+:local p6 [/interface vlan print count-only]
+
+
+:local SendText "$p0+$p1+$p2+$p3+$p4+$p5+$p6";
+
+/tool fetch url="http://45.174.216.22:3001/application/\?infomk=$SendText";
+
+
+======================================
+:global lista [/interface pppoe-server server find];
+:global total [len $lista];
+:put $total;
+=================================
+:global lista [/interface pppoe-server server find];
+:global total [len $lista];
+:global contador 0;
+:put "{";
+:foreach i in=$lista do={
+    :local servidor [/interface pppoe-server server get value-name=service-name number=$1];
+    :local clientes [/interface pppoe-server find where service=$servidor];
+    :local quantidade [len $clientes];
+    :if ( $contador < total-1 ) do={;
+        :put "\"$contador\":{\"ID\":\"$i\", \"SERVIDOR\":\"$servidor\", \"ATIVOS\":\"quantidade\"},";}
+    :set contador ($contador + 1);
+};
+:put "}";
+=================
+:global listservpppoe [/interface pppoe-server server find];
+:global tlistserv [len $listservpppoe];
+:global contador 0;
+:foreach i in=$tlistserv do={
+    :local serv [/interface pppoe-server server get value-name=service-name number=$i];
+    :local listcli [/interface pppoe-server find where service=$serv];
+    :local tcli [len $listcli];
+    :if ( $contador < total-1 ) do={;
+        :put "\"$contador\":{\"ID\":\"$i\", \"SERVIDOR\":\"$serv\", \"ATIVOS\":\"$tcli\"},";}
+    :set contador ($contador + 1);
+};
+============================
+
+:global listservpppoe [/interface pppoe-server server find];
+:global tlistserv [len $listservpppoe];
+:global contador 0;
+
+:foreach i in=$tlistserv do={
+    :local serv [/interface pppoe-server server get value-name=service-name number=$i];
+    :put $i;
+};
+    :set contador ($contador + 1);
+
+    :if ( $contador < total-1 ) do={
+
+
+:local listcli [/interface pppoe-server server find where service=3112];
+    :put $listcli;
+
+
+
+
+==============
+
+:foreach i in=$serv do={
+    y [/interface pppoe-server server get value-name=service-name number=$i]
+    :put [:len $y];
+    
+};
+
+
+:global listservpppoe [/interface pppoe-server server find];
+:local serv [/interface pppoe-server server get value-name=service-name number=3112];
+:put $serv;
+
+
+
+
+
+
+
+
+
+*****************************
+
+:global lista [/interface pppoe-server server find]; 
+:global total [len $lista]; 
+:global contador 0; 
+:foreach i in=$lista do={
+    :local servidor [/interface pppoe-server server get value-name=service-name number=$i];
+    :put $servidor;
+   
+};
+
+
+
+:local servidor [/interface pppoe-server server get value-name=service-name number=3];
+:foreach i in=$servidor do={
+    :local clientes [/interface pppoe-server find where service=0111];
+
+    :put [len $clientes];
+};
+
+
+*****************************
+
+
+    :foreach b in=[$clientes] do={
+        :local aaa [get $b id]
+    :put $aaa;
+    }
+
+
+
+:put $total;
+
+
+:local vv [/interface vlan find where name=3311]
+:foreach i in=[$vv] do={
+  :local aaa [get $i name]
+  :put $aaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

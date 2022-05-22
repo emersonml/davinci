@@ -1,0 +1,199 @@
+// Place all the styles related to the Webcorujas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+/*====  RESET ============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ul {list-style: none;}
+  a {text-decoration: none;}
+  img {width: 100%; height: auto;}
+  
+  
+  
+
+
+  /*====  VARIABLES ============================ */
+  :root {
+    --height-header: 10vh;
+
+// CORES =============
+  --hue: 280;  //cor matriz
+
+  --color-light: hsl(var(--hue) 100% 80%);  
+  --color-primary: hsl(var(--hue) 100% 30%);
+  --color-dark: hsl(var(--hue) 100% 10%);
+  --color-alt: hsl(var(--hue) 100% 80%);
+  --color-second: hsl(var(--hue) 54% 87%);
+
+  --link: hsl(var(--hue) 100% 80%);
+  a {color: var(--body-font-color);}
+
+  --font-body: sans-serif;
+
+  --font-size-title: 1.875rem;
+  --font-title: sans-serif;
+  --font-size-subtitle: 1rem;
+  // --font-title: 'Poppins', sans-serif;
+
+
+} // END ROOT
+
+.color-light{color: var(--color-light);}
+.color-primary{color: var(--color-primary);}
+.bg-color-primary{background: var(--color-primary);}
+
+
+/*===  BASE ============================ */
+html {
+}
+
+body {
+  display: grid;
+    grid-template-columns: 17vw 83vw;
+    grid-template-rows: var(--height-header) auto 8vh;
+    grid-template-areas: "a h" "a m" "a f";
+
+  font: 400 1rem var(--font-body);
+  color: var(--ton90);
+  background: var(--ton10);
+  -webkit-font-smoothing: antialiased;
+}
+
+.title {
+  font: 700 var(--font-size-title) var(--font-title);
+  color: var(--color-light);
+}
+
+
+/*====  LAYOUT ============================ */
+aside {
+  overflow: hidden;
+  // position: absolute;
+  // z-index: 111;
+  grid-area: a; 
+  // position: absolute;
+  // width: var(--width-aside);
+  height: 100%;
+  color: var(--ton90);
+  // background-color: var(--color-primary);
+
+
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg,  var(--color-dark) 0%, var(--color-dark) 30%, var(--color-primary) 100% );
+  
+
+
+}
+header {
+  grid-area: h;
+  // display: flex;
+  // align-items: center;
+  // height: var(--height-header);
+  // margin-left: var(--width-aside);
+  background-color: var(--ton90);
+  // background: red;
+
+}
+main {
+  grid-area: m;
+  // margin-left: var(--width-aside);
+  min-height: 80vh;
+}
+footer {
+  grid-area: f;
+  // overflow: hidden;
+  // background-color: var(--color-dark);
+  border-top: 0.25rem solid var(--ton30);
+  background-color: var(--ton00);
+} 
+.container {margin-left: 2vw; margin-right: 2vw;}
+.grid {display: grid;}
+
+
+/*====  LOGO ============================ */
+a.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--height-header);
+  
+  font: 700 1.5rem var(--font-title);
+  color: var(--ton90);
+  // background-color: var(--bg-color1);
+} a.logo span { color: var(--color-light);}
+
+
+
+/*====  NAVIGATION ============================ */
+nav {
+  // width: auto;
+  height: var(--height-header);
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  justify-content: space-between;
+  color: var(--ton30);
+  
+}
+
+
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+}
+
+/*====  CONTEUDO ============================ */
+.section {padding: 5rem 0; background-color: var(--ton1-5);}
+.section .title {margin-bottom: 1rem;}
+.section .subtitle {font-size: var(--font-size-subtitle);}
+.section header {margin-bottom: 4rem;}
+.section header strong {color: var(--color-primary);}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  // grid-template-columns: 1fr 1fr 1fr; 
+}
+.cards {
+
+}
+.card {
+  // display: block;
+  // width: auto;
+  width: 18rem;
+  overflow: hidden;
+  padding: 1rem 1rem;
+  // box-shadow: 0px 0px 12px var(--bg-color1);
+  border-bottom: 0.25rem solid var(--ton90);
+  border-radius: 0.25rem 0.25rem 0 0;
+  background-color: var(--ton22);
+  text-align: center;
+
+  .title{font-size: 1.25rem;}
+  i {color: var(--ton60);}
+}
+
+
+/*====  DASHBOARD  ============================ */
+
+#dashboard .card{
+  
+  
+}
+
+
+
+
+/*====  FOOTER  ============================ */
+footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

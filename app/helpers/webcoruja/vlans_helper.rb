@@ -1,0 +1,2 @@
+module Webcoruja::VlansHelper
+end

@@ -1,0 +1,2 @@
+module Webcoruja::WelcomeHelper
+end

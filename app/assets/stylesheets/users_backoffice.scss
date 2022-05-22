@@ -1,0 +1,44 @@
+
+
+
+
+.teste2 {
+    background: red;
+  } 
+
+
+  
+
+.container {
+    
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 20vh 70vh 10vh;
+  grid-template-areas: "h h" "m m" "f f";
+  /* background: url("https://organicsnewsbrasil.com.br/wp-content/uploads/2016/09/urso-polar.jpg"); */
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  position: relative;
+  grid-area: h;
+  background-color: rgb(255, 255, 174);
+  
+}
+main {
+  display: grid;
+  justify-content: center;
+  grid-area: m;
+  background: red;
+}
+main > div {
+}
+
+
+footer {
+grid-area: f;
+background-color: rgb(98, 98, 98);
+} 

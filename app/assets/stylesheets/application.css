@@ -1,0 +1,216 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+
+ 
+
+ :root {
+
+
+
+--ton0: hsl(0, 0%, 0%);
+--ton1: hsl(0, 0%, 1%);
+--ton2: hsl(0, 0%, 2%);
+--ton3: hsl(0, 0%, 3%);
+--ton4: hsl(0, 0%, 4%);
+--ton5: hsl(0, 0%, 5%);
+--ton10: hsl(0, 0%, 10%);
+--ton11: hsl(0, 0%, 11%);
+--ton12: hsl(0, 0%, 12%);
+--ton13: hsl(0, 0%, 13%);
+--ton14: hsl(0, 0%, 14%);
+--ton15: hsl(0, 0%, 15%);
+--ton20: hsl(0, 0%, 20%);
+--ton21: hsl(0, 0%, 21%);
+--ton22: hsl(0, 0%, 22%);
+--ton23: hsl(0, 0%, 23%);
+--ton24: hsl(0, 0%, 24%);
+--ton25: hsl(0, 0%, 25%);
+--ton26: hsl(0, 0%, 26%);
+--ton30: hsl(0, 0%, 30%);
+--ton31: hsl(0, 0%, 31%);
+--ton32: hsl(0, 0%, 32%);
+--ton32: hsl(0, 0%, 32%);
+--ton33: hsl(0, 0%, 33%);
+--ton34: hsl(0, 0%, 34%);
+--ton35: hsl(0, 0%, 35%);
+--ton40: hsl(0, 0%, 40%);
+--ton50: hsl(0, 0%, 50%);
+--ton60: hsl(0, 0%, 60%);
+--ton70: hsl(0, 0%, 70%);
+--ton80: hsl(0, 0%, 80%);
+--ton81: hsl(0, 0%, 81%);
+--ton82: hsl(0, 0%, 82%);
+--ton83: hsl(0, 0%, 83%);
+--ton84: hsl(0, 0%, 84%);
+--ton85: hsl(0, 0%, 85%);
+--ton90: hsl(0, 0%, 90%);
+--ton91: hsl(0, 0%, 91%);
+--ton92: hsl(0, 0%, 92%);
+--ton93: hsl(0, 0%, 93%);
+--ton94: hsl(0, 0%, 94%);
+--ton95: hsl(0, 0%, 95%);
+--ton100: hsl(0, 0%, 100%);
+
+--green: green;
+--yellow: yellow;
+--pink: pink;
+--blue: blue;
+--red: red;
+
+ }
+
+
+ .ton0{color: var(--ton0);}    
+ .ton10{color: var(--ton10);}    
+ .ton20{color: var(--ton20);}    
+ .ton30{color: var(--ton30);}    
+ .ton40{color: var(--ton40);}    
+ .ton50{color: var(--ton50);}    
+ .ton60{color: var(--ton60);}    
+ .ton70{color: var(--ton70);}    
+ .ton80{color: var(--ton80);}    
+ .ton90{color: var(--ton90);}    
+ .ton100{color: var(--ton100);}    
+
+ .bg-ton0{background: var(--ton0);}    
+ .bg-ton10{background: var(--ton10);}    
+ .bg-ton20{background: var(--ton20);}    
+ .bg-ton30{background: var(--ton30);}    
+ .bg-ton40{background: var(--ton40);}    
+ .bg-ton50{background: var(--ton50);}    
+ .bg-ton60{background: var(--ton60);}    
+ .bg-ton70{background: var(--ton70);}    
+ .bg-ton80{background: var(--ton80);}    
+ .bg-ton90{background: var(--ton90);}    
+ .bg-ton100{background: var(--ton100);}    
+
+ 
+
+.icon{cursor: pointer;}
+.toggle{};
+
+
+ .rem075 {font-size: 0.75rem;} 
+ .rem100 {font-size: 1rem;} 
+ .rem125 {font-size: 1.25rem;} 
+ .rem150 {font-size: 1.50rem;} 
+ .rem175 {font-size: 1.75rem;} 
+ .rem200 {font-size: 2rem;} 
+ .rem225 {font-size: 2.25rem;} 
+ .rem300 {font-size: 3rem;} 
+ .rem325 {font-size: 3.25rem;} 
+ .rem350 {font-size: 3.5rem;} 
+
+
+
+ 
+
+ @font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?nmernb');
+  src:  url('fonts/icomoon.eot?nmernb#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?nmernb') format('truetype'),
+    url('fonts/icomoon.woff?nmernb') format('woff'),
+    url('fonts/icomoon.svg?nmernb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-plano1_svg:before {
+  content: "\e910";
+}
+.icon-plano2_svg:before {
+  content: "\e911";
+}
+.icon-plano3_svg:before {
+  content: "\e912";
+}
+.icon-coruja_svg:before {
+  content: "\e901";
+}
+.icon-sanduiche_svg:before {
+  content: "\e907";
+}
+.icon-on_svg:before {
+  content: "\e909";
+}
+.icon-saude_svg:before {
+  content: "\e90d";
+}
+.icon-vlan_svg:before {
+  content: "\e90f";
+}
+.icon-online_prediction:before {
+  content: "\e90e";
+}
+.icon-arrow-up:before {
+  content: "\e90c";
+}
+.icon-phone:before {
+  content: "\e900";
+}
+.icon-facebook:before {
+  content: "\e902";
+}
+.icon-instagram:before {
+  content: "\e903";
+}
+.icon-mail:before {
+  content: "\e904";
+}
+.icon-map-pin:before {
+  content: "\e905";
+}
+.icon-menu:before {
+  content: "\e906";
+}
+.icon-whatsapp:before {
+  content: "\e908";
+}
+.icon-youtube:before {
+  content: "\e90a";
+}
+.icon-close:before {
+  content: "\e90b";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-stats-bars:before {
+  content: "\e99c";
+}
+.icon-info:before {
+  content: "\ea0c";
+}
+.icon-exit:before {
+  content: "\ea14";
+}

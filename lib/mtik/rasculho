@@ -1,0 +1,99 @@
+http://leonogueira.com.br/index.php/mikrotik/34-script-de-padronizacao-mikrotik
+
+
+
+/////////   INFOMK
+
+
+:local p0 [/ppp active print count-only];
+:local p1 [/system resource get uptime];
+:local p2 [/system resource get cpu-load];
+:local p3 [/system health get cpu-temperature];
+:local p4 [/system clock get time];
+:local p5 [/system identity get name];
+:local p6 [/interface vlan print count-only]
+
+
+:local SendText "$p0+$p1+$p2+$p3+$p4+$p5+$p6";
+
+/tool fetch url="http://45.174.216.22:3003/application/\?infomk=$SendText" keep-result=no;
+
+
+
+
+&&&&&&&&&&&&&&&&&&
+:put [/interface pppoe-server get [find where service=$servidor]]
+
+
+///////////   SERVIDORES
+
+
+:global Servidores [/interface pppoe-server server find];
+:global ServidorQtd [len $Servidores];
+:global contador 0;
+:foreach i in=$Servidores do={
+  :global servidor [/interface pppoe-server server get value-name=service-name number=$i]
+  :global clientes [/interface pppoe-server find where service=$servidor]
+  :global clienteQtd [len $clientes]
+
+  :if ($contador < ServidorQtd-1) do={ 
+    } else={     }
+    :set contador ($contador +  1)
+
+};
+
+  :global home [/interface pppoe-server get [find where service=$clientes] value-name=user ]
+
+
+   /tool fetch url="http://45.174.216.22:3003/application/\?infocliente=$clientename" keep-result=no;
+
+  :global clientename=[/interface pppoe-server get $clientes value-name=user]
+
+
+  :local Send "$clientename";
+
+
+
+
+
+
+
+  :foreach h in=[/interface pppoe-server$clientes] do {
+  };
+
+
+
+  :global [/interface pppoe-server get $clientes value-name=user]
+
+:foreach h in=[$clientes] do {
+:global clientename [/interface pppoe-server get $h value-name=name]; 
+  /tool fetch url="http://45.174.216.22:3003/application/\?infocliente=$clientename" keep-result=no;
+};
+
+
+              /////////////////////
+:global Servidores [/interface pppoe-server server find];
+:global ServidorQtd [len $Servidores];
+:global contador 0;
+
+:foreach i in=$Servidores do={
+  :global servidor [/interface pppoe-server server get value-name=service-name number=$i];
+  :global clientes [/interface pppoe-server find where service=$servidor];
+  :global clienteQtd [len $clientes]
+
+  :if ($contador < ServidorQtd-1) do={   } else={     }; 
+
+    :set contador ($contador +  1);
+};
+
+
+
+///////////////////////  ENVIA TODOS OS ACTIVE UM POR UM 
+
+:global xactive [/ppp active find];
+:global xqtd [len $xactive];
+:global xcontador 0;
+  :foreach h in=[/ppp active find] do={
+    :global xname [/ppp active get $h value-name=name];
+  /tool fetch url="http://45.174.216.22:3003/application/\?infocliente=$xname" keep-result=no;
+};

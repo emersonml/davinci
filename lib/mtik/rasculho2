@@ -1,0 +1,53 @@
+:foreach h in=[/ppp active find] do={
+:global name [/ppp active get $h value-name=name];
+}
+
+
+******************
+:global fff [/interface pppoe-server get number=4 ];
+**************************
+
+:global cliente [/interface pppoe-server get number=111 ];
+
+
+
+:global Servidores [/interface pppoe-server server find];
+:global ServidorQtd [len $Servidores];
+:global contador 0;
+
+:put "{";
+:foreach i in=$Servidores do={
+  :global servidor [/interface pppoe-server server get value-name=service-name number=$i];
+  :global clientes [/interface pppoe-server find where service=$servidor];
+  :global clienteQtd [len $clientes]
+
+  :if ($contador < ServidorQtd-1) do={;
+    :put "\"$contador\":{\"ID\":\"$i\", \"SERVIDOR\":\"$servidor\", \"ATIVO\":\"$clienteQtd\"},";} else={;
+    :put "\"$contador\":{\"ID\":\"$i\", \"SERVIDOR\":\"$servidor\", \"ATIVO\":\"$clienteQtd\"}";};
+    :set contador ($contador +  1);
+};
+:put "}";
+
+
+
+
+ /ip dhcp-server lease
+
+:foreach i in=[find] do={
+  :local add [get $i address]
+
+}
+
+
+:foreach i in=[find] do={
+  :local add [get $i address]
+  :local mac [get $i mac-address]
+
+  /tool fetch url=("https://mysite.com/api/dhcp_assignments%5C?ip_address=" . $add . "&leased_mac_address=" . $mac . "&expired=1&api_key=some_api_key_here") mode=https keep-result=no
+}
+
+:local vv /interface vlan find where name=3311
+:foreach i in=[$vv] do={
+  :local a [get $i name]
+  :put $a;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <%# <meta http-equiv="X-FRAME-OPTIONS" content="ALLOW-FROM https://esoft.sgp.net.br/accounts/central/login"> %>
+    <%# <META HTTP-EQUIV="Access-Control-Allow-Origin" content="ALLOW-FROM https://esoft.sgp.net.br/accounts/central/login"> %>
+    
+    <title>5GBrasil</title>
+
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+      
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag    'site' %>
+
+
+    
+
+  </head>
+
+  <body>
+
+  
+    <%= yield %>
+
+
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
+  </body>
+</html>
+

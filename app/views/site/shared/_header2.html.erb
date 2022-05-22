@@ -1,0 +1,24 @@
+<header id="header">
+      <nav class="container">
+            <li><%= link_to root_path, class:"logo" do%>
+              5G<span>Brasil</span>
+            <% end %> </li>
+        <!-- menu -->
+        <div class="menu">
+          <ul class="grid">
+            <li><%= link_to root_path,  class:"title" do%>Início<% end %> </li>
+            <%# <li><a class="title" target="_blank" href="https://sgp.net.br/esoft/accounts/central/login"><strong>Central do Assinante</strong></a></li> %>
+            <li><%= link_to site_welcome_areacliente_path, class:"title" do%>Central do Assinante<% end %> </li>
+            <li><%= link_to "Sobre", site_welcome_index_path(@site_welcome_index, anchor: "about")%> </li>
+            <li><%= link_to "Contato", site_welcome_index_path(@site_welcome_index, anchor: "contact")%> </li>
+            <li><%= link_to webcoruja_welcome_index_path, class:"title" do%>Técnico<% end %> </li>
+           
+            
+            
+          </ul>
+        </div>
+        <!-- /menu -->
+        <div class="icon icon-sanduiche_svg toggle  "></div>
+        <div class="icon icon-close rem300 toggle"></div>
+      </nav>
+    </header>
