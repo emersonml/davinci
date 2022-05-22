@@ -1,0 +1,26 @@
+<aside class="layout" id="js-toggle">
+    <div class="container">
+
+        <header>
+            <%# <span>Web</span> %>
+              <i class="icon icon-coruja rem225"></i>
+            <%# <span>Coruja</span> %>
+            
+          <i class="icon icon-backward2 rem225 js-backward2"></i>
+        </header>
+        
+        <main>
+          <ul>
+            <li>
+            <i class="icon icon-home rem150"></i>
+            <%= link_to 'Site', site_welcome_index_path %>
+            
+            </li>
+            <li>
+            <i class="icon icon-vlan rem150"></i>
+            <%= link_to 'Vlans', webcoruja_vlans_index_path %>
+            </li>
+          </ul>
+        </main>
+    </div>
+  </aside>
