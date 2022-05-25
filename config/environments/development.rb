@@ -83,6 +83,7 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   # config.web_console.allowed_ips: 45.174.219.194
+  config.web_console.whitelisted_ips = '45.174.216.22'
   config.web_console.permissions = '45.174.219.194'
   config.web_console.automount = true
 

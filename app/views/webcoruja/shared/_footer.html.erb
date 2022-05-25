@@ -1,8 +1,12 @@
 <footer class="layout">
-
-  <ul>
-        <li><%= link_to 'Admin', admins_backoffice_welcome_index_path %></li>
-        <li><%= link_to 'Pontual' %></li>
-        <li><%= link_to 'Grain in Grain' %></li>
-      </ul>
+    <ul>
+          <li><%= link_to 'Admin', admins_backoffice_welcome_index_path %></li>
+          <li><%= link_to 'Pontual' %></li>
+          <li><%= link_to 'Grain in Grain' %></li>
+          <li>
+            <%= link_to webcoruja_welcome_index_path do%>
+                <i class="icon icon-home rem125" alt=""> </i>
+            <% end %>
+          </li>
+        </ul>
 </footer>

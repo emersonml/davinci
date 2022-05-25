@@ -1,26 +1,34 @@
-<aside class="layout" id="js-toggle">
+<aside class="layout" id="js-aside">
     <div class="container">
 
         <header>
             <%# <span>Web</span> %>
-              <i class="icon icon-coruja rem225"></i>
             <%# <span>Coruja</span> %>
+
+            <%= link_to webcoruja_welcome_index_path do %>
+              <i class="icon icon-coruja rem225"></i>
+            <% end %> 
+              <i class="icon icon-backward2 rem225" id="js-backward2"></i>
+          
             
-          <i class="icon icon-backward2 rem225 js-backward2"></i>
         </header>
         
         <main>
           <ul>
             <li>
-            <i class="icon icon-home rem150"></i>
-            <%= link_to 'Site', site_welcome_index_path %>
-            
+            <%= link_to site_welcome_index_path do %>
+              <i class="icon icon-home rem225"></i><span>Site</span>
+            <% end %> 
             </li>
             <li>
-            <i class="icon icon-vlan rem150"></i>
-            <%= link_to 'Vlans', webcoruja_vlans_index_path %>
+            <%= link_to webcoruja_vlans_index_path  do %>
+              <i class="icon icon-vlan rem225"></i><span>Vlans</span>
+            <% end %> 
             </li>
+            
+
           </ul>
         </main>
     </div>
   </aside>
+
