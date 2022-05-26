@@ -1,52 +1,51 @@
-<main class="layout">
+<main class="layout" id="js-main">
     <div class="container">
 
+        
         <section class="layout">
-            <div class="title">DASHBOARD: <%= @infomk[5] %> </div>
-
-            <div class="cards">
-
-
-
-                <div class="card">
-                    <i class="icon icon-info  "></i>
-                    <div class="title">INFORMAÇÃO DO CONCENTRADOR</div>
-                    <p>NOME:<strong><%= @infomk[5] %> </strong></p>
-                    <p>UpTime: <strong><%= @infomk[1] %></strong> </p>
-                    <p>Hora: <strong><%= @infomk[4] %> </strong></p>
-                </div card >
-                <div class="card">
-                    <i class="icon icon-on  "></i>
-                    <div class="title">ACTIVES</div>
-                    <p><strong class="rem300"><%= @infomk[0] %> </strong></p>
-                </div card >
-                <div class="card">
-                    <i class="icon icon-saude  "></i>
-                    <div class="title">SAÚDE</div>
-                    <p>CPU Load: <strong><%= @infomk[2] %>% </strong></p>
-                    <p>CPU Temperatura: <strong><%= @infomk[3] %> C </strong></p>
-                </div card >
-                <div class="card">
-                    <i class="icon icon-vlan  "></i>
-                    <div class="title">SAÚDE</div>
-                    <p>CPU Load: <strong><%= @infomk[2] %>% </strong></p>
-                    <p>CPU Temperatura: <strong><%= @infomk[3] %> C </strong></p>
-                </div card >
-                <div class="card">
-                    <i class="icon icon-vlan  "></i>
-                    <div class="title">VLANs</div>
-                    <p>Qtd: <strong><%= @infomk[6] %> </strong></p>
-                    <p>Alerta:: <strong><%= " 0" %> </strong></p>
-                </div card >
-
-
-
-
-            </div cards >
-                                        
-
-
-
+            <header>
+                <h1>Dashboard </h1>
+            </header>
+            <main>
+                <article>
+                    <h3>Mikrotik C1 </h3>
+                    <div class="cards wropper">
+                        <div class="card">
+                            <i class="icon icon-info  "></i>
+                            <h1>CONCENTRADOR</h1>
+                            <p>IDENTIFICAÇÃO: <strong><%= @infomk[5] %> </strong></p>
+                            <p>UpTime: <strong><%= @infomk[1] %></strong> </p>
+                            <p>Hora: <strong><%= @infomk[4] %> </strong></p>
+                        </div card >
+                        <div class="card">
+                            <i class="icon icon-on  "></i>
+                            <h1>ACTIVES</h1>
+                            <p><strong class="rem300"><%= @infomk[0] %> </strong></p>
+                        </div card >
+                        <div class="card">
+                            <i class="icon icon-saude  "></i>
+                            <h1>SAÚDE</h1>
+                            <p>CPU Load: <strong><%= @infomk[2] %>% </strong></p>
+                            <p>CPU Temperatura: <strong><%= @infomk[3] %> C </strong></p>
+                        </div card >
+                        <div class="card">
+                            <i class="icon icon-vlan  "></i>
+                            <h1>VLANs</h1>
+                            <p>Qtd: <strong><%= @infomk[6] %> </strong></p>
+                            <p>Alerta:: <strong><%= " 0" %> </strong></p>
+                        </div card >
+                        <div class="card">
+                            <i class="icon icon-vlan  "></i>
+                            <h1>VLANs</h1>
+                            <p>Qtd: <strong><%= @infomk[6] %> </strong></p>
+                            <p>Alerta:: <strong><%= " 0" %> </strong></p>
+                        </div card >
+                    </div>                        
+            </article>
+            </main>
         </section>
+        
+
+
     </div container>
 </main>
