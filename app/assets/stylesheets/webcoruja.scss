@@ -64,11 +64,7 @@ aside.layout {
   visibility: none;
   position: fixed;
   width: 65vw;
-  // visibility: visible;
   z-index: 11;
-  // grid-area: a;
-  // grid-column: 1 / span 4;
-  // grid-row: 1 / span 3;
   height: 100%;
   color: var(--ton90);
   
@@ -129,7 +125,7 @@ aside.layout main ul li{
 }aside.layout main ul li span{margin-left: 1rem;}
 section{
   // background: red; color: royalblue;
-  border: 1px solid var(--ton4);
+  border: 1px solid var(--ton8);
 }
 /*====  MAIN * ============================ */
 main section.layout{
@@ -184,16 +180,22 @@ footer ul{
 @media (min-width:400px) { 
   
 
-  // header.layout{margin-left: var(--width-aside-medium);}
+  header.layout .container{padding-left: calc(var(--width-aside-medium) - (1.7rem ));}
+  header.layout #js-forward3{color: var(--color-primary);}
+  
   aside.layout{visibility: visible;  width: var(--width-aside-medium);  }
   main.layout{margin-left: var(--width-aside-medium);}
   footer.layout{margin-left: var(--width-aside-medium);}
 /*====  ASIDES TABLET * ============================ */
+  aside.layout header { 
+    display: flex; 
+    justify-content: center; 
+  }
   // aside header a{ display: flex; width: 100%; justify-content: center; }
   // aside header i:nth-child(2){display: none;}/* seta pra voltar */
-  // aside main ul {display: flex; justify-items: center; }
+  aside main ul {display: flex; justify-items: center; }
 
-  // aside main ul li a span{visibility: hidden;  }
+  aside main ul li a span{display: none;  }
   // aside main ul li a i{
   //   display: flex;
   //   visibility: visible; 
