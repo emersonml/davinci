@@ -1,28 +1,43 @@
-<aside class="layout" id="js-aside">
+<aside class="lay1" id="js-aside">  
     <div class="container">
-
-        <header>
-            <%# <span>Web</span> %>
-            <%# <span>Coruja</span> %>
-
+        <%# aside_lay1_header %>
+        <header> 
+            <%#  loco_completo s%>
+            <span>Web</span> 
             <%= link_to webcoruja_welcome_index_path do %>
-              <i class="icon icon-coruja rem225"></i>
+              <i class="icon icon-coruja "></i>
             <% end %> 
-              <i class="icon icon-undo2 rem225 js-undo2" id="js-undo2"></i>
-          
-            
+            <span>Coruja</span>
         </header>
-        
+        <%# aside_lay1_main %>
         <main>
           <ul>
             <li>
+            <%# a home s%>
             <%= link_to site_welcome_index_path do %>
-              <i class="icon icon-home rem225"></i><span>Site</span>
+              <i class="icon icon-home"></i>
+              <span>Site</span>
             <% end %> 
             </li>
             <li>
+            <%# a vlan s%>
             <%= link_to webcoruja_vlans_index_path  do %>
-              <i class="icon icon-vlan rem225"></i><span>Vlans</span>
+              <i class="icon icon-vlan"></i>
+              <span>Vlans</span>
+            <% end %> 
+            <li>
+            <%# a home s%>
+            <%= link_to site_welcome_index_path do %>
+              <i class="icon icon-home"></i>
+              <span>Site</span>
+            <% end %> 
+            </li>
+            </li>
+            <li>
+            <%# a vlan s%>
+            <%= link_to webcoruja_vlans_index_path  do %>
+              <i class="icon icon-vlan"></i>
+              <span>Vlans</span>
             <% end %> 
             </li>
             
@@ -31,4 +46,7 @@
         </main>
     </div>
   </aside>
-
+  <div class="colDir">
+    <%#  voltar s%>
+    <i class="icon icon-undo2 rem225 js-undo2" id="js-undo2"></i>
+  </div>

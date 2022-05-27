@@ -73,13 +73,16 @@ mqMedium.addEventListener('change', (query) => {
 
 
         //////////   FUNCTIONS
-      
-
+        
+        
         function configSmall(){
           console.log('small')
-          document.getElementById('js-aside').style.visibility = "hidden"
-          document.getElementById('js-sanduiche').style.visibility = "visible"
-          document.getElementById('js-forward3').style.visibility = "hidden"
+          // document.querySelector('aside').style.zIndex = "11"
+          // document.querySelector('aside').style.visibility = "hidden"
+
+          // document.getElementById('js-aside').style.visibility = "hidden"
+          // document.getElementById('js-sanduiche').style.visibility = "visible"
+          // document.getElementById('js-forward3').style.visibility = "hidden"
         }
         function configMedium(){
           console.log('medium');
