@@ -1,221 +1,361 @@
-// Place all the styles related to the Webcorujas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 // = require webcoruja/welcome
 // = require webcoruja/vlans
 
-
-
 /*====  VARIABLES ============================ */
-@media (min-width:0px) { 
 :root {
+   --mqmedium: (min-width: 400px;) 
+  --mq-large: 800px;
   --height-header: 12vh;
+  --height-footer: 10vh;
   --width-aside-medium: 100px;
   --width-aside-large: 35vh;
+
+  // --display-grid: none;
   // CORES =============
   --hue: 280; //cor matriz
+  --hue-sec: 840; //cor matriz
 
   --color-light: hsl(var(--hue) 100% 80%);
   --color-primary: hsl(var(--hue) 100% 30%);
   --color-dark: hsl(var(--hue) 100% 10%);
   --color-alt: hsl(var(--hue) 100% 80%);
-  --color-second: hsl(var(--hue) 54% 87%);
+  --color-second: hsl(var(--hue-sec) 94% 87%);
+  // --color-second: rgb(255, 222, 150);
 
   --link: hsl(var(--hue) 100% 80%);
   a {color: var(--body-font-color); }
 
   --font-body: sans-serif;
 
-  --font-title: 'Poppins', sans-serif;
+  // --font: 'Poppins', sans-serif;
+  --font: 'M PLUS Rounded 1c', sans-serif;
+  // --font: 'DM Sans', sans-serif;
 } ////////////////////////////////////////////////// END ROOT
 
 /*===  BASE ============================ */
+
 a.logo { color: var(--ton90);}
 .color-light {color: var(--color-light);}
 .color-primary {color: var(--color-primary);}
 .bg-color-primary {background: var(--color-primary);}
-.title {
-  font: 700 var(--font-size-title) var(--font-title);
-  // color: var(--color-light);
+.title {  font: 700 var(--font-size-title) var(--font-title);  // color: var(--color-light);
 } ////////////////////////////////////////////////// END BASE
+.container { margin-left: 3%; margin-right: 3%;} 
+.colDir-Aside{ 
+  display: none; /* IMPORTANTE JS CLICK = GRID */
+  grid-column: 9 / 11;
+  grid-row: 1 / 2;
+  z-index: 11; /* mq */
+  align-items: center; justify-items: center;
+  height: var(--height-header);
+  font-size: 2.5rem;
+  color: var(--color-primary);
+}
+
 
 /*====  LAYOUT ============================ */
-html {  background: var(--ton10); }
-body.layout {
+html { }
+///////////////////////////////////////////////////////  L0
+///////////////////////////////  BODY_LAY0
+body.lay0{
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: var(--height-header) minmax(80vh, auto) 8vh;
-  grid-template-areas: 
-                      "h h h h h h" 
-                      "m m m m m m" 
-                      "f f f f f f";
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: minmax(100vh, auto);
                       
   font: 400 1rem var(--font-body);
   color: var(--ton90);
+  background: purple
 }
-header.layout {
-  position: fixed;
-  width: 100vw;
-  // grid-area: h;
-  background-color: var(--ton90);
-}
-aside.layout {
-  visibility: none;
-  position: fixed;
-  width: 65vw;
-  z-index: 11;
-  height: 100%;
-  color: var(--ton90);
-  
-  background-image: linear-gradient(
-    43deg,
-    var(--color-dark) 0%,
-    var(--color-dark) 30%,
-    var(--color-primary) 100%
-    );
-  } aside.layout2{visibility: hidden;}
-  
-  main.layout {grid-area: m;}
-  
-  footer.layout {
-    grid-area: f;
-    border-top: 2px solid var(--color-light);
-}
-.container {
-  margin-left: 2vw; margin-right: 2vw;
-} 
+///////////////////////////////////////////////////////  L1
+///////////////////////////////  ASIDE Lay1 ---
+aside.lay1{
+  display: grid; /* IMPORTANTE JS INIT = none */
+  grid-column: 1 / 9;
+  grid-row: 1 / 2;
+  z-index: 11; /* mq */
+  // min-width: 170px;
 
-////////////////////////////////////////////////// END LAYOUT
-
-/*====  LOGO ============================ */
-a.logo span {
-  color: var(--color-light);
-}
-
-/*==== HEADER NAVIGATION ============================ */
-nav {
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: var(--height-header);
-  padding: 1rem;
-  color: var(--ton30);
-}
-
-/*====  ASIDE aside smartphone * ============================ */
-aside.layout header{
-  display: flex;
-  justify-content: space-between ;
-  align-items: center;
-  height: var(--height-header);
-  padding: .5rem;
-}
-aside.layout main ul{
-  display: grid;
-  margin-top: 1rem;
-}
-
-aside.layout main ul li{
-  display: inline;
-  gap: 1rem;
-  padding: .5rem;
-  font-size: 1.5rem;
-}aside.layout main ul li span{margin-left: 1rem;}
-section{
-  // background: red; color: royalblue;
-  border: 1px solid var(--ton8);
-}
-/*====  MAIN * ============================ */
-main section.layout{
-  display: grid;
-  margin: 1rem 0rem;
-  padding: 2rem;
-  background-color: var(--ton15);
-  // background: green; color: yellow;
-}main section header{
-  border-bottom: 2px solid var(--ton50); margin-bottom: 2rem;
-}
-.cards{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
+  background-image: 
+  linear-gradient( 43deg, var(--color-dark) 0%, var(--color-dark) 30%,   var(--color-primary) 100%);
 
 
-.card {
-  flex: 1 1 auto;
-  // width: auto 10rem;
-  text-align: center;
-  padding: 1rem;
-  border-bottom: 0.25rem solid var(--ton90);
-  border-radius: 0.25rem 0.25rem 0 0;
-  background-color: var(--ton22);
-
-    i {margin-bottom: 3rem; font-size: 2.25rem; color: var(--ton60);}
-    h1 {padding: .5rem 0rem 1rem;
-      color: var(--color-light);  }    // p {margin-top: 1rem; }
-}
-
-/*====  DASHBOARD  ============================ */
-
-
-/*====  FOOTER  ============================ */
-footer ul{
-  display: flex;
-  // flex-wrap: wrap;
-  gap: 1rem;
-  padding: .5rem;
-  align-items: center;
-  justify-content: end;
-  // background: green; color: yellow;
-}
-}
-
-
-
-/////  MEDIUM
-@media (min-width:400px) { 
-  
-
-  header.layout .container{padding-left: calc(var(--width-aside-medium) - (1.7rem ));}
-  header.layout #js-forward3{color: var(--color-primary);}
-  
-  aside.layout{visibility: visible;  width: var(--width-aside-medium);  }
-  main.layout{margin-left: var(--width-aside-medium);}
-  footer.layout{margin-left: var(--width-aside-medium);}
-/*====  ASIDES TABLET * ============================ */
-  aside.layout header { 
-    display: flex; 
-    justify-content: center; 
+/* ASIDE LAY1 Header */ 
+  header{
+    display: flex;
+    height: var(--height-header); 
+    justify-content: center ;
+    align-items: center;
+    
+    font-family:  800 var(--font);
+    font-style: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    // background: red; color: black;
+    i {font-size: 2.5rem; color: var(--color-light);padding: .4rem;}
+    i:hover {color: var(--color-second);}
   }
-  // aside header a{ display: flex; width: 100%; justify-content: center; }
-  // aside header i:nth-child(2){display: none;}/* seta pra voltar */
-  aside main ul {display: flex; justify-items: center; }
+/* ASIDE_LAY1_main*/
+  main{
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem ;
+        margin-top: 2rem;
+        padding-left: 2rem;
+        font-size: 2rem;
+        li{
+          display: flex;
+          width: 90%;
+          justify-content: start;
+        }li:hover {border-right: 2px solid var(--color-second);}
+        li:hover > a i{color: var(--color-second);}
+      }
+  }
+}  
+//  ASIDE_lay1 
+///////////////////////////////  MAIN_LAY1
+main.lay1 {
+  display: grid;
+  grid-column: 1 / 13; grid-row: 1 / 2;
+  background: var(--ton10);
+  
+  
+  grid-template-columns: 1fr;
+  // grid-template-rows:  var(--height-header) minmax(80vh, 1fr) 1fr ;
+  grid-template-rows:   var(--height-header) minmax(78vh, auto) var(--height-footer) ;
+}
+/* MAIN_LAY1 */ 
+///////////////////////////////////////////////////////  L2
+///////////////////////////////  HEADER LAY2
+header.lay2{ 
+  display: grid;
+  grid-column: 1 / 2; grid-row: 1 / 2;
+  background-color: var(--ton90);
 
-  aside main ul li a span{display: none;  }
-  // aside main ul li a i{
-  //   display: flex;
-  //   visibility: visible; 
-  //   justify-content: center;
-  //   font-size: 2.5rem;
-  // }
+  i{
+
+    color: var(--color-primary);
+  }
+  i.icon-forward3{
+    height: var(--height-header);
+    align-items: center;
+    font-size: 2.5rem;
+  }
 
 }
+/* HEADER_LAY2 */ 
+///////////////////////////////  MAIN_LAY2
+main.lay2{
+  display: grid;
+  grid-column: 1 / 2; grid-row: 2 / 3;
+  // height: minmax( );
 
 
-/////  LARGE
-@media (min-width:800px) { 
+/////////////////////////////////////// main FOOTER layout LAY2
+  main footer.lay2 {
+    display: grid;
+    grid-column: 1 / 2; grid-row: 3 / 4;
 
-  header.layout{}
-  aside.layout{visibility: visible;  width: var(--width-aside-large);  }
-  main.layout{margin-left: var(--width-aside-large);}
-  footer.layout{margin-left: var(--width-aside-large);}
-
-
-
+      border-top: 2px solid var(--color-light);
+      // background: yellow; color: blue;
+  }
 }
+/* MAIN_LAY2 */ 
 
-@import "button.scss";
+
+
+// ////////////////////////////////////////////////// END LAYOUT
+
+// /*====  LOGO ============================ */
+// a.logo span {
+//   color: var(--color-light);
+// }
+
+// /*==== HEADER NAVIGATION ============================ */
+// nav {
+
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   height: var(--height-header);
+//   padding: 1rem;
+//   color: var(--ton30);
+// }
+
+// /*====  ASIDE aside smartphone * ============================ */
+// aside.layout header{
+//   display: flex;
+//   justify-content: space-between ;
+//   align-items: center;
+//   height: var(--height-header);
+//   padding: .5rem;
+// }
+// aside.layout main ul{
+//   display: grid;
+//   margin-top: 1rem;
+// }
+
+// aside.layout main ul li{
+//   display: inline;
+//   gap: 1rem;
+//   padding: .5rem;
+//   font-size: 1.5rem;
+// }aside.layout main ul li span{margin-left: 1rem;}
+// section{
+//   // background: red; color: royalblue;
+//   border: 1px solid var(--ton8);
+// } // /*====  MAIN * ============================ */
+
+
+// main section.layout{
+//   display: grid;
+//   margin: 1rem 0rem;
+//   padding: 2rem;
+//   background-color: var(--ton15);
+//   // background: green; color: yellow;
+// }main section header{
+//   border-bottom: 2px solid var(--ton50); margin-bottom: 2rem;
+// }
+// .cards{
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   gap: 1rem;
+// }
+
+
+// .card {
+//   flex: 1 1 auto;
+//   // width: auto 10rem;
+//   text-align: center;
+//   padding: 1rem;
+//   border-bottom: 0.25rem solid var(--ton90);
+//   border-radius: 0.25rem 0.25rem 0 0;
+//   background-color: var(--ton22);
+
+//     i {margin-bottom: 3rem; font-size: 2.25rem; color: var(--ton60);}
+//     h1 {padding: .5rem 0rem 1rem;
+//       color: var(--color-light);  }    // p {margin-top: 1rem; }
+// }
+
+// /*====  DASHBOARD  ============================ */
+
+
+// /*====  FOOTER  ============================ */
+// footer ul{
+//   display: flex;
+//   // flex-wrap: wrap;
+//   gap: 1rem;
+//   padding: .5rem;
+//   align-items: center;
+//   justify-content: end;
+//   // background: green; color: yellow;
+// }
+
+// } 
+/// MEDIA WIDTH = 0
+
+
+
+// /////  MEDIUM
+@media (min-width: 400px) { 
+  body.lay0{grid-template-columns: 75px repeat(11, 10fr) ; }
+  aside.lay1{
+    /* IMPORTANTE  -  JS = display = grid   */ 
+    grid-column: 1 / 2;
+    span{display: none;}
+    /* ASIDE_LAY1_header */ 
+    header{
+      i {font-size: 2rem; color: var(--color-light);padding: .4rem;}
+      i:hover {color: var(--color-second);}
+    }
+    /* ASIDE_LAY1_main*/
+    main{
+        ul{
+          padding: 0rem;
+          font-size: 2.5rem;
+          li{
+            justify-content: center;
+          }
+        }
+    }
+  }  
+
+
+
+
+  main.lay1 {
+    display: grid;
+    // width: max(100px);
+    grid-column: 2 / 13;
+    //   background: yellow; color: black;
+    }
+  
+
+//   header.layout .container{padding-left: calc(var(--width-aside-medium) - (1.7rem ));}
+//   header.layout #js-forward3{color: var(--color-primary);}
+  
+//   aside.layout{visibility: visible;  width: var(--width-aside-medium);  }
+//   main.layout{margin-left: var(--width-aside-medium);}
+
+///////////////////////////////////////////////////  FOOTER layout
+//   footer.layout{margin-left: var(--width-aside-medium);}
+// /*====  ASIDES TABLET * ============================ */
+//   aside.layout header { 
+//     display: flex; 
+//     justify-content: center; 
+//   }
+//   // aside header a{ display: flex; width: 100%; justify-content: center; }
+//   // aside header i:nth-child(2){display: none;}/* seta pra voltar */
+//   aside main ul {display: flex; justify-items: center; }
+
+//   aside main ul li a span{display: none;  }
+//   // aside main ul li a i{
+//   //   display: flex;
+//   //   visibility: visible; 
+//   //   justify-content: center;
+//   //   font-size: 2.5rem;
+//   // }
+
+} /* @media medium */
+
+
+// /////  LARGE
+@media (min-width:845px) { 
+  body.lay0{grid-template-columns: 210px repeat(11, 10fr) ; }
+  /////////////////////////////   ASIDE LAY1
+  aside.lay1{
+    grid-column: 1 / 2;
+    span{display: grid;}
+
+    header{
+      font-size: 1.5rem;
+      span{display: grid;}
+    }
+    main{
+      ul{
+        padding-left: 1.3rem;
+        font-size: 1.2rem;
+        li {
+          justify-content: start;
+        }a {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+  }
+    
+  }/* aside lay1 */
+  /* MAIN_LAY1 */
+  main.lay1 {
+    
+    }
+
+
+}/* @mdia LARGE */
+
+
+
+
+
+
+

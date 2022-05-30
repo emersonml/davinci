@@ -1,21 +1,25 @@
-<header class="layout" id="js-header">
-  <div class="container ">
+<%# HEADER_LAY2 %>
+<header class="lay2 " id="js-header">
+<div class="container">
     <nav>
     <%# <div class="adeus">kkk</div> %>
     <%# <div class="adeuss">2222</div> %>
-        <i class="icon icon-sanduiche color-primary js-sanduiche" id="js-sanduiche" ></i>
-        <i class="icon icon-forward3 rem225"  id="js-forward3"> </i>
+
+        <%# IMPORTANTE - JS = js-sanduiche %>
+        <i class="icon icon-sanduiche color-primary rem225 js-sanduiche" id="js-sanduiche" ></i><%# IMPORTANTE - JS = display = "grid" IN ASIDE %>
+        <i class="icon icon-forward3 color-primary js-forward3"  id="js-forward3"> </i> 
 
         
         <div class="menu">
             <ul>
                 <li>
                     <%= link_to destroy_user_session_path, method: :delete do%>
-                        <i class="icon icon-exit rem125" id="js-exit" alt="ssss"></i> Sair
+                        <i class="icon icon-exit rem125" id="js-exit" alt="ssss"></i> Sair <%# mq all %>
                     <% end %>
                 </li>
             </ul>
         </div><!-- menu-->
     </nav>
-  </div>
+    </div container>
 </header>
+v

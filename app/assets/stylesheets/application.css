@@ -132,7 +132,10 @@ img {width: 100%; height: auto;}
  .rem350 {font-size: 3.5rem;} 
 
 
-
+.c0{background: red; color: black;}
+.c1{background: green; color: white;}
+.c2{background: yellow; color: blue;}
+.c3{background: pink; color: brown;}
  
  @font-face {
   font-family: 'icomoon';

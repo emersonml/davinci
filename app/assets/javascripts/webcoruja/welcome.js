@@ -11,130 +11,166 @@
     mediumtrue = vmedium.matches;
     largetrue = vlarge.matches;
         if (largetrue == true) {
-            configLarge();
+            configLarge('init ');
           } else if (mediumtrue == true) {
-            configMedium();
+            configMedium('init ');
           } else {
-            configSmall();  
+            configSmall('init ');  
+            hideAside('init ');
+            hideColDirAsideUndo2('init ');
           // mensagem = "Atenção";
         }
         
 
 
 
-  //////////  GATILHO ->  OUVINDO WIDTH RENDERIZACAO DE WIDTH
-        
-// const mqMediumTrue  = window.matchMedia( '(min-width: 400px) && (max-width: 799px)' );
+//   //////////  GATILHO ->  OUVINDO RENDERIZACAO DE WIDTH
 const mqMedium  = window.matchMedia( '(min-width: 400px)' );
 mqMedium.addEventListener('change', (query) => {
   if(query.matches )   {
-    configMedium();
-  } else { configSmall(); }
-
+    configMedium('renderSM ')
+    hideColDirAsideUndo2()
+  } else { 
+    configSmall('renderMS ')
+    hideAside() 
+    }
   });
   
   const mqLarge = window.matchMedia( '(min-width: 800px)' );
   mqLarge.addEventListener('change', (query) => {
     if(query.matches )   {
-      configLarge();
-
-
-    } else { configMedium(); }
+      configLarge('render ')
+    } else { 
+      configMedium('renderLM ')
+    }
   
   });
 
 
       
 
-  //////  GATILHO -> OUVINDO ELEMENTOS  //////////////////////////////////////////////////////////////////////
+//   //////  GATILHO -> OUVINDO ELEMENTOS CLICADOS CLICK //////////////////////////////////////////////////////////////////////
 
-  const sanduiche = document.querySelectorAll('nav .js-sanduiche')
-  for (const element of sanduiche) {
-    element.addEventListener('click', function () {
-      showAsideMQSmall();
-    })
-  }
-  const undo2 = document.querySelectorAll('header .js-undo2')
-  for (const link of undo2) {
-    link.addEventListener('click', function () {
-      // document.getElementById('js-aside').style.display = "none"
-      document.getElementById('js-aside').style.visibility = "hidden"
-    })
-  }
-  const forward3 = document.querySelectorAll('#js-forward3')
+// SANDUICHE
+const sanduiche = document.querySelectorAll('nav .js-sanduiche')
+for (const element of sanduiche) {
+  element.addEventListener('click', function () {
+    configLarge('clickSuduiche ')
+    showAside('clickSuduiche ');
+    showColDirAsideUndo2('clickSuduiche ');
+  })
+}
+// UNDO2 VOLTAR
+const undo2 = document.querySelectorAll('body .js-undo2')
+for (const element of undo2) {
+  element.addEventListener('click', function () {
+    hideAside('clickUndo ');
+  })
+}
+  const forward3 = document.querySelectorAll('header .js-forward3')
   for (const link of forward3) {
     link.addEventListener('click', function () {
-      console.log('smallhhhh')
-      showAsideMQLarge();
+      // console.log()
+      showAside('forward3 ')
+      // showAsideMQLarge();
       // document.getElementById('js-aside').style.visibility = "hidden"
     })
   }
   
 
 
-        //////////   FUNCTIONS
-      
-
-        function configSmall(){
-          console.log('small')
-          document.getElementById('js-aside').style.visibility = "hidden"
-          document.getElementById('js-sanduiche').style.visibility = "visible"
-          document.getElementById('js-forward3').style.visibility = "hidden"
-        }
-        function configMedium(){
-          console.log('medium');
-          showAsideMQMedium();
-          document.getElementById('js-forward3').style.visibility = "visible"
-          document.getElementById('js-undo2').style.display = "none"
-          document.getElementById('js-sanduiche').style.display = "none"
+//         //////////   FUNCTIONS
+        
+        
+        function configSmall(a){
+          console.log(a+'configSmall')
           
+          // document.querySelector('aside').style.display = "none"
+          // document.querySelector('aside').style.visibility = "hidden"
           
-          hiddenSanduiche();
+          // document.getElementById('js-aside').style.visibility = "hidden"
+          // document.getElementById('js-sanduiche').style.visibility = "visible"
+          // document.getElementById('js-forward3').style.visibility = "hidden"
+
         }
-        function configLarge(){
-          console.log('large');
-          document.getElementById('js-forward3' ).style.visibility = "hidden"
-          // document.getElementById('js-sanduiche').style.visibility = "hidden"
-          document.getElementById('js-exit').style.visibility = "visible"
-        }
+function configMedium(a){
+  console.log(a+'configMedium' )
+// showAsideMQMedium();
+showAside()
+// document.querySelector('aside').style.display = "grid"
+document.getElementById('js-forward3').style.visibility = "visible"
+// document.getElementById('js-undo2').style.display = "none"
+document.getElementById('js-sanduiche').style.display = "none"
+}
+        
+        
+        //           hiddenSanduiche();
+//         }
+function configLarge(a){
+  console.log(a+'configLarge' )
+// document.getElementById('js-forward3' ).style.visibility = "hidden"
+// document.getElementById('js-sanduiche').style.visibility = "hidden"
+// document.getElementById('js-exit').style.visibility = "visible"
+}
+
+
+
+
+
+
+
+
+function showAside(a){
+  console.log(a+'showAside');
+  document.getElementById('js-aside').style.display = "grid";
+  if(a === "forward3 "  ){
+    console.log("sssssss");
+  } else{
+    console.log("nnnnnnnnnn");
+
+  }
+}
+function showColDirAsideUndo2(a){
+  console.log(a+'showColDirAsideUndo2')
+  document.getElementById('js-colDir-Aside-undo2').style.display = "grid"
+
+}
+
+
+function hideAside(a){
+  console.log(a+'hideAside')
+  // console.log('js-undo2->showAside')
+  document.getElementById('js-aside').style.display = "none"
+  document.getElementById('js-colDir-Aside-undo2').style.display = "none"
+}
+function hideColDirAsideUndo2(a){
+  console.log(a+'hideColDirAsideUndo2')
+  document.getElementById('js-colDir-Aside-undo2').style.display = "none"
+}
+//         function showAsideMQMedium(){
+//           console.log('showAsideMQLarge')
+//           document.getElementById('js-aside').style.visibility = "visible"
+//           document.getElementById('js-aside').style.primaryColor
+//         }
+//         function showAsideMQLarge(){
+//           console.log('showAsideMQLarge')
+//           // document.getElementById('js-header').style.visibility = "visible"
+//           elemente = document.getElementById('js-header').style
+//           .marginLeft = "var(--width-aside-large)"
+//           elemente.width = "calc 100vw - (var(--width-aside-large))"
+
+//           elemente = document.getElementById('js-aside').style
+//           elemente.width = "var(--width-aside-large)"
+//           // elemente.background = "red"
+//           document.getElementById('js-main').style.marginLeft = "var(--width-aside-large)"
+//           // document.getElementById('js-main').style.background = "red"
+//           document.getElementById('js-footer').style.marginLeft = "var(--width-aside-large)"
+//         }
+        
         
 
 
-
-
-
-
-
-        function showAsideMQSmall(){
-          console.log('showAsideMQSmall')
-          // document.getElementById('js-undo2').style.visibility = "hidden"
-          document.getElementById('js-aside').style.visibility = "visible"
-        }
-        
-        function showAsideMQMedium(){
-          console.log('showAsideMQLarge')
-          document.getElementById('js-aside').style.visibility = "visible"
-          document.getElementById('js-aside').style.primaryColor
-        }
-        function showAsideMQLarge(){
-          console.log('showAsideMQLarge')
-          // document.getElementById('js-header').style.visibility = "visible"
-          elemente = document.getElementById('js-header').style
-          .marginLeft = "var(--width-aside-large)"
-          elemente.width = "calc 100vw - (var(--width-aside-large))"
-
-          elemente = document.getElementById('js-aside').style
-          elemente.width = "var(--width-aside-large)"
-          // elemente.background = "red"
-          document.getElementById('js-main').style.marginLeft = "var(--width-aside-large)"
-          // document.getElementById('js-main').style.background = "red"
-          document.getElementById('js-footer').style.marginLeft = "var(--width-aside-large)"
-        }
-        
-        
-
-
-        function hiddenSanduiche(){
-          console.log('hiddenSanduiche');
-          document.getElementById('js-sanduiche').style.visibility = "hidden"
-        }
+//         function hiddenSanduiche(){
+//           console.log('hiddenSanduiche');
+//           document.getElementById('js-sanduiche').style.visibility = "hidden"
+//         }

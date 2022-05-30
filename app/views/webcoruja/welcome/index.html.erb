@@ -1,8 +1,7 @@
-<main class="layout" id="js-main">
-    <div class="container">
+<main class="lay2">
 
         
-        <section class="layout">
+        <section >
             <header>
                 <h1>Dashboard </h1>
             </header>
@@ -34,6 +33,7 @@
                             <p>Qtd: <strong><%= @infomk[6] %> </strong></p>
                             <p>Alerta:: <strong><%= " 0" %> </strong></p>
                         </div card >
+                        
                         <div class="card">
                             <i class="icon icon-vlan  "></i>
                             <h1>VLANs</h1>
@@ -42,10 +42,34 @@
                         </div card >
                     </div>                        
             </article>
+
+
+
+
+
+
+             <article>
+                    <h3>Mikrotik C1 </h3>
+                    <div class="cards wropper">
+                        <div class="card">
+                            <i class="icon icon-info  "></i>
+                            <h1>CONCENTRADOR</h1>
+                            <p>IDENTIFICAÇÃO: <strong><%= @infomk[5] %> </strong></p>
+                            <p>UpTime: <strong><%= @infomk[1] %></strong> </p>
+                            <p>Hora: <strong><%= @infomk[4] %> </strong></p>
+                        </div card >
+   
+                    </div>                        
+            </article>
+
+
+
+
             </main>
         </section>
         
 
 
-    </div container>
-</main>
+
+
+</main lay2> <%# mq lay2%>
