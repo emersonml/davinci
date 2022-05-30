@@ -1,14 +1,7 @@
-// Place all the styles related to the Webcorujas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 // = require webcoruja/welcome
 // = require webcoruja/vlans
 
-
-
 /*====  VARIABLES ============================ */
-// @media (min-width:0px) { 
 :root {
    --mqmedium: (min-width: 400px;) 
   --mq-large: 800px;
@@ -16,9 +9,11 @@
   --height-footer: 10vh;
   --width-aside-medium: 100px;
   --width-aside-large: 35vh;
+
+  // --display-grid: none;
   // CORES =============
   --hue: 280; //cor matriz
-  --hue-sec: 440; //cor matriz
+  --hue-sec: 840; //cor matriz
 
   --color-light: hsl(var(--hue) 100% 80%);
   --color-primary: hsl(var(--hue) 100% 30%);
@@ -38,16 +33,30 @@
 } ////////////////////////////////////////////////// END ROOT
 
 /*===  BASE ============================ */
+
 a.logo { color: var(--ton90);}
 .color-light {color: var(--color-light);}
 .color-primary {color: var(--color-primary);}
 .bg-color-primary {background: var(--color-primary);}
 .title {  font: 700 var(--font-size-title) var(--font-title);  // color: var(--color-light);
 } ////////////////////////////////////////////////// END BASE
-.container { margin-left: 2vw; margin-right: 2vw;} 
+.container { margin-left: 3%; margin-right: 3%;} 
+.colDir-Aside{ 
+  display: none; /* IMPORTANTE JS CLICK = GRID */
+  grid-column: 9 / 11;
+  grid-row: 1 / 2;
+  z-index: 11; /* mq */
+  align-items: center; justify-items: center;
+  height: var(--height-header);
+  font-size: 2.5rem;
+  color: var(--color-primary);
+}
+
 
 /*====  LAYOUT ============================ */
 html { }
+///////////////////////////////////////////////////////  L0
+///////////////////////////////  BODY_LAY0
 body.lay0{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -57,78 +66,53 @@ body.lay0{
   color: var(--ton90);
   background: purple
 }
-///////////////////////////////  ASIDE layout lay1
-
+///////////////////////////////////////////////////////  L1
+///////////////////////////////  ASIDE Lay1 ---
 aside.lay1{
-  display: grid;
+  display: grid; /* IMPORTANTE JS INIT = none */
   grid-column: 1 / 9;
   grid-row: 1 / 2;
   z-index: 11; /* mq */
+  // min-width: 170px;
 
   background-image: 
   linear-gradient( 43deg, var(--color-dark) 0%, var(--color-dark) 30%,   var(--color-primary) 100%);
-}
-/* aside_lay1_header */ 
-aside.lay1 header{
-  display: flex;
-  height: var(--height-header);
-  justify-content: center ;
-  align-items: center ;
-  
-  font-family:  800 var(--font);
-  font-style: 'DM Sans', sans-serif;
-  font-size: 1.4rem;
-  // background: red; color: black;
-  i {font-size: 3rem; color: var(--color-light);padding: .2rem;}
-  i:hover {color: var(--color-second);}
-}
-/* aside_lay1_main*/
-aside.lay1 main{
-  ul{
+
+
+/* ASIDE LAY1 Header */ 
+  header{
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem ;
-    margin-top: 2rem;
-    padding-left: 2rem;
-    font-size: 1.3rem;
-    li{
-      display: flex;
-      width: 100%;
-      justify-content: start;
-    }li:hover {border-right: 2px solid var(--color-second);}
-     li:hover > a i{color: var(--color-second);}
+    height: var(--height-header); 
+    justify-content: center ;
+    align-items: center;
+    
+    font-family:  800 var(--font);
+    font-style: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    // background: red; color: black;
+    i {font-size: 2.5rem; color: var(--color-light);padding: .4rem;}
+    i:hover {color: var(--color-second);}
   }
-
-  
-}
-
-.colDir{
-  display: grid;
-  grid-column: 9 / 11;
-  grid-row: 1 / 2;
-  z-index: 11; /* mq */
-  margin-top: 2rem;
-  color: var(--color-primary);
-  // background: red; color: black;
-}
-
-
-
-
-// aside {
-  //   visibility: none;
-  //   position: fixed;
-  //   width: 65vw;
-  //   z-index: 11;
-  //   height: 100%;
-//   color: var(--ton90);
-  
-
-//   } 
-
-
-
-//////////////////////////////////////  MAIN LAYOUT lay1
+/* ASIDE_LAY1_main*/
+  main{
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem ;
+        margin-top: 2rem;
+        padding-left: 2rem;
+        font-size: 2rem;
+        li{
+          display: flex;
+          width: 90%;
+          justify-content: start;
+        }li:hover {border-right: 2px solid var(--color-second);}
+        li:hover > a i{color: var(--color-second);}
+      }
+  }
+}  
+//  ASIDE_lay1 
+///////////////////////////////  MAIN_LAY1
 main.lay1 {
   display: grid;
   grid-column: 1 / 13; grid-row: 1 / 2;
@@ -139,31 +123,45 @@ main.lay1 {
   // grid-template-rows:  var(--height-header) minmax(80vh, 1fr) 1fr ;
   grid-template-rows:   var(--height-header) minmax(78vh, auto) var(--height-footer) ;
 }
-  
-  /////////////////////////////////////// main HEADER layout lay2
-  main header.lay2{ 
+/* MAIN_LAY1 */ 
+///////////////////////////////////////////////////////  L2
+///////////////////////////////  HEADER LAY2
+header.lay2{ 
   display: grid;
   grid-column: 1 / 2; grid-row: 1 / 2;
-  // height: var(--height-header);
-  // width: 100vw;
   background-color: var(--ton90);
-}
 
-/////////////////////////////////////// main MAIN layout LAY2
-main main.lay2{
+  i{
+
+    color: var(--color-primary);
+  }
+  i.icon-forward3{
+    height: var(--height-header);
+    align-items: center;
+    font-size: 2.5rem;
+  }
+
+}
+/* HEADER_LAY2 */ 
+///////////////////////////////  MAIN_LAY2
+main.lay2{
   display: grid;
   grid-column: 1 / 2; grid-row: 2 / 3;
   // height: minmax( );
-}
+
 
 /////////////////////////////////////// main FOOTER layout LAY2
-main footer.lay2 {
-  display: grid;
-  grid-column: 1 / 2; grid-row: 3 / 4;
+  main footer.lay2 {
+    display: grid;
+    grid-column: 1 / 2; grid-row: 3 / 4;
 
-    border-top: 2px solid var(--color-light);
-    // background: yellow; color: blue;
+      border-top: 2px solid var(--color-light);
+      // background: yellow; color: blue;
+  }
 }
+/* MAIN_LAY2 */ 
+
+
 
 // ////////////////////////////////////////////////// END LAYOUT
 
@@ -262,8 +260,28 @@ main footer.lay2 {
 @media (min-width: 400px) { 
   body.lay0{grid-template-columns: 75px repeat(11, 10fr) ; }
   aside.lay1{
+    /* IMPORTANTE  -  JS = display = grid   */ 
     grid-column: 1 / 2;
-  }
+    span{display: none;}
+    /* ASIDE_LAY1_header */ 
+    header{
+      i {font-size: 2rem; color: var(--color-light);padding: .4rem;}
+      i:hover {color: var(--color-second);}
+    }
+    /* ASIDE_LAY1_main*/
+    main{
+        ul{
+          padding: 0rem;
+          font-size: 2.5rem;
+          li{
+            justify-content: center;
+          }
+        }
+    }
+  }  
+
+
+
 
   main.lay1 {
     display: grid;
@@ -304,26 +322,39 @@ main footer.lay2 {
 // /////  LARGE
 @media (min-width:845px) { 
   body.lay0{grid-template-columns: 210px repeat(11, 10fr) ; }
-  
+  /////////////////////////////   ASIDE LAY1
   aside.lay1{
     grid-column: 1 / 2;
-  }
+    span{display: grid;}
 
-  main.lay1 {
-    display: grid;
-    // width: max(100px);
-    grid-column: 2 / 13;
-    //   background: yellow; color: black;
+    header{
+      font-size: 1.5rem;
+      span{display: grid;}
     }
-//   header.layout{}
-//   aside.layout{visibility: visible;  width: var(--width-aside-large);  }
-//   main.layout{margin-left: var(--width-aside-large);}
-//   footer.layout{margin-left: var(--width-aside-large);}
+    main{
+      ul{
+        padding-left: 1.3rem;
+        font-size: 1.2rem;
+        li {
+          justify-content: start;
+        }a {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+  }
+    
+  }/* aside lay1 */
+  /* MAIN_LAY1 */
+  main.lay1 {
+    
+    }
+
+
+}/* @mdia LARGE */
 
 
 
-
-}
 
 
 

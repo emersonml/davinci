@@ -1,5 +1,6 @@
+<%#  css ASIDE_lay1 %>
 <aside class="lay1" id="js-aside">  
-    <div class="container">
+    <nav class="container">
         <%# aside_lay1_header %>
         <header> 
             <%#  loco_completo s%>
@@ -10,6 +11,7 @@
             <span>Coruja</span>
         </header>
         <%# aside_lay1_main %>
+
         <main>
           <ul>
             <li>
@@ -44,9 +46,12 @@
 
           </ul>
         </main>
-    </div>
+        
+    </nav container>
   </aside>
-  <div class="colDir">
-    <%#  voltar s%>
-    <i class="icon icon-undo2 rem225 js-undo2" id="js-undo2"></i>
+
+  <%# NF css BASE %>
+  <div class="colDir-Aside" id="js-colDir-Aside-undo2">
+    <%# IMPORTANTE - JS = é chamado pelo js-sanduiche '%>
+    <i class="icon icon-undo2 js-undo2" id="js-undo2"></i><%# IMPORTANTE - JS = display = "none" IN ASIDE %>
   </div>
