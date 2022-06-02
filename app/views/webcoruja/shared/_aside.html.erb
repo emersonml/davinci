@@ -1,19 +1,22 @@
-<%#  css ASIDE_lay1 %>
+<%#  css ASIDE lay1 | js InitSmall %>
 <aside class="lay1" id="js-aside">  
-    <nav class="container">
-        <%# aside_lay1_header %>
+  <div class="container" >
+    <header> 
+      <i class="icon icon-undo2 js-undo2" id="js-undo2"></i>
+      <i class="icon icon-backward2 js-undo2"   id="js-backward2"> </i> 
+
+    </header>
+    <main>
+      <nav>
         <header> 
-            <%#  loco_completo s%>
+          <%#  LOGO s%>
             <span>Web</span> 
             <%= link_to webcoruja_welcome_index_path do %>
               <i class="icon icon-coruja "></i>
             <% end %> 
             <span>Coruja</span>
         </header>
-        <%# aside_lay1_main %>
-
-        <main>
-          <ul>
+        <ul>
             <li>
             <%# a home s%>
             <%= link_to site_welcome_index_path do %>
@@ -45,13 +48,10 @@
             
 
           </ul>
-        </main>
-        
-    </nav container>
+      </nav>
+    </main>
+  </div container>
+
+
   </aside>
 
-  <%# NF css BASE %>
-  <div class="colDir-Aside" id="js-colDir-Aside-undo2">
-    <%# IMPORTANTE - JS = é chamado pelo js-sanduiche '%>
-    <i class="icon icon-undo2 js-undo2" id="js-undo2"></i><%# IMPORTANTE - JS = display = "none" IN ASIDE %>
-  </div>
