@@ -69,7 +69,6 @@ body.lay0{
   color: var(--ton90);
   background: purple
 }
-///////////////////////////////////////////////////////  L1
 ///////////////////////////////  ASIDE Lay1 ---
 aside.lay1{
   visibility: hidden;
@@ -117,10 +116,10 @@ aside.lay1{
         li:hover > a i{color: var(--color-second);}
       }
   }
-} 
+} /** ASIDE lay1 */
 
-//  ASIDE_lay1 
-///////////////////////////////  MAIN_LAY1
+
+///////////////  MAIN LAY1
 main.lay1 {
   display: grid;
   grid-column: 1 / 13; grid-row: 1 / 2;
@@ -189,8 +188,48 @@ main.lay2{
 
 @import 'webcoruja/welcome.scss';
 
+
+
+
+
 //////////////////////////////      MQ MEDIUM    MEDIA QUERIES
-@import 'webcoruja/mq_medium.scss';
+// @import 'webcoruja/mq_medium.scss';
+@media (min-width: 400px) {
+  body.lay0 {
+    grid-template-columns: 75px repeat(11, 10fr);
+  }
+  aside.lay1 {
+    /* IMPORTANTE  -  */
+    visibility: visible;
+    // display: none;
+    grid-column: 1 / 2;
+    span {
+      display: none;
+    }
+    /* asidelay1HEADER */
+    header {
+    }
+    /* ASIDE_LAY1_main*/
+    main {
+      ul {
+        padding: 0rem;
+        font-size: 2.5rem;
+        li {
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  main.lay1 {
+    // display: grid;
+    // width: max(100px);
+    grid-column: 2 / 13;
+    // z-index: 12;
+    //   background: yellow; color: black;
+  }
+
+}
 /* mq_medium */
 
 

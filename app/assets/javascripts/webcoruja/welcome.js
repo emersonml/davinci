@@ -64,7 +64,10 @@ for (const element of backward2) {
                     //1S1C
                     case "init":
                       switch(action){
-                        case "small":  console.log(controller+'|'+action ); break;  
+                        case "small":  console.log(controller+'|'+action ); 
+                        // hideRender(id='js-aside')
+                          
+                        break;  
                         case "medium": console.log(controller+'|'+action ); break;  
                         case "large": console.log(controller+'|'+action ); break;  
                         }break;

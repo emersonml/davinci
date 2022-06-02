@@ -21,13 +21,11 @@
 
   <body class="lay0">
     <%= render partial: 'webcoruja/shared/aside' %>
-    <main class="lay1">
+    <main class="lay1" id="js-mainLay1">
       <%= render partial: 'webcoruja/shared/header' %>
-      <%# <main class="lay2" id="js-main"> %>
       <%= yield %>
-      <%# </main layout> %>
       <%= render partial: 'webcoruja/shared/footer' %>
-    </main>
+    </main lay1>
 
 
     <%= javascript_include_tag 'application' %>

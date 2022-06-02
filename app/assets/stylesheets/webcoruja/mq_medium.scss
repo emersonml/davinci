@@ -2,39 +2,4 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@media (min-width: 400px) {
-  body.lay0 {
-    grid-template-columns: 75px repeat(11, 10fr);
-  }
-  aside.lay1 {
-    /* IMPORTANTE  -  */
-    visibility: visible;
-    // display: none;
-    grid-column: 1 / 2;
-    span {
-      display: grid;
-    }
-    /* asidelay1HEADER */
-    header {
-    }
-    /* ASIDE_LAY1_main*/
-    main {
-      ul {
-        padding: 0rem;
-        font-size: 2.5rem;
-        li {
-          justify-content: center;
-        }
-      }
-    }
-  }
 
-  main.lay1 {
-    display: grid;
-    // width: max(100px);
-    // grid-column: 1 / 13;
-    // z-index: 12;
-    //   background: yellow; color: black;
-  }
-
-}
