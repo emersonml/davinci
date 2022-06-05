@@ -4,16 +4,16 @@
 
 aside i.icon{font-size: 2rem;}
 aside header i.icon{font-size: 2rem;}
-
-aside header i{color: var(--color-light); padding: .4rem;}
 aside header i:hover {color: white;}
 aside header i.icon-backward2{ display: none; font-size: 2.5rem; }
 
 // .colDir-Aside i{background-color: var(--ton90);}
 
+html body.lay0 aside#js-aside.lay1 div.container main nav ul li a{font-size: 1.5rem;}
+i.icon.icon-coruja{font-size: 3.5rem;}
 header i.icon{font-size: 1.5rem;}
 header i.icon-sanduiche{ font-size: 1rem;}
-header i.icon-forward3{ visibility: hidden; font-size: 2.5rem; }
+header i.icon-forward3{  display: none; font-size: 2.5rem; }
 
 header.lay2 nav i.icon-forward3{
     height: var(--height-header);
@@ -23,12 +23,17 @@ header.lay2 nav i.icon-forward3{
 
 // /////  MEDIUM
 @media (min-width:400px) { 
+    i.icon.icon-coruja{font-size: 2.5rem;}
+
+
     //////////////////  BASE
     // aside i.icon{font-size: 2.2rem;}
     // header i.icon{font-size: 1.5rem;}
     // header i.icon-sanduiche{ font-size: 1rem; }
     aside header i.icon-undo2{ display: none; }
     aside header i.icon-backward2{ display: grid; }
+    header i.icon-sanduiche{ display: none;  font-size: 1rem;}
+    header i.icon-forward3{  display: grid; font-size: 2.5rem; }
     
 }
 
@@ -36,8 +41,9 @@ header.lay2 nav i.icon-forward3{
 
 @media (min-width:850px) { 
     //////////////////  BASE
-    header i.icon-sanduiche{ display: none;
-    header i.icon-backward2{ visibility: visible;  }
-    }
+
+    header i.icon-sanduiche{ display: grid;  font-size: 1rem;}
+    header i.icon-sanduiche{ visibility: hidden; }
+    header i.icon-forward3{  display: none; font-size: 2.5rem; }
 
 }

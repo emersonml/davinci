@@ -9,8 +9,10 @@ module.exports = environment.toWebpackConfig()
 module.exports = {
   // ...
   module: {
-   rules: [
-    {
+    ///cuem cuem/ type: "module",
+    rules: [
+      {
+      // cuem  type: "module",
      test: /\.scss$/,
      use: ["style-loader", "css-loader", "sass-loader"]
     },
