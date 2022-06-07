@@ -1,18 +1,12 @@
-
-
 // = require webcoruja/icons
 // = require webcoruja/vlans
+// = require webcoruja/users/sessions
 // = require webcoruja/welcome
 
 // @import 'webcoruja/icons.scss';
 
-
-
 /*====  VARIABLES ============================ */
 :root {
-
-
-
   --height-header: 7vh;
   --height-mainlay1: 100vh;
   --height-footer: 10vh;
@@ -32,205 +26,68 @@
   // --color-second: rgb(255, 222, 150);
 
   --link: hsl(var(--hue) 100% 80%);
-  a {color: var(--body-font-color); }
+  a {
+    color: var(--body-font-color);
+  }
 
   --font-body: sans-serif;
 
   // --font: 'Poppins', sans-serif;
-  --font: 'M PLUS Rounded 1c', sans-serif;
+  --font: "M PLUS Rounded 1c", sans-serif;
+  --fontMPlus: "M PLUS Rounded 1c", sans-serif;
+  --fontMontserrat: 'Montserrat Alternates', sans-serif;
   // --font: 'DM Sans', sans-serif;
 } ////////////////////////////////////////////////// END ROOT
 
 /*===  BASE ============================ */
-// 
+//
 
-
-
-a.logo { color: var(--ton90);}
-.color-light {color: var(--color-light);}
-.color-primary {color: var(--color-primary);}
-.bg-color-primary {background: var(--color-primary);}
-.title {  font: 700 var(--font-size-title) var(--font-title);  // color: var(--color-light);
-} ////////////////////////////////////////////////// END BASE
-.container { margin-left: 2vw; margin-right: 2vw;} 
-
-
-
-/*====  LAYOUT ============================ */
-html { }
-///////////////////////////////////////////////////////  L0
-///////////////////////////////  BODY_LAY0
-body.lay0{
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: minmax(var(--height-mainlay1), auto);
-                      
-  font: 400 1rem var(--font-body);
+a.logo {
   color: var(--ton90);
-  background: purple
 }
-///////////////////////////////////////////////////////  L1
-///////////////////////////////  ASIDE Lay1 ---
-aside.lay1{
-  visibility: hidden;
-  display: grid; /* IMPORTANTE JS INIT = none */
-  grid-column: 1 / 9;
-  grid-row: 1 / 2;
-  z-index: 11; /* mq */
-  // min-width: 170px;
+.color-light {
+  color: var(--color-light);
+}
+.color-primary {
+  color: var(--color-primary);
+}
+.bg-color-primary {
+  background: var(--color-primary);
+}
+.title {
+  font: 700 var(--font-size-title) var(--font-title); // color: var(--color-light);
+} ////////////////////////////////////////////////// END BASE
+.container {
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
 
-  background-image: 
-  linear-gradient( 43deg, var(--color-dark) 0%, var(--color-dark) 30%,   var(--color-primary) 100%);
+/*============  LAYOUT =================== */
+///////////////////////////////  BODY_LAY0
 
-  header{
-    display: flex;
-    height: var(--height-header); 
-    justify-content: end ;
-    align-items: center;
-  }
 
-  /* ASIDE_LAY1_main*/
-  main{
-    margin-top: 1rem;
-    /* ASIDE LAY1 Header */ 
-    header{
-      display: flex;
-      height: var(--height-header); 
-      justify-content: center ;
-      align-items: center;
-      
-      i {color: var(--color-light);padding: .4rem;}
-      i:hover {color: white;}
-    }
-      ul{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem ;
-        margin-top: 1rem;
-        padding-left: 1rem;
-        font-size: 2rem;
-        li{
-          display: flex;
-          width: 90%;
-          justify-content: start;
-        }li:hover {border-right: 2px solid var(--color-second);}
-        li:hover > a i{color: var(--color-second);}
-      }
-  }
-} 
+@import "webcoruja/mq/webcoruja_small.scss";
+@media (min-width: 400px) { @import "webcoruja/mq/webcoruja_medium.scss";}
+@media (min-width: 850px) { @import "webcoruja/mq/webcoruja_large.scss";}
 
-//  ASIDE_lay1 
-///////////////////////////////  MAIN_LAY1
-main.lay1 {
+
+///////////////////   DAQUI PRA BAIXO NAO TEM MQ NAO ALTERA  ///////////////////
+
+///////////////////////////////////////////////////////  LAYOUT 2 MAIN
+main.lay1 main.lay2 {/////////////////////  MAIN_LAY2
   display: grid;
-  grid-column: 1 / 13; grid-row: 1 / 2;
-  background: var(--ton10);
-  
-  
-  grid-template-columns: 1fr;
-  // grid-template-rows:  var(--height-header) minmax(80vh, 1fr) 1fr ;
-  grid-template-rows:   var(--height-header) minmax(78vh, auto) var(--height-footer) ;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }
-/* MAIN_LAY1 */ 
-///////////////////////////////////////////////////////  L2
-///////////////////////////////  HEADER LAY2
-header.lay2{ 
+
+main.lay1 footer.lay2 {/////////////FOOTER layout LAY2
   display: grid;
-  grid-column: 1 / 2; grid-row: 1 / 2;
-  
-  background-color: var(--ton90);
-  
-  nav{
-    display: flex;
-    width: 100%; height: 100%;
-
-    justify-content: space-between;
-    align-items: center;
-    // font-size: 1rem;
-    color: var(--color-primary);
-
-
-
-
-  }
-
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  border-top: 2px solid var(--color-light);
 }
-/* headerLay2 */ 
-///////////////////////////////  MAIN_LAY2
 
 
 
 
-main.lay2{
-  display: grid;
-  grid-column: 1 / 2; grid-row: 2 / 3;
-  // height: minmax( );
-
-
-/////////////////////////////////////// main FOOTER layout LAY2
-  main footer.lay2 {
-    display: grid;
-    grid-column: 1 / 2; grid-row: 3 / 4;
-
-      border-top: 2px solid var(--color-light);
-      // background: yellow; color: blue;
-  }
-}
-/* MAIN_LAY2 */ 
-
-
-/* END LAYOUT */ 
-
-
-
-// ////////////////////////////////////////////////// END LAYOUT
-
-
-
-@import 'webcoruja/welcome.scss';
-
-//////////////////////////////      MQ MEDIUM    MEDIA QUERIES
-@import 'webcoruja/mq_medium.scss';
-/* mq_medium */
-
-
-// /////  LARGE
-@media (min-width:850px) { 
-  body.lay0{grid-template-columns: 210px repeat(11, 1fr) ; }
-  /////////////////////////////   ASIDE LAY1
-  aside.lay1{
-    grid-column: 1 / 2;
-    span{display: grid;}
-
-    header{
-      font-size: 1.5rem;
-      span{display: grid;}
-    }
-    main{
-      ul{
-        padding-left: 1.3rem;
-        font-size: 1.2rem;
-        li {
-          justify-content: start;
-        }a {
-          display: flex;
-          gap: 1rem;
-        }
-      }
-  }
-    
-  }/* aside lay1 */
-  /* MAIN_LAY1 */
-  main.lay1 {
-    
-    }
-
-
-}/* @mdia LARGE */
-
-
-
-
-
-
-
+// @import 'webcoruja/users/sessions.scss';

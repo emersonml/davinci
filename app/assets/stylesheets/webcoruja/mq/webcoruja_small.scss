@@ -1,0 +1,108 @@
+body.lay0 {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: minmax(var(--height-mainlay1), auto);
+  
+    font: 400 1rem var(--font-body);
+    color: var(--ton90);
+    background: purple;
+  }
+  ///////////////////////////////  ASIDE Lay1 ---
+  aside.lay1 {
+    visibility: hidden;
+    display: grid; /* IMPORTANTE JS INIT = none */
+    grid-column: 1 / 16;
+    grid-row: 1 / 2;
+    z-index: 11; /* mq */
+    // min-width: 170px;
+  
+    background-image: linear-gradient(
+      43deg,
+      var(--color-dark) 0%,
+      var(--color-dark) 30%,
+      var(--color-primary) 100%
+    );
+  
+    header {
+      display: flex;
+      height: var(--height-header);
+      justify-content: end;
+      align-items: center;
+    }
+  
+    /* ASIDE_LAY1_main*/
+    main {
+      margin-top: 1rem;
+      /* ASIDE LAY1 Header */
+      header {
+        display: flex;
+        height: var(--height-header);
+        justify-content: center;
+        align-items: center;
+  
+        i {
+          color: var(--color-light);
+          padding: 0.4rem;
+        }
+        i:hover {
+          color: white;
+        }
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        padding-left: 1rem;
+        font-size: 2rem;
+        li {
+          display: flex;
+          width: 90%;
+          justify-content: start;
+        }
+        li:hover {
+          border-left: 2px solid var(--color-light);
+        }
+        li:hover > a i {
+          color: var(--color-light);
+        }
+      }
+    }
+  } /** ASIDE lay1 */
+  
+  
+  ///////////////  MAIN LAY1
+  main.lay1 {
+    display: grid;
+    grid-column: 1 / 25;
+    grid-row: 1 / 2;
+    background: var(--ton10);
+  
+    grid-template-columns: 1fr;
+    // grid-template-rows:  var(--height-header) minmax(80vh, 1fr) 1fr ;
+    grid-template-rows: var(--height-header) minmax(78vh, auto) var(
+        --height-footer
+      );
+  }
+  /* MAIN_LAY1 */
+  
+  header.lay2 { /////////////////////  HEADER LAY2
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  
+    background-color: var(--ton90);
+  
+    nav {
+      display: flex;
+      width: 100%;
+      height: 100%;
+  
+      justify-content: space-between;
+      align-items: center;
+      // font-size: 1rem;
+      color: var(--color-primary);
+    }
+  }/* headerLay2 */
+  
+  

@@ -1,22 +1,20 @@
-// Place all the styles related to the webcoruja::Vlans controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 
-@media (min-width: 400px) {
+
+
+
+
+
   body.lay0 {
-    grid-template-columns: 75px repeat(11, 10fr);
+    grid-template-columns: 85px repeat(23, 1fr);
   }
   aside.lay1 {
     /* IMPORTANTE  -  */
     visibility: visible;
     // display: none;
     grid-column: 1 / 2;
-    span {
-      display: grid;
-    }
+    span {display: none; }
     /* asidelay1HEADER */
-    header {
-    }
+    header {    }
     /* ASIDE_LAY1_main*/
     main {
       ul {
@@ -24,17 +22,21 @@
         font-size: 2.5rem;
         li {
           justify-content: center;
+          a {
+            display: flex;
+            gap: 1rem
+          }
         }
       }
     }
   }
+  
 
   main.lay1 {
-    display: grid;
+    // display: grid;
     // width: max(100px);
-    // grid-column: 1 / 13;
+    grid-column: 2 / 25;
     // z-index: 12;
     //   background: yellow; color: black;
   }
 
-}

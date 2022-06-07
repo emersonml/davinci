@@ -12,9 +12,10 @@
  *
  *= require_self
  */
+ :root {
+ --fontMontserrat: 'Montserrat Alternates', sans-serif;
 
-
-
+ }
  /*====  RESET ============================ */
 * {
   margin: 0;

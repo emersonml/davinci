@@ -1,14 +1,15 @@
 <main class="lay2">
 
         
-        <section >
+        <section>
+        <div class="container">
             <header>
                 <h1>Dashboard </h1>
             </header>
             <main>
                 <article>
                     <h3>Mikrotik C1 </h3>
-                    <div class="cards wropper">
+                    <div class="cards">
                         <div class="card">
                             <i class="icon icon-info  "></i>
                             <h1>CONCENTRADOR</h1>
@@ -19,12 +20,12 @@
                         <div class="card">
                             <i class="icon icon-on  "></i>
                             <h1>ACTIVES</h1>
-                            <p><strong class="rem300"><%= @infomk[0] %> </strong></p>
+                            <p><strong id="cardActives" ><%= @infomk[0] %> </strong></p>
                         </div card >
                         <div class="card">
                             <i class="icon icon-saude  "></i>
                             <h1>SAÚDE</h1>
-                            <p>CPU Load: <strong><%= @infomk[2] %>% </strong></p>
+                            <p>CPU Load: <strong ><%= @infomk[2] %>% </strong></p>
                             <p>CPU Temperatura: <strong><%= @infomk[3] %> C </strong></p>
                         </div card >
                         <div class="card">
@@ -43,16 +44,8 @@
                     </div>                        
             </article>
 
-
-
-
-
-            
-
-
-
-
             </main>
+            </div container>
         </section>
         
 

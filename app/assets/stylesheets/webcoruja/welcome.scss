@@ -1,56 +1,61 @@
-
-
-
-
-
-
-main.lay2 section{
-    // background: red; color: black;
+#cardActives{
+    font-size: 4rem;
 }
-// main section.layout{
-//   display: grid;
-//   margin: 1rem 0rem;
-//   padding: 2rem;
-//   background-color: var(--ton15);
-//   // background: green; color: yellow;
-// }main section header{
-//   border-bottom: 2px solid var(--ton50); margin-bottom: 2rem;
-// }
-// .cards{
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   gap: 1rem;
-// }
 
 
-// .card {
-//   flex: 1 1 auto;
-//   // width: auto 10rem;
-//   text-align: center;
-//   padding: 1rem;
-//   border-bottom: 0.25rem solid var(--ton90);
-//   border-radius: 0.25rem 0.25rem 0 0;
-//   background-color: var(--ton22);
+section {
+  display: grid;
+  margin: 1rem 0rem;
+  padding: 2rem;
+  background-color: var(--ton15);
+  // background: green; color: yellow;
+  header {
+    border-bottom: 2px solid var(--ton50);
+    margin-bottom: 2rem;
+  }
 
-//     i {margin-bottom: 3rem; font-size: 2.25rem; color: var(--ton60);}
-//     h1 {padding: .5rem 0rem 1rem;
-//       color: var(--color-light);  }    // p {margin-top: 1rem; }
-// }
+  
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--ton50);
+//   background: yellow; color: blue;
+}
+
+.card {
+  flex: 1 1 auto;
+  // width: auto 10rem;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 0.25rem solid var(--ton90);
+  border-radius: 0.25rem 0.25rem 0 0;
+  background-color: var(--ton22);
+
+  i {
+    margin-bottom: 3rem;
+    font-size: 2.25rem;
+    color: var(--ton60);
+  }
+  h1 {
+    padding: 0.5rem 0rem 1rem;
+    color: var(--color-light);
+  } // p {margin-top: 1rem; }
+}
 
 // /*====  DASHBOARD  ============================ */
 
-
-// /*====  FOOTER  ============================ */
-// footer ul{
-//   display: flex;
-//   // flex-wrap: wrap;
-//   gap: 1rem;
-//   padding: .5rem;
-//   align-items: center;
-//   justify-content: end;
-//   // background: green; color: yellow;
-// }
-
-// } 
-/// MEDIA WIDTH = 0
+/*====  FOOTER  ============================ */
+footer ul {
+  display: flex;
+  // flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: end;
+  // background: green; color: yellow;
+}
