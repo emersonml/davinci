@@ -5,11 +5,16 @@
 aside i.icon{font-size: 2rem;}
 aside header i.icon{font-size: 2rem;}
 aside header i:hover {color: white;}
+
 aside header i.icon-backward2{ display: none; font-size: 2.5rem; }
 
-// .colDir-Aside i{background-color: var(--ton90);}
+/**  links  */
+html body.lay0 aside#js-aside.lay1 div.container main nav ul li a{
+    align-items: baseline;
+    gap:1rem;  
 
-html body.lay0 aside#js-aside.lay1 div.container main nav ul li a{font-size: 1.5rem;}
+    font-size: 1.5rem;
+}
 i.icon.icon-coruja{font-size: 3.5rem;}
 header i.icon{font-size: 1.5rem;}
 header i.icon-sanduiche{ font-size: 1rem;}

@@ -1,0 +1,32 @@
+
+  body.lay0{
+    grid-template-columns:  repeat(23, 1fr) ; }
+  /////////////////////////////   ASIDE LAY1
+  aside.lay1{
+    grid-column: 1 / 2;
+    span{display: grid;}
+
+    header{
+      font-size: 1.5rem;
+      span{display: grid;}
+    }
+    main{
+      ul{
+        padding-left: 1.3rem;
+        font-size: 1.2rem;
+        li {
+          justify-content: start;
+        }a {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+  }
+    
+  }/* aside lay1 */
+  /* MAIN_LAY1 */
+  main.lay1 {
+    
+    }
+
+
