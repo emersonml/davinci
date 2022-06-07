@@ -28,12 +28,23 @@
     var(--color-primary) 100%
     );
     
-    input{
 
+    .logo{
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      i{
+        font-size: 4rem;
+
+      }
+    }
+
+    input{
+      
       background-color: var(--color-alt);
       color: var(--color-dark);
-      height: 3rem;
+      height: 2.5rem;
       display: inline-flex;
+      // margin-bottom: 2rem;
       align-items: center;
       padding: 0 2rem;
       border-radius: 0.25rem;
