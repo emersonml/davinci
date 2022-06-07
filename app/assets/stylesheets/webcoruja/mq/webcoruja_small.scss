@@ -61,10 +61,10 @@ body.lay0 {
           justify-content: start;
         }
         li:hover {
-          border-right: 2px solid var(--color-second);
+          border-left: 2px solid var(--color-light);
         }
         li:hover > a i {
-          color: var(--color-second);
+          color: var(--color-light);
         }
       }
     }

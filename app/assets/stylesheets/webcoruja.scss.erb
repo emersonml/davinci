@@ -1,5 +1,6 @@
 // = require webcoruja/icons
 // = require webcoruja/vlans
+// = require webcoruja/users/sessions
 // = require webcoruja/welcome
 
 // @import 'webcoruja/icons.scss';
@@ -33,6 +34,8 @@
 
   // --font: 'Poppins', sans-serif;
   --font: "M PLUS Rounded 1c", sans-serif;
+  --fontMPlus: "M PLUS Rounded 1c", sans-serif;
+  --fontMontserrat: 'Montserrat Alternates', sans-serif;
   // --font: 'DM Sans', sans-serif;
 } ////////////////////////////////////////////////// END ROOT
 
@@ -63,43 +66,28 @@ a.logo {
 ///////////////////////////////  BODY_LAY0
 
 
-
-
-
-
-
-
-
-
-
-
-
 @import "webcoruja/mq/webcoruja_small.scss";
 @media (min-width: 400px) { @import "webcoruja/mq/webcoruja_medium.scss";}
 @media (min-width: 850px) { @import "webcoruja/mq/webcoruja_large.scss";}
 
 
-
-
 ///////////////////   DAQUI PRA BAIXO NAO TEM MQ NAO ALTERA  ///////////////////
 
 ///////////////////////////////////////////////////////  LAYOUT 2 MAIN
-main.lay2 {/////////////////////  MAIN_LAY2
+main.lay1 main.lay2 {/////////////////////  MAIN_LAY2
   display: grid;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  // height: minmax( );
+}
 
-  
-  main footer.lay2 {/////////////FOOTER layout LAY2
-    display: grid;
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-
-    border-top: 2px solid var(--color-light);
-    // background: yellow; color: blue;
-  }
-}/* MAIN_LAY2 */
+main.lay1 footer.lay2 {/////////////FOOTER layout LAY2
+  display: grid;
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  border-top: 2px solid var(--color-light);
+}
 
 
-@import "webcoruja/welcome.scss"; //////////    SECTIONS
+
+
+// @import 'webcoruja/users/sessions.scss';

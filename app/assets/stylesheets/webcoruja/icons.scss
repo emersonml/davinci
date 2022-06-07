@@ -1,54 +1,77 @@
-
-
-
-
-aside i.icon{font-size: 2rem;}
-aside header i.icon{font-size: 2rem;}
-aside header i:hover {color: white;}
-
-aside header i.icon-backward2{ display: none; font-size: 2.5rem; }
-
-/**  links  */
-html body.lay0 aside#js-aside.lay1 div.container main nav ul li a{
-    align-items: baseline;
-    gap:1rem;  
-
-    font-size: 1.5rem;
+aside i.icon {
+  font-size: 2rem;
 }
-i.icon.icon-coruja{font-size: 3.5rem;}
-header i.icon{font-size: 1.5rem;}
-header i.icon-sanduiche{ font-size: 1rem;}
-header i.icon-forward3{  display: none; font-size: 2.5rem; }
-
-header.lay2 nav i.icon-forward3{
-    height: var(--height-header);
-    align-items: center;
+aside header i:hover {
+  color: white;
 }
 
+/**  backward2  */
+aside header i.icon-backward2 {
+  display: none;
+  font-size: 2.5rem;
+}
+
+/**  links    ul li a*/
+html body.lay0 aside#js-aside.lay1 div.container main nav ul li a {
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+i.icon.icon-coruja {
+  font-size: 3.5rem;
+}
+header.lay2 i.icon {
+  font-size: 1.5rem;
+}
+header.lay2 i.icon-sanduiche {
+  font-size: 1rem;
+}
+header.lay2 i.icon-forward3 {
+  display: none;
+  font-size: 2.5rem;
+}
+
+header.lay2 nav i.icon-forward3 {
+  height: var(--height-header);
+  align-items: center;
+}
 
 // /////  MEDIUM
-@media (min-width:400px) { 
-    i.icon.icon-coruja{font-size: 2.5rem;}
+@media (min-width: 400px) {
+  i.icon.icon-coruja {
+    font-size: 2.5rem;
+  }
 
+  //////////////////  BASE
 
-    //////////////////  BASE
-    // aside i.icon{font-size: 2.2rem;}
-    // header i.icon{font-size: 1.5rem;}
-    // header i.icon-sanduiche{ font-size: 1rem; }
-    aside header i.icon-undo2{ display: none; }
-    aside header i.icon-backward2{ display: grid; }
-    header i.icon-sanduiche{ display: none;  font-size: 1rem;}
-    header i.icon-forward3{  display: grid; font-size: 2.5rem; }
-    
+  aside header i.icon-undo2 {
+    display: none;
+  }
+  aside header i.icon-backward2 {
+    display: grid;
+  }
+  header.lay2 i.icon-sanduiche {
+    display: none;
+    font-size: 1rem;
+  }
+  header.lay2 i.icon-forward3 {
+    display: grid;
+    font-size: 2.5rem;
+  }
 }
 
+@media (min-width: 850px) {
+  //////////////////  BASE
 
-
-@media (min-width:850px) { 
-    //////////////////  BASE
-
-    header i.icon-sanduiche{ display: grid;  font-size: 1rem;}
-    header i.icon-sanduiche{ visibility: hidden; }
-    header i.icon-forward3{  display: none; font-size: 2.5rem; }
-
+  header.lay2 i.icon-sanduiche {
+    display: grid;
+    font-size: 1rem;
+  }
+  header.lay2 i.icon-sanduiche {
+    visibility: hidden;
+  }
+  header.lay2 i.icon-forward3 {
+    display: none;
+    font-size: 2.5rem;
+  }
 }
