@@ -1,4 +1,5 @@
-// = require webcoruja/icons
+
+// = require webcoruja/shared/icons
 // = require webcoruja/vlans
 // = require webcoruja/users/sessions
 // = require webcoruja/welcome
@@ -7,23 +8,24 @@
 
 /*====  VARIABLES ============================ */
 :root {
+
+  // MEDIDAS =============
   --height-header: 7%;
   --height-mainlay1: 100vh;
   --height-footer: 10vh;
   --width-aside-medium: 100px;
   --width-aside-large: 35vh;
-
-  // --display-grid: none;
   // CORES =============
   --hue: 280; //cor matriz
   --hue-sec: 840; //cor matriz
-
   --color-light: hsl(var(--hue) 100% 80%);
   --color-primary: hsl(var(--hue) 100% 30%);
   --color-dark: hsl(var(--hue) 100% 10%);
   --color-alt: hsl(var(--hue) 100% 80%);
   --color-second: hsl(var(--hue-sec) 94% 87%);
-  // --color-second: rgb(255, 222, 150);
+  // FONTS =============
+  // --fontLogo: --Kdam;
+
 
   --link: hsl(var(--hue) 100% 80%);
   a {
@@ -41,6 +43,8 @@
 
 /*===  BASE ============================ */
 //
+
+// .logo{font-family: var(--fontLogo)}
 
 a.logo {
   color: var(--ton90);
@@ -62,30 +66,22 @@ a.logo {
   margin-right: 2vw;
 }
 
+
+
+
 /*============  LAYOUT =================== */
 ///////////////////////////////  BODY_LAY0
 
 
-@import "webcoruja/mq/webcoruja_small.scss";
-@media (min-width: 400px) { @import "webcoruja/mq/webcoruja_medium.scss";}
-@media (min-width: 850px) { @import "webcoruja/mq/webcoruja_large.scss";}
+// @import "webcoruja/shared/icons.scss";
 
+@import "webcoruja/shared/lay0_body.scss";
+@import "webcoruja/shared/lay1_aside.scss";
+@import "webcoruja/shared/lay1_main.scss";
+@import "webcoruja/shared/lay2_header.scss";
+@import "webcoruja/shared/lay2_main.scss";
+@import "webcoruja/shared/lay2_footer.scss";
 
-///////////////////   DAQUI PRA BAIXO NAO TEM MQ NAO ALTERA  ///////////////////
-
-///////////////////////////////////////////////////////  LAYOUT 2 MAIN
-main.lay1 main.lay2 {/////////////////////  MAIN_LAY2
-  display: grid;
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
-
-main.lay1 footer.lay2 {/////////////FOOTER layout LAY2
-  display: grid;
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-  border-top: 2px solid var(--color-light);
-}
 
 
 
