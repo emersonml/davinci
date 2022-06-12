@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>5GBrasil</title>
+
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" />
+
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag    'iot' %>
+
+
+</head>
+
+<body>
+  <%= yield %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'iot' %>
+</body>
+
+</html>

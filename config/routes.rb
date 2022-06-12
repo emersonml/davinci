@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+  namespace :iot do
+    get 'welcome/index'
+  end
   root to: 'site/welcome#index'
   
   get 'application', to: 'application#index'
+  # get 'webcoruja', to: 'webcoruja#dados'
   
   
   namespace :site do
@@ -17,7 +21,10 @@ Rails.application.routes.draw do
   end
   namespace :webcoruja do
     get 'welcome/index'
+    get 'welcome/teste'
+    # get 'welcome/dados'
     get 'vlans/index'
+    post 'welcome/index'
   end
   
   

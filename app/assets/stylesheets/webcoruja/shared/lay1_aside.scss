@@ -1,5 +1,6 @@
 
 
+  
 ///////////////////////////////  ASIDE Lay1 ---
 aside.lay1 {
   visibility: hidden;
@@ -15,7 +16,8 @@ aside.lay1 {
     var(--color-dark) 30%,
     var(--color-primary) 100%
   );
-
+// background: red; color: black;
+  
   /** HEADER */
   header {
     display: flex;
@@ -23,10 +25,11 @@ aside.lay1 {
     justify-content: end;
     align-items: center;
   }
-  
+
   
   /** MAIN */
   main {
+
     margin-top: 1rem;
     /* ASIDE LAY1 Header */
     header {
@@ -35,8 +38,10 @@ aside.lay1 {
       justify-content: center;
       align-items: center;
 
-
+      
+      
       i {
+        font-family: 'Kdam Thmor Pro', sans-serif;
         color: var(--color-light);
         padding: 0.4rem;
       }
@@ -64,6 +69,7 @@ aside.lay1 {
       }
       // background: yellow; color: blue;
     }
+
   }
 } /** ASIDE */
 

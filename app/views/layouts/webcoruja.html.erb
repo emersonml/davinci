@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>WebCoruja</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <%= csrf_meta_tags %> <%= csp_meta_tag %> 
-    
 
-   
-    
-    <%= stylesheet_link_tag 'application' %>
-    <%= stylesheet_link_tag 'webcoruja' %>
+<head>
+  <title>WebCoruja</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    
-  </head>
+
+
+
+
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'webcoruja' %>
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?
 family=Kdam+Thmor+Pro&
-family=Montserrat+Alternates:ital,wght@0,400;0,800;1,400;1,800&display=swap" 
-rel="stylesheet">
+family=Montserrat+Alternates:ital,wght@0,400;0,800;1,400;1,800&display=swap" rel="stylesheet">
+
+
+</head>
 
 
 
-  <body class="lay0">
-    <%= render partial: 'webcoruja/shared/aside' %>       <!--ASIDE   L1-->
-    <main class="lay1" id="js-mainLay1">                  <!--MAIN    L1 -->
-      <%= render partial: 'webcoruja/shared/header' %>    <!--HEADER  L2 -->
-      <main class="lay2">                                 <!--MAIN    L2 -->
-        <%= yield %>                                      <!--Sections   -->
-      </main lay2> 
-      <%= render partial: 'webcoruja/shared/footer' %>    <!--FOOTER  L2 -->
-    </main lay1>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'webcoruja'%>
-  </body>
+
+<body class="lay0">
+  <%= render partial: 'webcoruja/shared/aside' %>
+  <!--ASIDE   L1-->
+  <main class="lay1" id="js-mainLay1">
+    <!--MAIN    L1 -->
+    <%= render partial: 'webcoruja/shared/header' %>
+    <!--HEADER  L2 -->
+    <main class="lay2">
+      <!--MAIN    L2 -->
+      <%= yield %>
+      <!--Sections   -->
+    </main lay2>
+    <%= render partial: 'webcoruja/shared/footer' %>
+    <!--FOOTER  L2 -->
+  </main lay1>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'webcoruja' %>
+
+
+</body>
+
 </html>
-
