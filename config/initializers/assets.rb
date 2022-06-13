@@ -19,8 +19,9 @@ Rails.application.config.assets.paths << Rails.root.join("vendor", "assets" )  #
 Rails.application.config.assets.precompile += %w( 
 application.js application.css
 admins_backoffice.js admins_backoffice.css
-webcoruja.js webcoruja.css
 users_backoffice.js users_backoffice.css
 site.js site.css  
+webcoruja.js webcoruja.css
+iot.js iot.css
 
 )
