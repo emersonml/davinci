@@ -1,5 +1,8 @@
 
 
+
+
+
 // var xmlHttp;
 // if(window.XMLHttpRequest){
 //   xmlHttp = new XMLHttpRequest;
@@ -13,11 +16,23 @@
 //   }
 // }
 
-// xmlHttp.open('GET', 'dados.html.erb', true);
-// xmlHttp.send();
+// xmlHttp.open('GET', 'http://5gbrasil.net.br:3003/webcoruja/welcome/dados', true);
+// // xmlHttp.open('GET', 'dados', true);
+// // xmlHttp.send(Document.getElementById('cardActives'));
 
-$("#cardActives").load("dados.html.erb")
 
+// // $("#cardActives").text(responseText)
+
+
+
+var counter = 0
+
+window.setInterval('aaa()', 30000)
+
+function refreshDiv() {
+  counter = counter + 1
+  document.getElementById('cardActives').innerHTML = xmlHttp.send() + counter
+}
 
 
 //////////////////////////////////////////////////////
@@ -27,19 +42,22 @@ $("#cardActives").load("dados.html.erb")
 // dados.append('end', 'Rua Lobato');
 
 
-// $.ajax({
-//   url: 'http://5gbrasil.net.br:3003/webcoruja/welcome/dados',
-//   method: 'GET',
-//   // data: dados,
-//   processData: false,
-//   contentType: false
+function aaa() {
 
-// }).done(function(result){
-// // window.alert(resposta);
-// $('#cardActives').text(result)
-// })
+$.ajax({
+  url: 'http://5gbrasil.net.br:3003/webcoruja/welcome/dados',
+  // uri: 'webcoruja/welcome/dados',
+  method: 'GET',
+  // data: dados,
+  processData: false,
+  contentType: false
 
+}).done(function(result){
+// window.alert(resposta);
+$('#cardActives').text(result)
+})
 
+}
 
 // $.ajax({
 //   url: "/api/getWeather",

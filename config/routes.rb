@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   namespace :webcoruja do
     get 'welcome/index'
     get 'welcome/teste'
-    # get 'welcome/dados'
+    get 'welcome/dados'
     get 'vlans/index'
     post 'welcome/index'
   end

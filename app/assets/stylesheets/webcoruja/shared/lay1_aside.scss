@@ -58,8 +58,9 @@ aside.lay1 {
       font-size: 2rem;
       li {
         display: flex;
-        width: 90%;
+        width: 100%;
         justify-content: start;
+        // background: red;
       }
       li:hover {
         border-left: 2px solid var(--color-light);

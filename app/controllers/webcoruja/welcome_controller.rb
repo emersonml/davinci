@@ -29,6 +29,12 @@ def teste
 end
 
 def dados
+  infotxt = %x(cat /home/emerson/projects/mtik/info.mk.txt)
+   @infomk = infotxt.split(" ")
+   
+
+   render json: @infomk[0]
+
 end
 
 

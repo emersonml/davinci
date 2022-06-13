@@ -1,5 +1,3 @@
-
-// = require webcoruja/shared/icons
 // = require webcoruja/vlans
 // = require webcoruja/users/sessions
 // = require webcoruja/welcome
@@ -72,11 +70,17 @@ a.logo {
 /*============  LAYOUT =================== */
 
 
-@import "webcoruja/shared/lay0_body.scss";
-@import "webcoruja/shared/lay1_aside.scss";
-@import "webcoruja/shared/lay1_main.scss";
-@import "webcoruja/shared/lay2_header.scss";
-@import "webcoruja/shared/lay2_main.scss";
-@import "webcoruja/shared/lay2_footer.scss";
+
+
+
+
+@import "webcoruja/shared/**/*";
+// @import "webcoruja/shared/icons.scss";
+// @import "webcoruja/shared/lay0_body.scss";
+// @import "webcoruja/shared/lay1_aside.scss";
+// @import "webcoruja/shared/lay1_main.scss";
+// @import "webcoruja/shared/lay2_header.scss";
+// @import "webcoruja/shared/lay2_main.scss";
+// @import "webcoruja/shared/lay2_footer.scss";
 
 
