@@ -1,0 +1,23 @@
+
+  header.lay2 { /////////////////////  HEADER LAY2
+
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  
+    background-color: var(--ton90);
+  
+    nav {
+      display: flex;
+      width: 100%;
+      height: 100%;
+  
+      justify-content: space-between;
+      align-content: center;
+      align-items: center;
+      // font-size: 1rem;
+      color: var(--color-primary);
+    }
+  }/* headerLay2 */
+  
+  

@@ -1,0 +1,33 @@
+body.lay0 {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: minmax(var(--height-mainlay1), auto);
+
+  font: 400 1rem var(--font-body);
+  color: var(--ton90);
+  background: purple;
+}
+
+
+
+@media (min-width: 400px) { 
+  body{
+    grid-template-columns: 85px repeat(23, 1fr);
+  }
+}
+
+
+
+
+
+  @media (min-width: 850px) { 
+    body {
+      grid-template-columns: repeat(24, 1fr) ; 
+    }
+    
+  }
+
+
+
+
+

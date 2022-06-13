@@ -1,0 +1,133 @@
+
+
+  
+///////////////////////////////  ASIDE Lay1 ---
+aside.lay1 {
+  visibility: hidden;
+  display: grid; /* IMPORTANTE JS INIT = none */
+  grid-column: 1 / 16;
+  grid-row: 1 / 2;
+  z-index: 11; /* mq */
+  // min-width: 170px;
+
+  background-image: linear-gradient(
+    43deg,
+    var(--color-dark) 0%,
+    var(--color-dark) 30%,
+    var(--color-primary) 100%
+  );
+// background: red; color: black;
+  
+  /** HEADER */
+  header {
+    display: flex;
+    height: var(--height-header);
+    justify-content: end;
+    align-items: center;
+  }
+
+  
+  /** MAIN */
+  main {
+
+    margin-top: 1rem;
+    /* ASIDE LAY1 Header */
+    header {
+      display: flex;
+      height: var(--height-header);
+      justify-content: center;
+      align-items: center;
+
+      
+      
+      i {
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        color: var(--color-light);
+        padding: 0.4rem;
+      }
+      i:hover {
+        color: white;
+      }
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-left: 1rem;
+      font-size: 2rem;
+      li {
+        display: flex;
+        width: 100%;
+        justify-content: start;
+        // background: red;
+      }
+      li:hover {
+        border-left: 2px solid var(--color-light);
+      }
+      li:hover > a i {
+        color: var(--color-light);
+      }
+      // background: yellow; color: blue;
+    }
+
+  }
+} /** ASIDE */
+
+@media (min-width: 400px) {
+  aside.lay1 {
+    /* IMPORTANTE  -  */
+    visibility: visible;
+    // display: none;
+    grid-column: 1 / 2;
+    span {
+      display: none;
+    }
+    /* asidelay1HEADER */
+    header {
+    }
+    /* ASIDE_LAY1_main*/
+    main {
+      ul {
+        padding: 0rem;
+        font-size: 2.5rem;
+        li {
+          justify-content: center;
+          a {
+            display: flex;
+            gap: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 850px) {
+  aside.lay1 {
+    grid-column: 1 / 2;
+    span {
+      display: grid;
+    }
+
+    header {
+      font-size: 1.5rem;
+      span {
+        display: grid;
+      }
+    }
+    main {
+      ul {
+        padding-left: 1.3rem;
+        font-size: 1.2rem;
+        li {
+          justify-content: start;
+        }
+        a {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+}

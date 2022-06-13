@@ -1,4 +1,4 @@
-# = require webcoruja/mq
+# = require webcoruja/shared/responsive
 # = require webcoruja/welcome
 
 

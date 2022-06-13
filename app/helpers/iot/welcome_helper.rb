@@ -1,0 +1,2 @@
+module Iot::WelcomeHelper
+end
