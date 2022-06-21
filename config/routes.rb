@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :iot do
     get 'welcome/index'
+    get 'welcome/ligar'
   end
   root to: 'site/welcome#index'
   
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
     get 'vlans/index'
     post 'welcome/index'
   end
-  
+
   
   devise_for :users
   devise_scope :user do  

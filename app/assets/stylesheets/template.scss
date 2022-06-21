@@ -1,0 +1,52 @@
+// = require template/icons
+// = require template/users/sessions
+
+
+
+:root {  /** ROOT DO TEMPLETE  */
+  
+  /* VARIABLES ......... ///*/
+  // CAIXAS
+  --height-mainlay1: 100vh;
+  --height-header: minmax(7vh, auto);
+  // --height-mainlay2: calc(100vh - var(--height-header) - var(--height-footer) ) ;
+  --height-mainlay2: 83vh;
+  --height-footer: minmax(10vh, auto);;
+
+  // CORES 
+  //cor matriz SETADO NOS MODULOS
+  --hue-pri: 192; //--hue-sec: 0; //cor matriz SETADO NOS MODULOS /////   color: hsl(180, 100%, 50%);  // TESTE DE COR DE MATRIZ
+  --color-light: hsl(var(--hue-pri) 100% 80%);
+  --color-primary: hsl(var(--hue-pri) 100% 30%);
+  --color-dark: hsl(var(--hue-pri) 100% 10%);
+  --color-alt: hsl(var(--hue-pri) 100% 80%);
+  --color-second: hsl(var(--hue-sec) 94% 87%);
+  
+  // FONT-SIZE
+  --font-size-aside-MQ-small: 1.8rem;
+  --font-size-aside-MQ-medium: 1rem;
+  --font-size-aside-MQ-large: 1rem;
+
+
+
+
+  /* ............ VARIABLES */
+
+
+  // FONTS >>>>>>
+
+  // <<<<<< FONTS 
+  
+
+
+
+} 
+
+.container {
+}
+
+/*============  LAYOUT =================== */
+@import "template/users/sessions.scss";
+@import "template/partial/**/*";
+
+

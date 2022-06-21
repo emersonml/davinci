@@ -1,32 +1,6 @@
 
 
 
-
-
-/*====  RESET ============================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-
-
-
-
 /*====  VARIABLES ============================ */
 :root {
   --header-height: 4.5rem;
@@ -44,6 +18,7 @@ img {
   /* --base-color-second: hsl(var(--hue) 65% 88%); */
   /* --title-color: hsl(var(--hue) 41% 10%); */
   --dark: hsl(var(--hue) 100% 8%);
+  --color-dark: hsl(var(--hue) 100% 8%);
   --text: hsl(0 0% 46%);
   --text-light: hsl(0 0% 98%);
   --body: hsl(0 50% 98%);
@@ -151,22 +126,7 @@ body {
 
 /*====  HEADER ============================ */
 
-#header {
-  border-bottom: 1px solid #e4e4e4;
-  margin-bottom: 2rem;
-  display: flex;
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background-color: var(--body);
-  width: 100%;
-}
-
-#header.scroll {
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
-}
 
 /*====  LOGO ============================ */
 .logo {
@@ -236,6 +196,7 @@ nav .menu ul {
 
 /* Mostrar menu */
 nav.show .menu {
+  top: -20rem;
   opacity: 1;
   visibility: visible;
 
@@ -250,6 +211,9 @@ nav.show .menu {
 
   display: grid;
   place-content: center;
+padding: 1rem;
+  font: 800 1.5rem var(--body-font);
+
 }
 
 nav.show .menu ul {
@@ -257,7 +221,7 @@ nav.show .menu ul {
 }
 
 nav.show ul.grid {
-  gap: 4rem;
+  gap: 3rem;
 }
 
 /* toggle menu */
@@ -695,3 +659,7 @@ footer .social a:hover {
   }
 }
 /* medium devices: 767 > */
+
+
+@import "site/partial/**/*";
+// @import "template/users/sessions.scss";

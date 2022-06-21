@@ -18,6 +18,7 @@ Rails.application.config.assets.paths << Rails.root.join("vendor", "assets" )  #
 
 Rails.application.config.assets.precompile += %w( 
 application.js application.css
+esoft.js esoft.css
 admins_backoffice.js admins_backoffice.css
 users_backoffice.js users_backoffice.css
 site.js site.css  

@@ -1,0 +1,58 @@
+<!-- 
+A QUANTIDADE DE LI É ESTATICA CUIDADO PARA NAO QUEBRAR O CODIGO
+
+-->
+
+<%#  css ASIDE lay1 | js InitSmall %>
+<aside class="lay1" id="js-aside">  
+  <div class="container" >
+    <header class="">
+      <i class="icon icon-undo2 js-undo2" id="js-undo2"></i>
+      <i class="icon icon-backward2 js-backward2"   id="js-backward2"> </i> 
+    </header>
+    <main>
+      <header id=""> 
+        <%#  LOGO s%>
+          <span id="js-span">Web</span> 
+            <%= link_to webcoruja_welcome_index_path do %>
+              <i class="icon icon-coruja "></i>
+            <% end %> 
+          <span id="js-span">Coruja</span>
+      </header>
+      <main>
+        <nav>
+          <ul>
+              <li>
+              <%# a home s%>
+              <%= link_to site_welcome_index_path do %>
+                <i class="icon icon-home"></i>
+                <span id="js-span">Site</span>
+              <% end %> 
+              </li>
+              <li>
+              <%# a vlan s%>
+              <%= link_to webcoruja_vlans_index_path  do %>
+                <i class="icon icon-vlan"></i>
+                <span id="js-spa4">Vlans</span>
+              <% end %> 
+              <li>
+              <%# a home s%>
+              <%= link_to iot_welcome_index_path do %>
+                <i class="icon icon-home"></i>
+                <span id="js-span">Iot</span>
+              <% end %> 
+              </li>
+              </li>
+              <li>
+              <%# a vlan s%>
+              <%= link_to webcoruja_vlans_index_path  do %>
+                <span id="js-span"></span>
+              <% end %> 
+              </li>
+            </ul>
+        </nav>
+      </main>
+    </main>
+  </div container>
+  </aside>
+
