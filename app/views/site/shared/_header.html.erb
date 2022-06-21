@@ -6,16 +6,18 @@
         <!-- menu -->
         <div class="menu">
           <ul class="grid">
-            <li><%= link_to root_path '#home',  class:"title" do%><i class="icon icon-home rem150"></i><% end %> </li>
+          
+            <li><%= link_to root_path '#home' do%><i class="icon icon-home rem150"></i><% end %> </li>
+            
              <a class="" target="" href="https://sgp.net.br/esoft/accounts/central/login">Central do Assinante</a> 
 
-            <li><%= link_to site_welcome_index_path(@site_welcome_index, anchor: "planos"), class:"title" do%>Nosso Planos<% end %> </li>
-            <li><%= link_to site_welcome_index_path(@site_welcome_index, anchor: "about"), class:"title" do%>Sobre<% end %> </li>
-            <li><%= link_to site_welcome_index_path(@site_welcome_index, anchor: "contact"), class:"title" do%>Contato<% end %> </li>
-            <li><%= link_to webcoruja_welcome_index_path, class:"title" do%><i class="icon icon-coruja rem150"></i><% end %> </li>
-            <li><%= link_to iot_welcome_index_path, class:"title" do%>IoT<% end %> </li>
-           
+            <li><%= link_to site_welcome_index_path(@site_welcome_index, anchor: "planos") do%>Nosso Planos<% end %> </li>
+            <li><%= link_to site_welcome_index_path(@site_welcome_index, anchor: "about") do%>Sobre<% end %> </li>
+            <li><%= link_to site_welcome_index_path(@site_welcome_index, anchor: "contact") do%>Contato<% end %> </li>
             
+            <li><%= link_to webcoruja_welcome_index_path do%><i class="icon icon-coruja rem150"></i><% end %> </li>
+            <li><%= link_to iot_welcome_index_path do%>IoT<% end %> </li>
+           
           </ul>
         </div>
         

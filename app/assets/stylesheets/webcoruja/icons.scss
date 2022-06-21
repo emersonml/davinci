@@ -1,0 +1,16 @@
+/**  LAY1 ASIDE HEADER */
+i.icon-coruja {
+  font-size: 6vw;
+}
+
+@media (min-width: 400px) {
+  i.icon.icon-coruja {
+  }
+}
+@media (min-width: 850px) {
+  i.icon.icon-coruja {
+    font-size: 3vw;
+    // font-size: 2.7rem;
+
+  }
+}

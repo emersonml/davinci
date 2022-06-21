@@ -15,13 +15,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?
-family=Kdam+Thmor+Pro&
-family=Montserrat+Subrayada&display=swap" 
-rel="stylesheet">
+
+
 
   <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'template' %>
   <%= stylesheet_link_tag 'webcoruja' %>
+
 
 
 </head>
@@ -30,24 +30,25 @@ rel="stylesheet">
 
 
 <body class="lay0">
-  <%= render partial: 'webcoruja/shared/aside' %>
+  <%= render partial: 'webcoruja/partial/aside' %>
   <!--ASIDE   L1-->
   <main class="lay1" id="js-mainLay1">
     <!--MAIN    L1 -->
-    <%= render partial: 'webcoruja/shared/header' %>
+    <%= render partial: 'webcoruja/partial/header' %>
     <!--HEADER  L2 -->
     <main class="lay2">
       <!--MAIN    L2 -->
       <%= yield %>
       <!--Sections   -->
     </main lay2>
-    <%= render partial: 'webcoruja/shared/footer' %>
+    <%= render partial: 'webcoruja/partial/footer' %>
     <!--FOOTER  L2 -->
   </main lay1>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'template' %>
   <%= javascript_include_tag 'webcoruja' %>
 
 

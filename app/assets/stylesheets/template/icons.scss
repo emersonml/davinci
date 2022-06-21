@@ -1,0 +1,95 @@
+:root {
+  /** VARIAVEIS ........ */
+  --font-icon-MQ-small: 2.5rem;
+  --font-icon-MQ-medium: 2.5rem;
+  --font-icon-MQ-large: 1.7rem;
+  /** ......... VARIAVEIS  */
+}
+
+/**  BODY  */
+body {
+  i.icon {
+    font-size: var(--font-icon-MQ-small);
+    color: white;
+  }
+  /**  LAY1 ASIDE......  */
+  aside header {
+    i.icon-backward2 {
+      display: none;
+      font-size: 2.5rem;
+    }
+  }
+  /**  LAY2 HEADER.......  */
+  main.lay1 header {
+    i {
+      color: var(--ton20);
+    }
+    i:hover {
+      color: var(--color-primary);
+    }
+    i.icon-sanduiche {
+      font-size: 1.2rem;
+    }
+    i.icon-forward3 {
+      display: none;
+    }
+    i.icon-exit {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  /**  BODY  */
+  body {
+    i.icon {
+      font-size: var(--font-icon-MQ-medium);
+    }
+
+    /**  LAY1 ASIDE  */
+    /**  LAY1 ASIDE HEADER */
+    aside header {
+      i.icon-undo2 {
+        display: none;
+      }
+      i.icon-backward2 {
+        display: grid;
+      }
+    }
+    /**  LAY2 HEADER  */
+    main.lay1 header {
+      i.icon-sanduiche {
+        display: none;
+      }
+      i.icon-forward3 {
+        display: grid;
+      }
+    }
+  }
+} /**  ....@media medium*/
+
+@media (min-width: 850px) {
+  /**  BODY  */
+  body {
+    i.icon {
+      font-size: var(--font-icon-MQ-large);
+    }
+
+    /**  LAY2 HEADER  */
+    main.lay1 header {
+      i.icon-forward3 {
+        display: none;
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  /**  LAY1 ASIDE HEADER */
+
+  header.lay2 i.icon-sanduiche {
+    display: grid;
+  }
+  header.lay2 i.icon-sanduiche {
+    visibility: hidden;
+  }
+}

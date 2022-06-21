@@ -22,6 +22,8 @@ gem 'webpacker', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 gem 'devise'
+gem 'kaminari'
+gem 'kaminari-i18n'
 # gem 'htmlbeautifier'
 
 
@@ -47,6 +49,7 @@ end
 group :development do
   # gem 'web-console'
   gem 'web-console', '>= 4.1.0'
+  gem 'rails_db', '2.3.1'
 
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   # Display performance information such as SQL time and flame graphs for each request in your browser.

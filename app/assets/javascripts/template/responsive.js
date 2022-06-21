@@ -1,4 +1,4 @@
-var asideEstagio=3;
+var asideEstagio = 3;
 
 // iPhone  12/13  390/844
 
@@ -22,11 +22,11 @@ const mqInitLarge = window.matchMedia(minLarge);
 mediumTrue = mqIniteMedium.matches; // true ou false
 largeTrue = mqInitLarge.matches; // true ou false
 if (largeTrue == true) {
-  router(controller= 'init', mq= 'large');
+  router(controller = 'init', mq = 'large');
 } else if (mediumTrue === true) {
-  router(controller= 'init', mq= 'medium');
+  router(controller = 'init', mq = 'medium');
 } else {
-  router(controller= 'init', mq= 'small');
+  router(controller = 'init', mq = 'small');
 }
 
 //   //////////  GATILHO ->  OUVINDO rENDERIZACAO DE WIDTH
@@ -123,6 +123,8 @@ function router(controller, action) {
               asideFlutuante()
               document.getElementById(el).style.gridColumnEnd = '18'
               undo2()
+
+
               break; //
             case "medium": // msc
               aside2()
@@ -130,9 +132,9 @@ function router(controller, action) {
               forward3()
               break;
             case "large": // lsc
-            aside3(
-              backward2()
-            )
+              aside3(
+                backward2()
+              )
               break; //3.1.3
               console.log('para todos');
 
@@ -151,7 +153,7 @@ function router(controller, action) {
               break;
           }
           break;
-        case "js-backward2": 
+        case "js-backward2":
           switch (mq) {
             case "medium": // mbc
               aside1()
@@ -162,12 +164,12 @@ function router(controller, action) {
                 aside2()
                 backward2()
                 forward3()
-                asideEstagio=2
-              }else{
+                asideEstagio = 2
+              } else {
                 reset()
                 aside1()
                 sanduiche()
-                asideEstagio=3
+                asideEstagio = 3
               }
               break;
           }
@@ -182,7 +184,7 @@ function router(controller, action) {
             case "large":
               aside3()
               backward2()
-              asideEstagio=3
+              asideEstagio = 3
               break;
           }
 
@@ -209,41 +211,46 @@ function aside1() {
 function aside2() {
   asideShow()
   document.getElementById(el).style.gridColumnEnd = '2'
+  // document.getElementById(el).style.width = '5rem'
+  // document.getElementById(el).style.width = '100%'
   document.getElementById('js-mainLay1').style.gridColumnStart = '2'
   document.querySelector("header span:nth-child(1)").style.display = 'none'
   document.querySelector("header span:nth-child(3)").style.display = 'none'
-  document.querySelector("nav").style.fontSize = '1.3rem'
-  document.querySelector("nav ul li").style.display = 'flex'
-  document.querySelector("nav ul").style.fontSize = '1.4rem'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(1) a span").style.display = 'none'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(2) a span").style.display = 'none'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(3) a span").style.display = 'none'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(4) a span").style.display = 'none'
+  // document.querySelector("nav").style.fontSize = '1.3rem'
+  // document.querySelector("nav ul li").style.display = 'flex'
+  // document.querySelector("nav ul").style.fontSize = '1.4rem'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(1) a span").style.display = 'none'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(2) a span").style.display = 'none'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(3) a span").style.display = 'none'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(4) a span").style.display = 'none'
 }
 
 function aside3() {
-  document.getElementById(el).style.gridColumnEnd = '2'
-  document.getElementById('js-mainLay1').style.gridColumnStart = '2'
   asideShow()
+  document.getElementById(el).style.gridColumnEnd = '4'
+  document.getElementById('js-mainLay1').style.gridColumnStart = '4'
+
   asideFull()
 
 }
 
 function asideFull() {
+
   document.querySelector("header span:nth-child(1)").style.display = 'grid'
   document.querySelector("header span:nth-child(3)").style.display = 'grid'
   document.querySelector("header span:nth-child(1)").style.display = 'grid'
   document.querySelector("header span:nth-child(3)").style.display = 'grid'
-  document.querySelector("nav").style.fontSize = '1.3rem'
-  document.querySelector("nav ul").style.fontSize = '1.4rem'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(1) a").style.display = 'flex'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(2) a").style.display = 'flex'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(3) a").style.display = 'flex'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(4) a").style.display = 'flex'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(1) a span").style.display = 'grid'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(2) a span").style.display = 'grid'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(3) a span").style.display = 'grid'
-  document.querySelector("nav ul:nth-child(2) li:nth-child(4) a span").style.display = 'grid'
+  // document.querySelector("nav").style.fontSize = '1.3rem'
+  // document.querySelector("nav ul").style.fontSize = '1.4rem'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(1) a").style.display = 'flex'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(2) a").style.display = 'flex'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(3) a").style.display = 'flex'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(4) a").style.display = 'flex'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(1) a span").style.display = 'grid'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(2) a span").style.display = 'grid'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(3) a span").style.display = 'grid'
+  document.querySelector("nav ul:nth-child(1) li:nth-child(4) a span").style.display = 'grid'
+
 }
 
 function asideShow() {
@@ -262,8 +269,8 @@ function asideStandard() {
 }
 
 function asideFlutuante() {
-  document.getElementById('js-mainLay1').style.gridColumnStart = '1'
   document.getElementById(el).style.gridColumnEnd = '10'
+  document.getElementById('js-mainLay1').style.gridColumnStart = '1'
   // asideFull()
 }
 

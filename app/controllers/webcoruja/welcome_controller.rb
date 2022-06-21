@@ -16,11 +16,10 @@ class Webcoruja::WelcomeController < WebcorujaController
    @infomk = infotxt.split(" ")
    
    #  redirect_back_or_to({ action: "index", id: 5 })
-  # redirect_to action: "reload"
-  # reload()
-  
-  
-end
+   # reload()
+   
+   
+  end
 
 
 def teste
@@ -30,11 +29,10 @@ end
 
 def dados
   infotxt = %x(cat /home/emerson/projects/mtik/info.mk.txt)
-   @infomk = infotxt.split(" ")
-   
-
-   render json: @infomk[0]
-
+  @infomk = infotxt.split(" ")  
+  
+  render json: @infomk[0]
+  
 end
 
 

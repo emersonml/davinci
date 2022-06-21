@@ -1,86 +1,12 @@
-// = require webcoruja/vlans
-// = require webcoruja/users/sessions
+// = require webcoruja/icons
 // = require webcoruja/welcome
 
-// @import 'webcoruja/icons.scss';
 
-/*====  VARIABLES ============================ */
-:root {
+:root {  /** WEBCORUJA  */
 
-  // MEDIDAS =============
-  --height-header: 7%;
-  --height-mainlay1: 100vh;
-  --height-footer: 10vh;
-  --width-aside-medium: 100px;
-  --width-aside-large: 35vh;
-  // CORES =============
-  --hue: 280; //cor matriz
-  --hue-sec: 840; //cor matriz
-  --color-light: hsl(var(--hue) 100% 80%);
-  --color-primary: hsl(var(--hue) 100% 30%);
-  --color-dark: hsl(var(--hue) 100% 10%);
-  --color-alt: hsl(var(--hue) 100% 80%);
-  --color-second: hsl(var(--hue-sec) 94% 87%);
-  // FONTS =============
-  // --fontLogo: --Kdam;
+//cor matriz
+--hue-pri: 280; 
 
-
-  --link: hsl(var(--hue) 100% 80%);
-  a {
-    color: var(--body-font-color);
-  }
-
-  --font-body: sans-serif;
-
-  // --font: 'Poppins', sans-serif;
-  --font: "M PLUS Rounded 1c", sans-serif;
-  --fontMPlus: "M PLUS Rounded 1c", sans-serif;
-  --fontMontserrat: 'Montserrat Alternates', sans-serif;
-  // --font: 'DM Sans', sans-serif;
-} ////////////////////////////////////////////////// END ROOT
-
-/*===  BASE ============================ */
-//
-
-// .logo{font-family: var(--fontLogo)}
-
-a.logo {
-  color: var(--ton90);
-}
-.color-light {
-  color: var(--color-light);
-}
-.color-primary {
-  color: var(--color-primary);
-}
-.bg-color-primary {
-  background: var(--color-primary);
-}
-.title {
-  font: 700 var(--font-size-title) var(--font-title); // color: var(--color-light);
-} ////////////////////////////////////////////////// END BASE
-.container {
-  margin-left: 2vw;
-  margin-right: 2vw;
 }
 
-
-
-
-/*============  LAYOUT =================== */
-
-
-
-
-
-
-@import "webcoruja/shared/**/*";
-// @import "webcoruja/shared/icons.scss";
-// @import "webcoruja/shared/lay0_body.scss";
-// @import "webcoruja/shared/lay1_aside.scss";
-// @import "webcoruja/shared/lay1_main.scss";
-// @import "webcoruja/shared/lay2_header.scss";
-// @import "webcoruja/shared/lay2_main.scss";
-// @import "webcoruja/shared/lay2_footer.scss";
-
-
+@import "webcoruja/partial/**/*";
