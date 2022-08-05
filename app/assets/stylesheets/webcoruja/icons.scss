@@ -3,6 +3,17 @@ i.icon-coruja {
   font-size: 6vw;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.menuu{
+  font-size: 1.75rem;
+}
+
 @media (min-width: 400px) {
   i.icon.icon-coruja {
   }

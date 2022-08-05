@@ -36,10 +36,10 @@ if(window.XMLHttpRequest){
     //     console.log(xmlHttp.responseText);
     //   }
     // }
-    window.setInterval('bbb()', 30000)
+    window.setInterval('bbb()', 3000)  //  executar a funcao getUrl a cada tantos milisegundos
     
     function bbb() {
-      xmlHttp.open('GET', 'http://5gbrasil.net.br:3003/webcoruja/welcome/dados', false);
+      xmlHttp.open('GET', 'http://5gbrasil.net.br:3000/webcoruja/welcome/dados', false);
       // xmlHttp.open('GET', 'dados', true);
       xmlHttp.send();
       
