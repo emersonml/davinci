@@ -1,3 +1,8 @@
+// = require site/home
+
+@import "site/partial/*";
+
+
 
 
 
@@ -21,7 +26,7 @@
   --color-dark: hsl(var(--hue) 100% 8%);
   --text: hsl(0 0% 46%);
   --text-light: hsl(0 0% 98%);
-  --body: hsl(0 50% 98%);
+  --body: hsl(0 50% 96%);
 
   /* fonts */
   --title-font-size: 1.875rem;
@@ -247,56 +252,22 @@ nav.show div.icon-close {
   top: 1.5rem;
 }
 
-/*====  HOME ============================ */
-#home {
-  /* background: #aaaaaa; */
-  overflow: hidden;
-}
+  /* home */
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
 
-#home .container {
-  margin: 0;
-}
+  #home .image {
+    order: 1;
+  }
 
-#home .image {
-  position: relative;
-}
-
-#home .image::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background: var(--second);
-  position: absolute;
-  top: -16.8%;
-  left: 16.7%;
-  z-index: 0;
-}
-
-#home .image img {
-  position: relative;
-  right: 2.93rem;
-}
-
-#home .image img,
-#home .image::before {
-  border-radius: 0.25rem;
-}
-
-#home .text {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  text-align: center;
-}
-
-#home .text h1 {
-  margin-bottom: 1rem;
-}
-
-#home .text p {
-  margin-bottom: 2rem;
-}
-
-
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
 
 
 /*====  2VIA ============================ */
@@ -540,7 +511,7 @@ footer .social a:hover {
   }
 
   .section {
-    padding: 10rem 0;
+    padding: 2.2rem 0;
   }
 
   .section header,
@@ -586,22 +557,12 @@ footer .social a:hover {
     margin-top: var(--header-height);
   }
 
-  /* home */
-  #home .container {
-    grid-auto-flow: column;
-    justify-content: space-between;
-    margin: 0 auto;
-  }
 
-  #home .image {
-    order: 1;
-  }
 
-  #home .text {
-    order: 0;
-    max-width: 24rem;
-    text-align: left;
-  }
+  // @import "site/home.scss";
+
+
+
 
   /* about */
   #about .container {
@@ -615,8 +576,7 @@ footer .social a:hover {
   }
 
   .card {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 0rem 3rem;
   }
 
   /* testimonials */
@@ -661,5 +621,4 @@ footer .social a:hover {
 /* medium devices: 767 > */
 
 
-@import "site/partial/**/*";
 // @import "template/users/sessions.scss";
