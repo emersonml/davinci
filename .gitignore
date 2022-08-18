@@ -41,4 +41,4 @@ yarn-debug.log*
 
 
 /lib/.pmbok
-/app/assets/stylesheets/application/dev.css
+# /app/assets/stylesheets/application/dev.css
