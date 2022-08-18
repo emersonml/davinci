@@ -1,197 +1,136 @@
-// Place all the styles related to the iot::welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 
-/* 
-    CSS Projeto Automacao Residencial
-    FILIPEFLOP Componentes Eletronicos
-*/
 
-section {
-  display: grid;
-  margin: 1rem 0rem;
-  padding: 2rem;
-  background-color: var(--ton15);
-  // background: green; color: yellow;
-  header {
-      // border-bottom: 2px solid var(--ton50);
-      height: 2rem;
-    //   border-bottom: 2px solid red;
-      margin-bottom: 2rem;
-    //   background-color: gold;
-  }
+section, .welcome {
+display: grid;
+margin: 1rem 0rem;
+padding: 2rem;
+background-color: var(--ton15);
+// background: green; color: yellow;
 
-  .btn{}
+}
+.welcome header {
+  border-bottom: 2px solid var(--ton50);
+  margin-bottom: 2rem;
+}
 
+.welcome .cards {
+  border-bottom: 2px solid var(--ton50);
+  
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+//   background: yellow; color: blue;
+}
+
+.cards .card {
+  flex: 1 1 auto;
+  min-width: 10rem;
+  max-width: 20rem;
+  margin-top: .5rem;
+  border-bottom: 0.25rem solid var(--ton90);
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: var(--ton22);
+  
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  text-align: center;
   
 }
-
-root {
-  display: block;
+.card h4 {
+  width: 100%;
+  color: var(--color-light);
+  // background: red; color: black;
+  
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0rem 1rem;
+  
+} 
+.card main{
+  width: 100%;
+  display: flex;
+  // background: rgb(6, 204, 204); color: pink;
 }
-
-body {
-  margin: 0;
-  padding: 0;
+.card .left{
+  // flex-shrink: 1;
+  flex: 1 1;
+  // width: auto;  
+  // background: yellow; color: blue;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  // padding: 0.5rem 0rem 1rem;
+  // flex-wrap: wrap;
+  
 }
-
-#wrapper {
-  padding-top: 40px;
-  position: relative;
-  width: 530px;
-  height: 600px;
-  margin-right: auto;
-  margin-top: 0;
-  margin-left: auto;
-  font-size: 30px;
+.card .left i {
+  // margin-bottom: 3rem;
+  // font-size: 2.25rem;
   color: black;
-  text-align: center;
-  font-family: arial;
+}
+.card .right{
+  flex: 1 1;
+  // width: auto;
+  // background: green; color: pink;
 }
 
-div.rele1_ligado {
-  position: absolute;
-  right: -110px;
-  top: 220px;
-  width: 300px;
-  height: 206px;
-  border: none;
-  margin: auto;
-  background: url(lampada_ligada.png) no-repeat left top;
-}
 
-div.rele1_desligado {
-  position: absolute;
-  right: -110px;
-  top: 220px;
-  width: 300px;
-  height: 206px;
-  border: none;
-  background: url(lampada_desligada.png) no-repeat left top;
-}
 
-div.rele2_ligado {
-  position: absolute;
-  right: -110px;
-  top: 387px;
-  width: 300px;
-  height: 206px;
-  border: none;
-  background: url(lampada_ligada.png) no-repeat left top;
-}
-
-div.rele2_desligado {
-  position: absolute;
-  right: -110px;
-  top: 387px;
-  width: 300px;
-  height: 206px;
-  border: none;
-  background: url(lampada_desligada.png) no-repeat left top;
-}
-
-#div1 {
-  position: absolute;
-  right: 85px;
-  top: 195px;
-  border-radius: 25px;
-  border: 2px solid #000000;
-  width: 350px;
-  height: 150px;
-}
-
-#div2 {
-  position: absolute;
-  right: 85px;
-  top: 355px;
-  border-radius: 25px;
-  border: 2px solid #000000;
-  width: 350px;
-  height: 150px;
-}
-
-#botao {
-  position: absolute;
-  right: 230px;
-  top: 250px;
-  width: 200px;
-  height: 256px;
-}
-
-.botao {
-  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  box-shadow: inset 0px 0px 0px 0px #ffffff;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.1, #16adff),
-    color-stop(1, #26a8ff)
-  );
-  background: -moz-linear-gradient(center top, #16adff 5%, #26a8ff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#16ADFF', endColorstr='#26A8FF');
-  background-color: #ededed;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  border: 1px solid #dcdcdc;
-  display: inline-block;
-  color: #ffffff;
-  font-family: arial;
-  font-size: 28px;
-  font-weight: bold;
-  padding: 10px 40px;
-  text-decoration: none;
-  text-shadow: 0px 0px 0px #ffffff;
-  width: 100px;
-  text-align: center;
-}
-
-// }.botao:active {
-// 	position:relative;
-// 	top:1px;
+// .cards .card {
+//   flex: 1 1 auto;
+//   min-width: 10rem;
+//   max-width: 20rem;
+//   margin-top: .5rem;
+//   border-bottom: 0.25rem solid var(--ton90);
+//   border-radius: 0.5rem 0.5rem 0 0;
+//   background-color: var(--ton22);
+  
+//   display: flex;
+//   flex-wrap: wrap;
+//   padding: 1rem;
+//   text-align: center;
+  
+// }
+// .card h4 {
+//   width: 100%;
+//   color: var(--color-light);
+//   // background: red; color: black;
+  
+//   display: flex;
+//   justify-content: center;
+//   padding: 0.5rem 0rem 1rem;
+  
+// } 
+// .card main{
+//   width: 100%;
+//   display: flex;
+//   // background: rgb(6, 204, 204); color: pink;
+// }
+// .card .left{
+//   // flex-shrink: 1;
+//   flex: 1 1;
+//   // width: auto;  
+//   // background: yellow; color: blue;
+//   display: flex;
+//   gap: 1rem;
+//   align-items: center;
+//   // padding: 0.5rem 0rem 1rem;
+//   // flex-wrap: wrap;
+  
+// }
+// .card .left i {
+//   // margin-bottom: 3rem;
+//   // font-size: 2.25rem;
+//   color: black;
+// }
+// .card .right{
+//   flex: 1 1;
+//   // width: auto;
+//   // background: green; color: pink;
 // }
 
-#botao_2 {
-  position: absolute;
-  right: 230px;
-  top: 417px;
-  width: 200px;
-  height: 256px;
-}
 
-.botao_2 {
-  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  box-shadow: inset 0px 0px 0px 0px #ffffff;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.1, #16adff),
-    color-stop(1, #26a8ff)
-  );
-  background: -moz-linear-gradient(center top, #16adff 5%, #26a8ff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#16ADFF', endColorstr='#26A8FF');
-  background-color: #ededed;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  border: 1px solid #dcdcdc;
-  display: inline-block;
-  color: #ffffff;
-  font-family: arial;
-  font-size: 28px;
-  font-weight: bold;
-  padding: 10px 40px;
-  text-decoration: none;
-  text-shadow: 0px 0px 0px #ffffff;
-  width: 100px;
-  text-align: center;
-}
-
-// }.botao_2:active {
-// 	position:relative;
-// 	top:1px;
-// }
+// /*====  DASHBOARD  ============================ */
