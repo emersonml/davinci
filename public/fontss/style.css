@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?den7xk');
-  src:  url('fonts/icomoon.eot?den7xk#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?den7xk') format('truetype'),
-    url('fonts/icomoon.woff?den7xk') format('woff'),
-    url('fonts/icomoon.svg?den7xk#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?lt1wpr');
+  src:  url('fonts/icomoon.eot?lt1wpr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?lt1wpr') format('truetype'),
+    url('fonts/icomoon.woff?lt1wpr') format('woff'),
+    url('fonts/icomoon.svg?lt1wpr#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,160 +25,70 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-foguete-1:before {
-  content: "\e910";
-}
-.icon-foguete-2:before {
-  content: "\e911";
-}
-.icon-foguete-3:before {
-  content: "\e912";
-}
 .icon-coruja:before {
+  content: "\e900";
+}
+.icon-davinci:before {
   content: "\e901";
 }
-.icon-sanduiche:before {
+.icon-exit:before {
+  content: "\e902";
+}
+.icon-facebook:before {
+  content: "\e903";
+}
+.icon-foguete-1 .path1:before {
+  content: "\e904";
+  color: rgb(0, 0, 0);
+}
+.icon-foguete-1 .path2:before {
+  content: "\e905";
+  margin-left: -0.7822265625em;
+  color: rgb(254, 254, 254);
+}
+.icon-foguete-2:before {
+  content: "\e906";
+}
+.icon-foguete-3:before {
   content: "\e907";
 }
-.icon-on:before {
+.icon-insta:before {
+  content: "\e908";
+}
+.icon-localizacao:before {
   content: "\e909";
 }
+.icon-on:before {
+  content: "\e90a";
+}
+.icon-sanduiche:before {
+  content: "\e90b";
+}
 .icon-saude:before {
-  content: "\e90d";
+  content: "\e90c";
 }
 .icon-vlan:before {
+  content: "\e90d";
+}
+.icon-wifi:before {
+  content: "\e90e";
+}
+.icon-zap:before {
   content: "\e90f";
 }
+.icon-lampada1:before {
+  content: "\e910";
+}
 .icon-home:before {
-  content: "\e913";
-}
-.icon-pencil2:before {
-  content: "\e915";
-}
-.icon-images:before {
-  content: "\e914";
-}
-.icon-bullhorn:before {
-  content: "\e91a";
-}
-.icon-connection:before {
-  content: "\e91b";
-}
-.icon-book:before {
-  content: "\e91f";
-}
-.icon-file-text:before {
-  content: "\e922";
-}
-.icon-profile:before {
-  content: "\e923";
-}
-.icon-file-picture:before {
-  content: "\e927";
-}
-.icon-copy:before {
-  content: "\e92c";
-}
-.icon-qrcode:before {
-  content: "\e938";
-}
-.icon-credit-card:before {
-  content: "\e93f";
-}
-.icon-phone1:before {
-  content: "\e942";
-}
-.icon-alarm:before {
-  content: "\e950";
-}
-.icon-bell:before {
-  content: "\e951";
-}
-.icon-stopwatch:before {
-  content: "\e952";
-}
-.icon-calendar:before {
-  content: "\e953";
-}
-.icon-printer:before {
-  content: "\e954";
+  content: "\e911";
 }
 .icon-undo2:before {
   content: "\e967";
 }
-.icon-redo2:before {
-  content: "\e968";
+.icon-sanduiche1:before {
+  content: "\e9bd";
 }
-.icon-hour-glass:before {
-  content: "\e979";
-}
-.icon-search:before {
-  content: "\e986";
-}
-.icon-equalizer:before {
-  content: "\e992";
-}
-.icon-equalizer2:before {
-  content: "\e993";
-}
-.icon-cog:before {
-  content: "\e994";
-}
-.icon-cogs:before {
-  content: "\e995";
-}
-.icon-stats-dots:before {
-  content: "\e99b";
-}
-.icon-stats-bars:before {
-  content: "\e99c";
-}
-.icon-mug:before {
-  content: "\e9a2";
-}
-.icon-bin:before {
-  content: "\e9ac";
-}
-.icon-bin2:before {
-  content: "\e9ad";
-}
-.icon-list-numbered:before {
-  content: "\e9b9";
-}
-.icon-list:before {
-  content: "\e9ba";
-}
-.icon-tree:before {
-  content: "\e9bc";
-}
-.icon-cloud-download:before {
-  content: "\e9c2";
-}
-.icon-cloud-upload:before {
-  content: "\e9c3";
-}
-.icon-sphere:before {
-  content: "\e9c9";
-}
-.icon-earth:before {
-  content: "\e9ca";
-}
-.icon-flag:before {
-  content: "\e9cc";
-}
-.icon-attachment:before {
-  content: "\e9cd";
-}
-.icon-info:before {
-  content: "\ea0c";
-}
-.icon-checkmark:before {
-  content: "\ea10";
-}
-.icon-checkmark2:before {
-  content: "\ea11";
-}
-.icon-exit:before {
+.icon-exit1:before {
   content: "\ea14";
 }
 .icon-backward2:before {
@@ -186,124 +96,4 @@
 }
 .icon-forward3:before {
   content: "\ea20";
-}
-.icon-first:before {
-  content: "\ea21";
-}
-.icon-last:before {
-  content: "\ea22";
-}
-.icon-previous2:before {
-  content: "\ea23";
-}
-.icon-next2:before {
-  content: "\ea24";
-}
-.icon-loop:before {
-  content: "\ea2d";
-}
-.icon-loop2:before {
-  content: "\ea2e";
-}
-.icon-sort-alpha-asc:before {
-  content: "\ea48";
-}
-.icon-sort-alpha-desc:before {
-  content: "\ea49";
-}
-.icon-sort-amount-asc:before {
-  content: "\ea4c";
-}
-.icon-sort-amount-desc:before {
-  content: "\ea4d";
-}
-.icon-checkbox-checked:before {
-  content: "\ea52";
-}
-.icon-scissors:before {
-  content: "\ea5a";
-}
-.icon-table2:before {
-  content: "\ea71";
-}
-.icon-paragraph-left:before {
-  content: "\ea77";
-}
-.icon-paragraph-right:before {
-  content: "\ea79";
-}
-.icon-paragraph-justify:before {
-  content: "\ea7a";
-}
-.icon-embed:before {
-  content: "\ea7f";
-}
-.icon-share2:before {
-  content: "\ea82";
-}
-.icon-google:before {
-  content: "\ea88";
-}
-.icon-facebook1:before {
-  content: "\ea90";
-}
-.icon-instagram1:before {
-  content: "\ea92";
-}
-.icon-whatsapp1:before {
-  content: "\ea93";
-}
-.icon-twitter:before {
-  content: "\ea96";
-}
-.icon-rss:before {
-  content: "\ea9b";
-}
-.icon-youtube2:before {
-  content: "\ea9e";
-}
-.icon-windows:before {
-  content: "\eac1";
-}
-.icon-windows8:before {
-  content: "\eac2";
-}
-.icon-stackoverflow:before {
-  content: "\ead0";
-}
-.icon-online_prediction:before {
-  content: "\e90e";
-}
-.icon-arrow-up:before {
-  content: "\e90c";
-}
-.icon-phone:before {
-  content: "\e900";
-}
-.icon-facebook:before {
-  content: "\e902";
-}
-.icon-instagram:before {
-  content: "\e903";
-}
-.icon-mail:before {
-  content: "\e904";
-}
-.icon-map-pin:before {
-  content: "\e905";
-}
-.icon-menu:before {
-  content: "\e906";
-}
-.icon-whatsapp:before {
-  content: "\e908";
-}
-.icon-youtube:before {
-  content: "\e90a";
-}
-.icon-close:before {
-  content: "\e90b";
-}
-.icon-cross:before {
-  content: "\ea0f";
 }
