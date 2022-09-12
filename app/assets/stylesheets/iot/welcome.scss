@@ -1,137 +1,77 @@
-
-
-section, .welcome {
-display: grid;
-margin: 1rem 0rem;
-padding: 2rem;
-background-color: var(--ton15);
-// background: green; color: yellow;
-
+section,
+.welcome {
+  margin: 1rem 0rem;
+  background-color: var(--ton15);
+  //
+  display: grid;
+  padding: 2rem;
 }
-.welcome header {
+.welcome header.dachboard {
   border-bottom: 2px solid var(--ton50);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  color: var(--ton70);
+}
+article header{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  color: var(--ton90);
 }
 
 .welcome .cards {
-  border-bottom: 2px solid var(--ton50);
   
   display: flex;
-  justify-content: start;
+  // justify-content: center;
+  // background: green; color: pink;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding-bottom: 1.5rem;
-//   background: yellow; color: blue;
-}
 
-.cards .card {
-  flex: 1 1 auto;
-  min-width: 10rem;
-  max-width: 20rem;
-  margin-top: .5rem;
-  border-bottom: 0.25rem solid var(--ton90);
-  border-radius: 0.5rem 0.5rem 0 0;
-  background-color: var(--ton22);
-  
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  text-align: center;
-  
 }
-.card h4 {
-  width: 100%;
-  color: var(--color-light);
-  // background: red; color: black;
-  
+.welcome .card { 
+  // flex: 1 1 300px;
+  //
+  // width: 25rem;
+  width: 25rem;
   display: flex;
   justify-content: center;
-  padding: 0.5rem 0rem 1rem;
-  
-} 
-.card main{
-  width: 100%;
-  display: flex;
-  // background: rgb(6, 204, 204); color: pink;
-}
-
-.card .left{
-  // flex-shrink: 1;
-  flex: 1 1;
-  // width: auto;  
-  // background: yellow; color: blue;
-  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 1rem;
-  align-items: center;
-  // padding: 0.5rem 0rem 1rem;
-  // flex-wrap: wrap;
-  
+  padding: 1rem;
 }
-.card .left i {
-  // margin-bottom: 3rem;
-  // font-size: 2.25rem;
-  color: black;
+.welcome .card h4 {
+  width: 100%;
+  color: var(--color-light);
+  //
+  // display: flex;
+  // align-items: center;
 }
-.card .right{
-  flex: 1 1;
-  // width: auto;
-  // background: green; color: pink;
+.card main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.card .celula {
+  width: 100%;
+  // height: 100%;
+  //
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  gap: 1rem;
+  padding: 1rem;
+}
+.card .celula i {
+  font-size: 4rem;
+  color: rgb(143, 143, 143);
+}
+.card .celula p {
+  width: auto;
+}
+.card .celula .btn {
 }
 
-
-
-// .cards .card {
-//   flex: 1 1 auto;
-//   min-width: 10rem;
-//   max-width: 20rem;
-//   margin-top: .5rem;
-//   border-bottom: 0.25rem solid var(--ton90);
-//   border-radius: 0.5rem 0.5rem 0 0;
-//   background-color: var(--ton22);
-  
-//   display: flex;
-//   flex-wrap: wrap;
-//   padding: 1rem;
-//   text-align: center;
-  
-// }
-// .card h4 {
-//   width: 100%;
-//   color: var(--color-light);
-//   // background: red; color: black;
-  
-//   display: flex;
-//   justify-content: center;
-//   padding: 0.5rem 0rem 1rem;
-  
-// } 
-// .card main{
-//   width: 100%;
-//   display: flex;
-//   // background: rgb(6, 204, 204); color: pink;
-// }
-// .card .left{
-//   // flex-shrink: 1;
-//   flex: 1 1;
-//   // width: auto;  
-//   // background: yellow; color: blue;
-//   display: flex;
-//   gap: 1rem;
-//   align-items: center;
-//   // padding: 0.5rem 0rem 1rem;
-//   // flex-wrap: wrap;
-  
-// }
-// .card .left i {
-//   // margin-bottom: 3rem;
-//   // font-size: 2.25rem;
-//   color: black;
-// }
-// .card .right{
-//   flex: 1 1;
-//   // width: auto;
-//   // background: green; color: pink;
-// }
-
-
-// /*====  DASHBOARD  ============================ */
+.btn-dark, .btn-off{
+  color: var(--ton90);
+	background-color: var(--color-dark);
+  border-bottom: 2px solid var(--color-light);
+}

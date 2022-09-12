@@ -1,32 +1,51 @@
-<%# sys5g/ controll / users_b %>
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sys5gbrasil</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <%= csrf_meta_tags %> 
-    <%= csp_meta_tag %> 
+
+<head>
+  <title>DaVINCI ok</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+  <%= stylesheet_link_tag 'http://45.174.216.22/production/themavangogh/style.css' %>
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'template' %>
+  <%= stylesheet_link_tag 'iot' %>
+
+
+</head>
 
 
 
+<!-- onload="bodyload();" -->
+<body class="lay0" > 
+  <%= render partial: 'user_backoffice/partial/aside' %>
+  <!--ASIDE   L1-->
+  <main class="lay1" id="js-mainLay1" >
+    <!--MAIN    L1 -->
+    <%= render partial: 'user_backoffice/partial/header' %>
+    <!--HEADER  L2 -->
+    <main class="lay2">
+      <!--MAIN    L2 -->
+      <%= yield %>
+      <!--Sections   -->
+    </main lay2>
+    <%= render partial: 'user_backoffice/partial/footer' %>
+    <!--FOOTER  L2 -->
+  </main lay1>
 
-    <%= stylesheet_link_tag 'application' %> 
-    <%= stylesheet_link_tag 'users_backoffice' %>
 
-  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'template' %>
+  <%= javascript_include_tag 'user_backoffice' %>
 
-  <body>
-    <div class="container">
-      <header>
-        <h1>Área do Técnicoo</h1>
-      </header>
-      <main>
 
-        <%= yield %>
-      </main>
+</body>
 
-      <footer>footer</footer>
-    </div>
-  </body>
 </html>

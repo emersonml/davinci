@@ -1,0 +1,33 @@
+
+
+
+
+
+/* LAMPADA */
+i.icon.icon-lampada1.icon-lampada1-on
+{
+  /* color: var(--color-primary); */
+  color: yellow; 
+}
+i.icon.icon-lampada1.icon-lampada1-off
+{
+  color: var(--color-dark);
+  /* color: var(--ton40); */
+  /* color: red; */
+}
+
+
+/* PORTA */
+/* i.icon.icon-lampada1.icon-lampada1-on */
+i.icon.icon-fechadura-open.icon-fechadura-on
+{
+  /* color: var(--color-primary); */
+  color: yellow; 
+}
+/* i.icon.icon-lampada1.icon-lampada1-off */
+i.icon.icon-fechadura-close.icon-fechadura-off
+{
+  color: var(--color-dark);
+  /* color: var(--ton40); */
+  /* color: red; */
+}

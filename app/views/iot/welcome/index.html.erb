@@ -1,26 +1,73 @@
-<section class="welcome">
+  
+<%# console %>
+
+<section class="welcome" pagina>
   <div class="container">
-    <header>
-      <h4>- Dashboard - </h4>
-    </header>
+    <header class="dachboard"><h4>- Dashboard - </h4></header>
     <main>
-      <article>
-        <h3>5GBrasil</h3>
-        <div class="cards">
-          <div class="card">
-            <h4>CPD:</h4>
-            <main>
-              <div class="left">
-                <i class="icon icon-lampada1"></i>
-                <p>Lâmpada 1</p>
-              </div>
-              <div class="right">
-                <a href="http://45.174.219.194:8000/?pin2on" class="js-btn2Rt" target="_blank">ON</a>
-              </div>
-            </main>
-          </div card>
-        </div cards>
+
+
+
+
+      <article patrimonio>
+        <header><h4>5GBrasil</h4></header>
+        <main>
+          <div class="cards" container>
+
+            <div class="card" compartimento1...>
+              <header><h4>RECEPÇÃO:</h4></header>
+              <main>
+                <button id="js-btn2-celula" class="celula"  >
+                  <p>Porta</p> <i class="icon icon-fechadura-close icon-fechadura-off" ></i>
+                  <p class="js-btn2 btn btn-off" >off</p>                
+                </button celula>
+              </main>
+            </div ...compartimento1>
+
+            <div class="card" compartimento2...>
+              <header><h4>CPD:</h4></header>
+              <main>
+                <button id="js-btn1-celula" class="celula"  >
+                  <p>Lâmpada 1</p> <i class="icon icon-lampada1 icon-lampada1-off "></i>
+                    <p class="js-btn1 btn btn-off" >off</p>                
+                </button celula>
+                <button       class="celula js-btn2Rt" target="_blank">
+                    <p>Lâmpada 3</p> <i class="icon icon-lampada1 "></i>
+                    <p        class="btn btn-dark">off</p>
+                </button celula>
+              </main>
+            </div ...compartimento2>
+            
+            
+      
+  
+          </div container >      
+        </main>
       </article>
+
+      <article patrimonio>
+        <header><h4>BANANEIRAS</h4></header>
+        <main>
+          <div class="cards" container>
+
+            <div class="card" compartimento...>
+              <header><h4>GERAL:</h4></header>
+              <main>
+                <button id="" class="celula"  >
+                  <p>Portão</p> <i class="icon icon-lampada1 icon-lampada1-off "></i>
+                    <p class="btn btn-off" >off</p>                
+                </button celula>
+                <button id="" class="celula " target="_blank">
+                    <p>Sirene</p> <i class="icon icon-lampada1 "></i>
+                    <p id="" class="btn btn-dark">off</p>
+                </button celula>
+              </main>
+            </div ...compartimento>
+  
+          </div container >      
+        </main>
+      </article>
+
     </main>
   </div container>
 </section>
@@ -28,8 +75,4 @@
 
 
 
-<%# <P><a href="http://45.174.219.194:8000/?pin2on"  class="js-btn2Rt" target="_blank">BTN RETENCAO</a></P>
-<P><a href="http://45.174.219.194:8000/?pin2on"  class="js-btn2Swt" target="_blank">BTN ON /  </a>
-  <a href="http://45.174.219.194:8000/?pin2off" class="js-btn2Swt2Off" target="_blank">  / BTN OFF</a></P>
-<P><a href="http://45.174.219.194:8000/?pin2on"  class="js-btn2Rt" target="_blank">BTN RTÇ KEY</a></P>
-<P><a href="http://45.174.219.194:8000/?pin4on" target="_blank">LAMPADA 2</a></P> %>
+    <%# <!-- btn1 --><%= text_field_tag("btn1-hidden",  @pin, :id => "js-ref-btn1"  )  %> 

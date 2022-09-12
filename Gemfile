@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'kaminari'
 gem 'kaminari-i18n'
+gem 'rack-cors'
 # gem 'htmlbeautifier'
 
 

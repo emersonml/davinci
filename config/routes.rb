@@ -1,10 +1,23 @@
 Rails.application.routes.draw do
 
+  root to: 'iot/welcome#index'
+
+  
+  resource :nome, :default => {format: :json}
+  get 'iot', to: 'iot/welcome#index'
+
   namespace :iot do
     get 'welcome/index'
+    get 'welcome/salvar'
+    get 'welcome/api'
+    get 'welcome/apiresponse'
+    get 'welcome/pinsttus'
+    get 'welcome/testes'
     get 'welcome/ligar'
+    
+    get 'api/fetch'
+    get 'api/salvar'
   end
-  root to: 'site/welcome#index'
   
   get 'application', to: 'application#index'
   # get 'webcoruja', to: 'webcoruja#dados'
@@ -39,7 +52,8 @@ Rails.application.routes.draw do
   devise_for :admins
   
   # root to: 'application#index'
-  
+
   get 'site', to: 'site/welcome#index'
+
   
 end
