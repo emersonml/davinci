@@ -1,0 +1,13 @@
+div.card main button .btn-sttus-0 {
+  color: var(--ton90);
+	background-color: var(--color-dark);
+  border-bottom: 2px solid var(--color-light);
+}
+
+div.card main button .btn-sttus-1 {
+  color: var(--ton10);
+	background-color: var(--color-light);
+  border-bottom: 3px solid var(--color-dark);
+}
+
+

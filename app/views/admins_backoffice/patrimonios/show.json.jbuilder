@@ -1,0 +1,1 @@
+json.partial! "admins_backoffice_patrimonios/admins_backoffice_patrimonio", admins_backoffice_patrimonio: @admins_backoffice_patrimonio

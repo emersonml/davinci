@@ -1,0 +1,36 @@
+
+
+ 
+<%# console %>
+
+<section class="welcome" pagina>
+  <div class="container">
+    <header class="dachboard"><h4>- Listando PATRIMONIOS - </h4></header>
+    <main>
+
+      <article patrimonio>
+        <header><h4>5GBrasil</h4></header>
+        <main>
+         
+        </main>
+      </article>
+
+    </main>
+  </div container>
+</section>
+
+
+
+
+<%# #################  %>
+
+
+    <% @admins_backoffice_patrimonios.each do |admins_backoffice_patrimonio| %>
+      <tr>
+        <td><%= link_to 'Show', admins_backoffice_patrimonio %></td>
+        <td><%= link_to 'Edit', edit_admins_backoffice_patrimonio_path(admins_backoffice_patrimonio) %></td>
+        <td><%= link_to 'Destroy', admins_backoffice_patrimonio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+<%= link_to 'New Admins Backoffice Patrimonio', new_admins_backoffice_patrimonio_path %>
