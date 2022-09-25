@@ -10,212 +10,194 @@ function XMLHttpRequestClient() {
   }
 }
 
-const ipCc = '45.174.219.194' //central de comando
-const urlApi = 'http://45.174.216.22:4151/'
-const jsLampada1 = document.querySelector('.icon-lampada1');
-const jsBtn1 = document.querySelector('.js-btn1');
-const jsBtn1Celula = document.getElementById('js-btn1-celula');
-const jsBtn2Celula = document.getElementById('js-btn2-celula');
-let btnObj;
-let btnSttus;
-// let btn2Obj;
-// let btn2Sttus;
+const apiUrl = 'http://45.174.216.22:4151/api/'
+const ccHost = '45.174.219.194' //central de comando
+const ccPort = '8000' //central de comando
+const ccPath = ccHost + ':' + ccPort
+const ccUrn = ccHost + ':' + ccPort
 
-let circuitObj;
-let circuitSttus;
-// let circuit2Obj;
-// let circuit2Sttus;
+// toggleClass_____Seletor
+let argIconNameOld;
+let argIconSttusOld;
+let argBtnSttusOld;
 
+let jsElemento = [];
 
+let patrimonios = [];
 
+let circuits = new Array();
+let circuitsQtd;
 
-///////GATILHOS
-init_0(); // atualiza os obj e variaveis
+let kinddevs = [];
+let kinddevsQtd;
 
-jsBtn1Celula.addEventListener('click', function () { //  CLINK
-  btnOnclick()
-});
-// jsBtn2Celula.addEventListener('click', function () { //  CLINK
-//   btnOnclick2()
-// });
-window.setInterval('init_0()', 2000) // LOOP
-// .............. FIM DOS GATILHOS
+let sttusInvertArr = [];
 
-//INICIO DAS FUNCTIONS ............
-function init_0() {
-  atualizarCircuits()
-  atualizarBtns()
-  atualizarJsBtnCelulas()
-  atualizarArduino()
+// ///////GATILHOS
+init(); // load page 
 
-  function atualizarArduino() {
-    // alert('circuitSttus => '+ circuitSttus);
+function init() { // iniciado no load da pagina
+  processo1() // atualizar
+  eventsOnclick() // event click
+  window.setInterval(processo1, 5000)//LOOP //window.setTimeout(function(){}, 1000) // SLEEP
+} //      init
 
-    xhr.open('GET', 'http://' + ipCc + ':8000/?2:' + circuitSttus, false);
-    xhr.setRequestHeader("Accept", ipCc);
-    // xhr.setRequestHeader("Accept", "*/*");
-    // xhr.setRequestHeader('Access-Control-Allow-Origin', '*/*');
-    xhr.send();
-    // return xhr.responseText  // nao é necessario pois o potao atualiza o circuit 
+//////////////////////   init PROCESSO 1
+function processo1() {
+  atualizarObjsArr('patrimonios', patrimonios)
+  atualizarObjsArr('kinddevs', kinddevs)
+  atualizarObjsArr('circuits', circuits)
+  atualizarJsElementosss()
+  atualizarJsElementosssStyleENome()
+}
 
-    // alert('XXX => '+ xhr.responseText);
+function atualizarObjsArr(recurso, objArr) {
+  for (i = 1; i <= getTObjQtd(recurso); i++) {
+    objArr[i] = requestHttp('GET', apiUrl, recurso + '/', i)
   }
+} //     atualizarObjsArr
 
-  function atualizarBtns() {
-
-    btnObj = getEntidade('btns/', '1')
-    btnSttus = btnObj.data.attributes.sttus
-    
-    // btnsObj = getEntidade('btns/', '2')
-    // btnsSttus = btnsObj.data.attributes.sttus
+function getTObjQtd(recurso) {
+  // console.log('busca na tab = ' + recurso);
+  let objQtd = requestHttp('GET', apiUrl, recurso).data.length
+  if (recurso == 'circuits') {
+    circuitsQtd = objQtd
   }
+  return objQtd
+} //     getTObjQtd
 
-  function atualizarCircuits() {
-
-    circuitObj = getEntidade('circuits/', '1')
-    circuitSttus = circuitObj.data.attributes.sttus
-
-    // circuit2Obj = getEntidade('circuits/', '2')
-    // circuit2Sttus = circuit2Obj.data.attributes.sttus
-  }
-
-  // function isCircuitAtualizado(){
-  //   if ( circuits.data.attributes.sttus !== getEntidade('circuits/1').sttus ){
-  //     alert('atual');
-  //   }
-
-  // }
-
-  function atualizarJsBtnCelulas() {
-    if (circuitSttus === 1) {
-      jsBtnSetOn()
-    } else {
-      btnSetOff()
-    }
-
-  }
-
-  function getEntidade(resource, id) {
-    return requestHttpGet(resource, id)
-
-  }
-  // function circuitSttusAtualizar(){
-  //    requestHttp()
-  // }
-  function jsBtnSetOn() {
-    toggleClass(jsLampada1, "icon-lampada1-off", "icon-lampada1-on") //or**4
-    toggleClass(jsBtn1, "btn-off", "btn-on") //**5
-    jsBtn1.innerHTML = "ON"
-  }
-
-  function btnSetOff() {
-    toggleClass(jsLampada1, "icon-lampada1-on", "icon-lampada1-off") //or**4
-    toggleClass(jsBtn1, "btn-on", "btn-off") //**5
-    jsBtn1.innerHTML = "OFF"
-  }
-
-  function toggleClass(seletor, remove, add) {
-    seletor.classList.remove(remove)
-    seletor.classList.add(add)
-  }
-
-
-
-
-
-} /// FIM Init0
-
-/////////////////////////////////////////////////////// FUNCTIONS GATILHO ONCLICK
-function btnOnclick() {
-  let circuitSttus = requestHttpGet('circuits/', '1').data.attributes.sttus
-  circuitSttusInvert = circuitSttus ? "0" : "1" // inverte valor do circuitSttus
-  requestHttpPatch('circuits/', '1', circuitSttusInvert)
-};
-function btnOnclick2() {
-  let circuitSttus = requestHttpGet('circuits/', '2').data.attributes.sttus
-  circuitSttusInvert = circuitSttus ? "0" : "1" // inverte valor do circuitSttus
-  requestHttpPatch('circuits/', '2', circuitSttusInvert)
-};
-
-
-function requestHttpGet(resource = '', id = '') { //
-  xhr.open('GET', 'http://45.174.216.22:4151/' + resource + id, false);
+function requestHttp(method = 'GET', url, resource = '', id = '', dadosJson = 'null') { //
+  xhr.open(method, url + resource + '/' + id, false);
   xhr.setRequestHeader("Accept", "application/vnd.api+json");
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.send();
+
+  xhr.send(JSON.stringify(dadosJson));
   var obj = JSON.parse(xhr.responseText);
   return obj
+} //     requestHttp
 
+function atualizarJsElementosss() {// GET ELEMENTOS HTML
+  for (i = 1; i <= circuitsQtd; i++) {
+    // circuits[i].data.attributes.sttus
+    let elemento = document.getElementById('js-circuit' + i);
+    jsElemento[i] = {
+      button: elemento,
+      name: elemento.children[0],
+      icon: elemento.children[1],
+      btn: elemento.children[2],
+      sttus: circuits[i].data.attributes.sttus,
+      sttusInvert: circuits[i].data.attributes.sttus ? 0 : 1
+    }
+  } //for
+}//     atualizarJsElementosss
+function atualizarJsElemento(i) {// GET ELEMENTOS HTML
+    let elemento = document.getElementById('js-circuit' + i);
+    jsElemento[i] = {
+      button: elemento,
+      name: elemento.children[0],
+      icon: elemento.children[1],
+      btn: elemento.children[2],
+      sttus: circuits[i].data.attributes.sttus,
+      sttusInvert: circuits[i].data.attributes.sttus ? 0 : 1
+    }
+}//     atualizarJsElementosss
 
-  // (dados !== null)? alert('yes') : alert('no')
+function atualizarJsElementosssStyleENome() {
+  for (i = 1; i <= circuitsQtd; i++) {
+    jsElemento[i].name.innerHTML = circuits[i].data.attributes.name
+    jsElemento[i].icon.classList.remove(
+      "icon-placeholder",
+      "icon-sttus-0",
+      "icon-sttus-1"
+    )
+    jsElemento[i].icon.classList.add(
+      "icon-" + kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name,
+      "icon-sttus-" + jsElemento[i].sttus
+    )
+    jsElemento[i].btn.classList.remove(
+      // "btn-sttus-" + jsElemento[1].sttusInvert,
+      "btn-placeholder",
+      "btn-sttus-0",
+      "btn-sttus-1"
+    )
+    jsElemento[i].btn.classList.add(
+      "btn-sttus-" + jsElemento[i].sttus
+    )
+    jsElemento[i].sttus ? jsElemento[i].btn.innerHTML = "ON." : jsElemento[i].btn.innerHTML = "OFF."
+  } //for
+} //     atualizarJsElementosssStyleENome
 
-  //   circuits = {"data": {attributes: {sttus:}}}
-  // alert('parse => '+ obj);
-}
+/////////////////////    init EVENSONCLICK
+function eventsOnclick() {
+  for (i = 1; i <= circuitsQtd; i++) {
+    btnOnclick(i)
+  } //for
+} //     btnsOnclick
 
-function requestHttpPatch(resource = '', id = '', dados = null) { //
-  xhr.open('PATCH', 'http://45.174.216.22:4151/' + resource + id, false);
-  xhr.setRequestHeader("Accept", "application/vnd.api+json");
-  xhr.setRequestHeader("Content-Type", "application/json");
+function btnOnclick(i) {
+  jsElemento[i].button.addEventListener('click', function () {
+    requestHttpArduino(i, jsElemento[i].sttusInvert)
+    atualizarTCircuits(i, jsElemento[i].sttusInvert) // dependencia para setInterval
+    atualizarJsElemento(i) // SEGUNDA UTILIZACAO
+    atualizarJsElementStyle(i)
+    
+    // processo2(i) // atualizar
+  })
+} //     btnOnclick
 
-  if (dados !== null) {
-    circuitObj = {
-      data: {
-        attributes: {
-          sttus: dados
-        }
+function requestHttpArduino(rele, pinSttus) { // ARDUINO
+  xhr.open('GET', 'http://' + ccHost + ':' + ccPort + '?' + rele + ':' + pinSttus, false);
+  xhr.setRequestHeader("Accept", ccHost);
+  xhr.send();
+  // alert('XXX => ' + xhr.responseText);
+  return xhr.responseText
+} //      requestHttpArduino
+
+function atualizarTCircuits(num, sttus) {
+  circuits[num] = {
+    data: {
+      attributes: {
+        sttus: sttus
       }
     }
-    xhr.send(JSON.stringify(circuitObj));
-    // alert('RESPOSTA requestHttpPatch => '+ xhr.responseText);   //NAO APAGAR
-  } else {
-    alert('requestHttpPatch, nenhum dado');
-  }
-
+  } // circuitObj[]
+  requestHttp('PATCH', apiUrl, 'circuits', num, circuits[num])
+  atualizarObjsArr('circuits', circuits)
 }
 
+//////////////////////    btnOnclick / PROCESSO 2
+function processo2(num) {
+    if (jsElemento[i].sttus !== circuits[i].data.attributes.sttus) {
+      atualizarJsElemento(num) // SEGUNDA UTILIZACAO
+      atualizarJsElementStyle(num)
+    }else{
+      console.log('Nenhum alteracaao');
+    }
+}//     processo2
 
-// function dbjose(recurso, circuit) { //pro1
-//   // alert('123 consultar_db_dev_sttus dev1  => '+ dev1.cod);
-//   method = 'GET'
-//   // url = api.url+recurso'/?table='+circuit.dev.table+'&col='+circuit.dev.name+'&celula='+circuit.dev.sttus
-//   // url = 'http://45.174.216.22:4151/c'
-//   //  respostaHttp 
-//   let responseHttp = requestHttp(method, url, sync) //pro1
-//   alert('responseHttp rtn dev1=> ' + responseHttp);
-//   return responseHttp
-// }
+function atualizarJsElementStyle(i) {// in processo2
+  jsElemento[i].icon.classList.remove(
+    "icon-placeholder",
+    "icon-sttus-0",
+    "icon-sttus-1"
+  )
+  // console.log('XXX => '+ kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name );
+  jsElemento[i].icon.classList.add(
+    // "icon-" + kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name,
+    "icon-sttus-" + jsElemento[i].sttus
+  )
+  jsElemento[i].btn.classList.remove(
+    // "btn-sttus-" + jsElemento[1].sttusInvert,
+    "btn-placeholder",
+    "btn-sttus-0",
+    "btn-sttus-1"
+  )
+  jsElemento[i].btn.classList.add(
+    "btn-sttus-" + jsElemento[i].sttus
+  )
+  jsElemento[i].sttus ? jsElemento[i].btn.innerHTML = "ON." : jsElemento[i].btn.innerHTML = "OFF."
+} //       atualizarJsElementStyle
 
 
-// // ///////   DEFININDO VARIAVEIS
-
-
-
-
-
-// function atualizaValueJsRefBtn1(pinnameSinal) {
-//   valueJsRefBtn1 = document.getElementById('js-ref-btn1').value = pinnameSinal
-//   document.getElementById('js-ref-btn1').innerHTML = valueJsRefBtn1
-// }
-
-
-// /* atualiza btn */ function reqHttpResp() {
-//   xhr.open('GET', `http://45.174.216.22:4051/iot/welcome/api/?pinnameosSttus=${xhr.responseText}`, false);
-//   xhr.send();
-
-//   // btn1HiddenValue = document.getElementById('js-input-hidden1').value = xhr.responseText
-//   // document.getElementById('js-input-hidden1').innerHTML = btn1HiddenValue
-// }
-
-//////////////////////////
-// btn2.addEventListener('click', function(event){
-//   event.preventDefault();
-//   xhr.open('GET', 'http://45.174.219.194:8000/?pinname2off', false);
-//   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-//   xhr.send();
-
-//   console.log("off");
-
-// });
-
-//////////////////////////
+// PROCESSO DO APRENDIZADO
+// let iconName = kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name

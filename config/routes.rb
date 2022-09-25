@@ -1,5 +1,9 @@
+#dev/davinci
 Rails.application.routes.draw do
 
+  namespace :admins_backoffice do
+    resources :patrimonios
+  end
   root to: 'iot/welcome#index'
 
   
@@ -32,6 +36,7 @@ Rails.application.routes.draw do
   end
   namespace :admins_backoffice do
     get 'welcome/index'
+    get 'patrimonios/index'
   end
   namespace :webcoruja do
     get 'welcome/index'

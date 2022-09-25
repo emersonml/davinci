@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?fkfgj3');
-  src:  url('fonts/icomoon.eot?fkfgj3#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?fkfgj3') format('truetype'),
-    url('fonts/icomoon.woff?fkfgj3') format('woff'),
-    url('fonts/icomoon.svg?fkfgj3#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?cizsyc');
+  src:  url('fonts/icomoon.eot?cizsyc#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?cizsyc') format('truetype'),
+    url('fonts/icomoon.woff?cizsyc') format('woff'),
+    url('fonts/icomoon.svg?cizsyc#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-sirene:before {
+  content: "\e91e";
+}
+.icon-dashboard:before {
+  content: "\e91b";
+}
+.icon-placeholder:before {
+  content: "\e91c";
+}
+.icon-portao:before {
+  content: "\e91d";
+}
 .icon-cadastrar:before {
   content: "\e900";
 }
