@@ -10,7 +10,8 @@ function XMLHttpRequestClient() {
   }
 }
 
-const apiUrl = 'http://45.174.216.22:4151/api/'
+
+const apiUrl = 'http://45.174.216.22:3151/api/'
 const ccHost = '45.174.219.194' //central de comando
 const ccPort = '8000' //central de comando
 const ccPath = ccHost + ':' + ccPort
@@ -25,27 +26,30 @@ let jsElemento = [];
 
 let patrimonios = [];
 
-let circuits = new Array();
-let circuitsQtd;
+let kindbtns = [];
 
 let kinddevs = [];
 let kinddevsQtd;
+
+let circuits = new Array();
+let circuitsQtd;
 
 let sttusInvertArr = [];
 
 // ///////GATILHOS
 init(); // load page 
 
+window.setInterval(processo2, 15000) //LOOP //window.setTimeout(function(){}, 1000) // SLEEP
 function init() { // iniciado no load da pagina
   processo1() // atualizar
   eventsOnclick() // event click
-  window.setInterval(processo1, 5000)//LOOP //window.setTimeout(function(){}, 1000) // SLEEP
 } //      init
 
 //////////////////////   init PROCESSO 1
 function processo1() {
   atualizarObjsArr('patrimonios', patrimonios)
   atualizarObjsArr('kinddevs', kinddevs)
+  atualizarObjsArr('kindbtns', kindbtns)
   atualizarObjsArr('circuits', circuits)
   atualizarJsElementosss()
   atualizarJsElementosssStyleENome()
@@ -76,7 +80,7 @@ function requestHttp(method = 'GET', url, resource = '', id = '', dadosJson = 'n
   return obj
 } //     requestHttp
 
-function atualizarJsElementosss() {// GET ELEMENTOS HTML
+function atualizarJsElementosss() { // GET ELEMENTOS HTML
   for (i = 1; i <= circuitsQtd; i++) {
     // circuits[i].data.attributes.sttus
     let elemento = document.getElementById('js-circuit' + i);
@@ -89,41 +93,31 @@ function atualizarJsElementosss() {// GET ELEMENTOS HTML
       sttusInvert: circuits[i].data.attributes.sttus ? 0 : 1
     }
   } //for
-}//     atualizarJsElementosss
-function atualizarJsElemento(i) {// GET ELEMENTOS HTML
-    let elemento = document.getElementById('js-circuit' + i);
-    jsElemento[i] = {
-      button: elemento,
-      name: elemento.children[0],
-      icon: elemento.children[1],
-      btn: elemento.children[2],
-      sttus: circuits[i].data.attributes.sttus,
-      sttusInvert: circuits[i].data.attributes.sttus ? 0 : 1
-    }
-}//     atualizarJsElementosss
+} //     atualizarJsElementosss
+function atualizarJsElemento(i) { // GET ELEMENTOS HTML
+  let elemento = document.getElementById('js-circuit' + i);
+  jsElemento[i] = {
+    button: elemento,
+    name: elemento.children[0],
+    icon: elemento.children[1],
+    btn: elemento.children[2],
+    sttus: circuits[i].data.attributes.sttus,
+    sttusInvert: circuits[i].data.attributes.sttus ? 0 : 1
+  }
+} //     atualizarJsElementosss
 
 function atualizarJsElementosssStyleENome() {
   for (i = 1; i <= circuitsQtd; i++) {
     jsElemento[i].name.innerHTML = circuits[i].data.attributes.name
-    jsElemento[i].icon.classList.remove(
-      "icon-placeholder",
-      "icon-sttus-0",
-      "icon-sttus-1"
-    )
+    removeJsElementStyle(i)
+    
     jsElemento[i].icon.classList.add(
       "icon-" + kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name,
       "icon-sttus-" + jsElemento[i].sttus
     )
-    jsElemento[i].btn.classList.remove(
-      // "btn-sttus-" + jsElemento[1].sttusInvert,
-      "btn-placeholder",
-      "btn-sttus-0",
-      "btn-sttus-1"
-    )
-    jsElemento[i].btn.classList.add(
-      "btn-sttus-" + jsElemento[i].sttus
-    )
-    jsElemento[i].sttus ? jsElemento[i].btn.innerHTML = "ON." : jsElemento[i].btn.innerHTML = "OFF."
+
+    jsElemento[i].btn.classList.add( "btn-sttus-" + jsElemento[i].sttus )
+    jsElemento[i].sttus ? jsElemento[i].btn.innerHTML = "ON" : jsElemento[i].btn.innerHTML = "OFF"
   } //for
 } //     atualizarJsElementosssStyleENome
 
@@ -134,19 +128,40 @@ function eventsOnclick() {
   } //for
 } //     btnsOnclick
 
+
 function btnOnclick(i) {
   jsElemento[i].button.addEventListener('click', function () {
-    requestHttpArduino(i, jsElemento[i].sttusInvert)
-    atualizarTCircuits(i, jsElemento[i].sttusInvert) // dependencia para setInterval
-    atualizarJsElemento(i) // SEGUNDA UTILIZACAO
-    atualizarJsElementStyle(i)
-    
-    // processo2(i) // atualizar
-  })
+
+    let kindBtn = kindbtns[circuits[i].data.relationships.kindbtn.data.id].data.attributes.name
+
+    switch (kindBtn) {
+      case 'time':
+        btnTemporizado(i, '5000')
+        break;
+      case 'pulso':
+        btnTemporizado(i, '50')
+        break;
+      default:
+        requestHttpArduino(i, jsElemento[i].sttusInvert)
+        atualizarJsElemento(i) // SEGUNDA UTILIZACAO
+        atualizarJsElementStyle(i)
+        atualizarTCircuits(i, jsElemento[i].sttusInvert) // dependencia para setInterval
+    } //switch
+  }) //addEventListener
 } //     btnOnclick
 
-function requestHttpArduino(rele, pinSttus) { // ARDUINO
-  xhr.open('GET', 'http://' + ccHost + ':' + ccPort + '?' + rele + ':' + pinSttus, false);
+function btnTemporizado(i, tempo) {
+  requestHttpArduino(i, '1')
+  sttus1ElementStyle(i)
+  window.setTimeout(function () {
+    sttus0ElementStyle(i)
+    requestHttpArduino(i, '0')
+  }, tempo)
+}
+
+function requestHttpArduino(i, pinSttus) { // ARDUINO
+
+  xhr.open('GET', 'http://' + ccHost + ':' + ccPort + '?' + i + ':' + pinSttus, false);
   xhr.setRequestHeader("Accept", ccHost);
   xhr.send();
   // alert('XXX => ' + xhr.responseText);
@@ -167,37 +182,55 @@ function atualizarTCircuits(num, sttus) {
 
 //////////////////////    btnOnclick / PROCESSO 2
 function processo2(num) {
-    if (jsElemento[i].sttus !== circuits[i].data.attributes.sttus) {
-      atualizarJsElemento(num) // SEGUNDA UTILIZACAO
-      atualizarJsElementStyle(num)
-    }else{
-      console.log('Nenhum alteracaao');
-    }
-}//     processo2
+  atualizarObjsArr('circuits', circuits)
+  atualizarJsElementosss()
+  atualizarJsElementosssStyleENome()
+} //     processo2
 
-function atualizarJsElementStyle(i) {// in processo2
+function atualizarJsElementStyle(i) { // in processo2
+  removeJsElementStyle(i)
+  addJsElementStyle(i)
+} //      atualizarJsElementStyle
+
+function removeJsElementStyle(i) {
   jsElemento[i].icon.classList.remove(
     "icon-placeholder",
     "icon-sttus-0",
     "icon-sttus-1"
   )
-  // console.log('XXX => '+ kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name );
-  jsElemento[i].icon.classList.add(
-    // "icon-" + kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name,
-    "icon-sttus-" + jsElemento[i].sttus
-  )
   jsElemento[i].btn.classList.remove(
-    // "btn-sttus-" + jsElemento[1].sttusInvert,
     "btn-placeholder",
     "btn-sttus-0",
     "btn-sttus-1"
   )
-  jsElemento[i].btn.classList.add(
-    "btn-sttus-" + jsElemento[i].sttus
-  )
-  jsElemento[i].sttus ? jsElemento[i].btn.innerHTML = "ON." : jsElemento[i].btn.innerHTML = "OFF."
-} //       atualizarJsElementStyle
+} //     desableJsElementStyle
+
+function addJsElementStyle(i) {
+  jsElemento[i].sttusInvert ? sttus1ElementStyle(i) : sttus0ElementStyle(i)
+  // jsElemento[i].icon.classList.add("icon-sttus-" + jsElemento[i].sttusInvert)
+  // jsElemento[i].btn.classList.add("btn-sttus-" + jsElemento[i].sttusInvert)
+} //     addJsElementStyle
+
+function sttus0ElementStyle(i) {
+  removeJsElementStyle(i)
+  jsElemento[i].icon.classList.add("icon-sttus-0")
+  jsElemento[i].btn.classList.add("btn-sttus-0")
+  jsElemento[i].btn.innerHTML = "OFF."
+} //     addJsElementStyle
+function sttus1ElementStyle(i) {
+  removeJsElementStyle(i)
+  jsElemento[i].icon.classList.add("icon-sttus-1")
+  jsElemento[i].btn.classList.add("btn-sttus-1")
+  jsElemento[i].btn.innerHTML = "ON."
+} //     addJsElementStyle
 
 
-// PROCESSO DO APRENDIZADO
-// let iconName = kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name
+
+
+
+
+//   ALERTS
+// alert('circuit id      => '+ circuits[i].data.id );
+// alert('kind id         => '+ circuits[i].data.relationships.kinddev.data.id );
+// alert('dev.name do circ  => '+ kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name );
+// alert('btn.name do circ  => '+ kindbtns[circuits[i].data.relationships.kindbtn.data.id].data.attributes.name );
