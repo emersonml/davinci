@@ -9,18 +9,20 @@
 
 String readString;
 
-int pin2 = 2;
+int pin2 = 2; //  circ1 FECHADURA | NA (contado = HIGH) NAO ACIONADO
 int pin2Sinal = 0;
-int pin3 = 3;
+int pin3 = 3; //  circ2
 int pin3Sinal = 0;
-int pin4 = 4;
+int pin4 = 4; //  circ3
 int pin4Sinal = 0;
-int pin5 = 5;
+int pin5 = 5; //  circ4
 int pin5Sinal = 0;
-int pin6 = 6;
+int pin6 = 6; //  circ5 PORTAO | NA (contado = HIGH)
 int pin6Sinal = 0;
-int pin7 = 7;
+int pin7 = 7; //  circ6
 int pin7Sinal = 0;
+int pin8 = 8; //  circ7
+int pin8Sinal = 0;
 
 int sinalReturn;
 
@@ -39,30 +41,34 @@ void setup() {
   pinMode(pin5, OUTPUT);
   pinMode(pin6, OUTPUT);
   pinMode(pin7, OUTPUT);
+  pinMode(pin8, OUTPUT);
   // pinMode(pin3, INPUT_PULLUP);
   Ethernet.begin(mac, ip, gateway, subnet);
   server.begin();
-  digitalWrite(pin2, LOW);
+  digitalWrite(pin2, HIGH);
   digitalWrite(pin3, LOW);
   digitalWrite(pin4, LOW);
   digitalWrite(pin5, LOW);
-  digitalWrite(pin6, LOW);
+  digitalWrite(pin6, HIGH);
   digitalWrite(pin7, LOW);
+  digitalWrite(pin8, LOW);
 }
 
 void loop() {
-  int pin2Sinal = digitalRead(pin2);
+  // int pin2Sinal = digitalRead(pin2);
   int pin3Sinal = digitalRead(pin3);
   int pin4Sinal = digitalRead(pin4);
   int pin5Sinal = digitalRead(pin5);
   int pin6Sinal = digitalRead(pin6);
   int pin7Sinal = digitalRead(pin7);
-  Serial.println("pin2: " + String(pin2Sinal));
+  int pin8Sinal = digitalRead(pin8);
+  // Serial.println("pin2: " + String(pin2Sinal));
   Serial.println("pin3: " + String(pin3Sinal));
   Serial.println("pin4: " + String(pin4Sinal));
   Serial.println("pin5: " + String(pin5Sinal));
   Serial.println("pin6: " + String(pin6Sinal));
   Serial.println("pin7: " + String(pin7Sinal));
+  Serial.println("pin8: " + String(pin8Sinal));
   delay(500);
 
   EthernetClient client = server.available();
@@ -79,12 +85,12 @@ void loop() {
       if (c == '\n') {
         Serial.println(readString);
         if (readString.indexOf("?1:1") > 0) {
-          digitalWrite(pin2, HIGH);
+          digitalWrite(pin2, LOW);
           sinalReturn = digitalRead(pin2);
           // delay(1);
         } else {
           if (readString.indexOf("?1:0") > 0) {
-            digitalWrite(pin2, LOW);
+            digitalWrite(pin2, HIGH);
             sinalReturn = digitalRead(pin2);
           }
         }
@@ -143,6 +149,17 @@ void loop() {
           if (readString.indexOf("?6:0") > 0) {
             digitalWrite(pin7, LOW);
             sinalReturn = digitalRead(pin7);
+          }
+        }
+
+        if (readString.indexOf("?7:1") > 0) {
+          digitalWrite(pin8, HIGH); // 
+          sinalReturn = digitalRead(pin8);
+          // delay(1);
+        } else {
+          if (readString.indexOf("?7:0") > 0) {
+            digitalWrite(pin8, LOW);
+            sinalReturn = digitalRead(pin8);
           }
         }
 

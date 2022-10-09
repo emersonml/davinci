@@ -11,11 +11,16 @@ function XMLHttpRequestClient() {
 }
 
 
-const apiUrl = 'http://45.174.216.22:3151/api/'
+const apiUrl = 'http://45.174.216.22:4151/api/'
 const ccHost = '45.174.219.194' //central de comando
 const ccPort = '8000' //central de comando
 const ccPath = ccHost + ':' + ccPort
 const ccUrn = ccHost + ':' + ccPort
+
+// Rails.application.routes.default_url_options = {
+//   host: 45.174.216.22,
+//   port: 4151
+// }
 
 // toggleClass_____Seletor
 let argIconNameOld;
@@ -39,24 +44,33 @@ let sttusInvertArr = [];
 // ///////GATILHOS
 init(); // load page 
 
-window.setInterval(processo2, 15000) //LOOP //window.setTimeout(function(){}, 1000) // SLEEP
+window.setInterval(processo2, 20000) //LOOP //window.setTimeout(function(){}, 1000) // SLEEP
 function init() { // iniciado no load da pagina
+  atualizarObjsArr('patrimonios', patrimonios)
+  atualizarObjsArr('kinddevs', kinddevs)
+  atualizarObjsArr('kindbtns', kindbtns)
+  atualizarObjsArr('circuits', circuits)
   processo1() // atualizar
   eventsOnclick() // event click
 } //      init
 
 //////////////////////   init PROCESSO 1
 function processo1() {
-  atualizarObjsArr('patrimonios', patrimonios)
-  atualizarObjsArr('kinddevs', kinddevs)
-  atualizarObjsArr('kindbtns', kindbtns)
-  atualizarObjsArr('circuits', circuits)
+  atualizarObjsArrProcesso1('circuits', circuits)
   atualizarJsElementosss()
   atualizarJsElementosssStyleENome()
 }
 
 function atualizarObjsArr(recurso, objArr) {
   for (i = 1; i <= getTObjQtd(recurso); i++) {
+    objArr[i] = requestHttp('GET', apiUrl, recurso + '/', i)
+  }
+} //     atualizarObjsArr
+function atualizarObjArr(recurso, objArr, num) {
+    objArr[num] = requestHttp('GET', apiUrl, recurso + '/', num)
+} //     atualizarObjsArr
+function atualizarObjsArrProcesso1(recurso, objArr) {
+  for (i = 1; i <= circuitsQtd; i++) {
     objArr[i] = requestHttp('GET', apiUrl, recurso + '/', i)
   }
 } //     atualizarObjsArr
@@ -110,13 +124,13 @@ function atualizarJsElementosssStyleENome() {
   for (i = 1; i <= circuitsQtd; i++) {
     jsElemento[i].name.innerHTML = circuits[i].data.attributes.name
     removeJsElementStyle(i)
-    
+
     jsElemento[i].icon.classList.add(
       "icon-" + kinddevs[circuits[i].data.relationships.kinddev.data.id].data.attributes.name,
       "icon-sttus-" + jsElemento[i].sttus
     )
 
-    jsElemento[i].btn.classList.add( "btn-sttus-" + jsElemento[i].sttus )
+    jsElemento[i].btn.classList.add("btn-sttus-" + jsElemento[i].sttus)
     jsElemento[i].sttus ? jsElemento[i].btn.innerHTML = "ON" : jsElemento[i].btn.innerHTML = "OFF"
   } //for
 } //     atualizarJsElementosssStyleENome
@@ -151,7 +165,9 @@ function btnOnclick(i) {
 } //     btnOnclick
 
 function btnTemporizado(i, tempo) {
+
   requestHttpArduino(i, '1')
+
   sttus1ElementStyle(i)
   window.setTimeout(function () {
     sttus0ElementStyle(i)
@@ -177,7 +193,7 @@ function atualizarTCircuits(num, sttus) {
     }
   } // circuitObj[]
   requestHttp('PATCH', apiUrl, 'circuits', num, circuits[num])
-  atualizarObjsArr('circuits', circuits)
+  atualizarObjArr('circuits', circuits, num)
 }
 
 //////////////////////    btnOnclick / PROCESSO 2
@@ -218,6 +234,7 @@ function sttus0ElementStyle(i) {
   jsElemento[i].btn.innerHTML = "OFF."
 } //     addJsElementStyle
 function sttus1ElementStyle(i) {
+
   removeJsElementStyle(i)
   jsElemento[i].icon.classList.add("icon-sttus-1")
   jsElemento[i].btn.classList.add("btn-sttus-1")
