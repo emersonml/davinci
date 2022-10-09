@@ -1,0 +1,50 @@
+<%# css ASIDE lay1 | js InitSmall %>
+  <aside class="lay1" id="js-aside">
+    <div class="container">
+      <header class="">
+        <i class="icon icon-undo2 js-undo2" id="js-undo2"></i>
+        <i class="icon icon-backward2 js-backward2" id="js-backward2"> </i>
+      </header>
+      <main>
+        <header id="">
+          <%# LOGO s%>
+            <span id="js-span">TÉCNICO</span>
+            <%= link_to iot_welcome_index_path do %>
+              <i class="icon icon-TECNICO "></i>
+              <% end %>
+                <span id="js-span"></span>
+        </header>
+        
+        <main>   
+          <nav>
+            <ul>
+              <li>
+                <%= link_to admins_backoffice_patrimonios_path do %>
+                  <i class="icon icon-home"></i>
+                  <span id="js-span">Patrimonios</span>
+                  <% end %>
+              </li>
+              <li>
+                <%= link_to webcoruja_vlans_index_path do %>
+                  <i class="icon icon-vg-adicionar"></i>
+                  <span id="js-spa4">Cadastros</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to iot_welcome_testes_path do %>
+                  <i class="icon icon-vlan"></i>
+                  <span id="js-span">Testes</span>
+                  <% end %>
+              </li>
+              <li>
+                <%= link_to webcoruja_vlans_index_path do %>
+                  <span id="js-spa4"></span>
+                  <% end %>
+              <li>
+
+            </ul>
+          </nav>
+        </main>
+      </main>
+    </div container>
+  </aside>

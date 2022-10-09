@@ -1,58 +1,49 @@
-<%#  css ASIDE lay1 | js InitSmall %>
-<aside class="lay1" id="js-aside">
-  <div class="container">
-    <header class="">
-      <i class="icon icon-undo2 js-undo2" id="js-undo2"></i>
-      <i class="icon icon-backward2 js-backward2" id="js-backward2"> </i>
-    </header>
-    <main>
-      <header id="">
-        <%#  LOGO s%>
-        <span id="js-span">IoT</span>
-        <%= link_to iot_welcome_index_path do %>
-        <i class="icon icon-davinci "></i>
-        <% end %>
-        <span id="js-span"></span>
+<%# css ASIDE lay1 | js InitSmall %>
+  <aside class="lay1" id="js-aside">
+    <div class="container">
+      <header class="">
+        <i class="icon icon-undo2 js-undo2" id="js-undo2"></i>
+        <i class="icon icon-backward2 js-backward2" id="js-backward2"> </i>
       </header>
       <main>
-        <nav>
-          <ul>
-            <li>
-              <%# a home s%>
-              <%= link_to site_welcome_index_path do %>
-              <i class="icon icon-home"></i>
-              <span id="js-span">Site</span>
+        <header id="">
+          <%# LOGO s%>
+            <span id="js-span">IoT</span>
+            <%= link_to iot_welcome_index_path do %>
+              <i class="icon icon-davinci "></i>
               <% end %>
-            </li>
-            <li>
-              <%# a vlan s%>
-              <%= link_to webcoruja_vlans_index_path  do %>
-              <i class="icon icon-vlan"></i>
-              <span id="js-spa4">Vlans</span>
-              <% end %>
-            </li>
-            <li>
-              <%# a home s%>
-              <%= link_to site_welcome_index_path do %>
-              <span id="js-span">
-              </span>
-              <% end %>
-            </li>
-            <li>
-              <%# a vlan s%>
-              <%= link_to webcoruja_vlans_index_path  do %>
-              <span id="js-spa4">
-              </span>
-              <% end %>
-            <li>
+                <span id="js-span"></span>
+        </header>
+        <main>
+          <nav>
+            <ul>
+              <li>
+                <%= link_to root_path do %>
+                  <i class="icon icon-dashboard"></i>
+                  <span id="js-span">Dashboard</span>
+                  <% end %>
+              </li>
+              <li>
+                <%= link_to webcoruja_vlans_index_path do %>
+                  <i class="icon icon-vg-adicionar"></i>
+                  <span id="js-spa4">Cadastros</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to iot_welcome_testes_path do %>
+                  <i class="icon icon-placeholder"></i>
+                  <span id="js-span">Testes</span>
+                  <% end %>
+              </li>
+              <li>
+                <%= link_to webcoruja_vlans_index_path do %>
+                  <span id="js-spa4"></span>
+                  <% end %>
+              <li>
 
-
-
-
-
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        </main>
       </main>
-    </main>
-  </div container>
-</aside>
+    </div container>
+  </aside>

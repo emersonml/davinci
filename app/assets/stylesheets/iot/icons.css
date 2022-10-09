@@ -1,0 +1,9 @@
+div.card main button .icon-sttus-0 {
+  /* color: var(--color-dark) !important; */
+  color: var(--color-dark);
+}
+
+div.card main button .icon-sttus-1 {
+  /* color: var(--color-light); */
+  color: yellow;
+}

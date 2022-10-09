@@ -1,0 +1,17 @@
+<%= form_with(model: admins_backoffice_patrimonio) do |form| %>
+  <% if admins_backoffice_patrimonio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admins_backoffice_patrimonio.errors.count, "error") %> prohibited this admins_backoffice_patrimonio from being saved:</h2>
+
+      <ul>
+        <% admins_backoffice_patrimonio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

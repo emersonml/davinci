@@ -11,7 +11,7 @@ var action = null;
 var el = 'js-aside';
 var modo = 'standard'
 
-console.log('FUNCTION |ctrlOrigin  <ctrl action mq> stateAside');
+// console.log('FUNCTION |ctrlOrigin  <ctrl action mq> stateAside');
 
 var minMedium = "(min-width: 400px)"
 var minLarge = "(min-width: 850px)"
@@ -136,7 +136,6 @@ function router(controller, action) {
                 backward2()
               )
               break; //3.1.3
-              console.log('para todos');
 
           }
           break;
