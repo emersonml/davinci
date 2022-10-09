@@ -15,3 +15,4 @@ possivel erro=>
 ## limpar a bagunça do assets na pastaa pubblic
 rails -T assets => rails assets:clober  # Remove compiled aassets
 rails assets:clober
+mmm
