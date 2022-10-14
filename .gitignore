@@ -42,3 +42,6 @@ yarn-debug.log*
 
 /lib/.pmbok
 # /app/assets/stylesheets/application/dev.css
+
+########  DEPLOY
+/config/database.yml
