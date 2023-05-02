@@ -3,7 +3,9 @@ body.lay0 {
   grid-template-columns: repeat(24, 1fr);
   // grid-template-rows: 1fr;
   // grid-template-rows: 1fr;
-  grid-template-rows: minmax(var(--height-mainlay1), 1fr);
+  // grid-template-rows: minmax(var(--height-mainlay1), 1fr);
+  grid-template-rows: 1fr;
+  // grid-template-rows: var(--height-mainlay1);
 
   background: purple;
 }

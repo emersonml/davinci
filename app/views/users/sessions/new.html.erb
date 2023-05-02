@@ -2,21 +2,24 @@
 
 <!-- DEVISE   USERS/SESSIONS-->
 
+<%= stylesheet_link_tag 'http://45.174.216.22/themavangogh/style.css' %>
 <%= stylesheet_link_tag 'iot' %>
 
 
 
 
-<div class="form ">
+
+<div class="form sessions">
+  <div class="container">
 
 <div class="logo">
-<span id="js-span">Leonardo</span> 
-   <i class="icon icon-davinci "></i>
-<span id="js-span">Davinci</span>
+  <span id="js-span">Leonardo</span> 
+    <i class="icon icon-davinci "></i>
+  <span id="js-span">Davinci</span>
 </div>
 
 
-<h1 >Login</h1>
+<h2 >Login</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -30,17 +33,20 @@
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="field relembre">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :Relembre %>
     </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Entrar" %>
   </div>
-<% end %>
+  <% end %>
+  
+  <div class="shared-links">
+    <%= render "users/shared/links" %>
+  <div>
 
-<%= render "users/shared/links" %>
-
+<div container>
 <div>

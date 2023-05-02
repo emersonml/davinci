@@ -35,7 +35,23 @@
     <!--MAIN    L1 -->
     <%= render partial: 'iot/partial/header' %>
     <!--HEADER  L2 -->
-    <main class="lay2">
+    <main class="lay2 ">
+
+
+      <div class="msg">
+        <p>
+          api: 
+        </p>
+        <div id="js-status-api" class="cicle-status " ></div> 
+        <p>
+          cc: 
+          <div id="js-status-cc" class="cicle-status " ></div> 
+        </p>
+      </div>
+
+      
+
+
       <!--MAIN    L2 -->
       <%= yield %>
       <!--Sections   -->
