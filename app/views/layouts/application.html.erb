@@ -4,11 +4,13 @@
     <title>APPLICATIONn</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <%= csrf_meta_tags %> <%= csp_meta_tag %> 
+
+    <%= stylesheet_link_tag 'http://45.174.216.22/production/themavangogh/style.css' %>
     <%= stylesheet_link_tag 'application' %>
     <%= stylesheet_link_tag 'template' %>
+    
   </head>
   
-  <%= stylesheet_link_tag 'http://45.174.216.22/production/themavangogh/style.css' %>
 
   
   <body class="applications">
@@ -16,5 +18,7 @@
 
     
     <%= yield %>
+
+    
   </body>
 </html>

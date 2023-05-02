@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :patrimonios
   end
   root to: 'iot/welcome#index'
+  
 
   
   resource :nome, :default => {format: :json}

@@ -1,9 +1,12 @@
 div.card main button .icon-sttus-0 {
+  transition: color 1s ease-out;
   /* color: var(--color-dark) !important; */
   color: var(--color-dark);
 }
 
 div.card main button .icon-sttus-1 {
+  transition: color 1s ease-out;
   /* color: var(--color-light); */
+
   color: yellow;
 }

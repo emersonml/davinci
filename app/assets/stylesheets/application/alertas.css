@@ -1,0 +1,32 @@
+
+
+
+
+.msg{
+  display: flex;
+  width: 100%;
+  height: 1.5rem;
+  margin: 0rem 3rem;
+  gap:.5rem;
+
+  /* background: red; color: black; */
+
+  /* justify-content: end; */
+  align-items: center;
+
+  /* background: red; color: black; */
+  
+}
+.cicle-status {
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  /* background: rgb(160, 160, 160); */
+}
+.on  {
+  background: rgb(32, 255, 32);
+}
+.off  {
+  transition: background-color 1s ease-out;
+  background: red;
+}

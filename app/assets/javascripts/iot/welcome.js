@@ -3,6 +3,7 @@ var xhr = XMLHttpRequestClient()
 function XMLHttpRequestClient() {
   if (window.XMLHttpRequest) {
     const xhr = new XMLHttpRequest();
+    
     return xhr
   } else {
     const xhr = new ActiveXObject("Microsoft.XMLHTTP");
@@ -11,9 +12,13 @@ function XMLHttpRequestClient() {
 }
 
 
-const apiUrl = 'http://45.174.216.22:4151/api/'
-const ccHost = '45.174.219.194' //central de comando
+const apiPort = '4151'
+// 45.174.216.22:4151/api/
+const apiUrl = 'http://45.174.216.22:'+apiPort+'/api/'
+
 const ccPort = '8000' //central de comando
+const ccHost = '45.174.219.194' //central de comando
+const ccUrl = '45.174.219.194:'+ ccPort
 const ccPath = ccHost + ':' + ccPort
 const ccUrn = ccHost + ':' + ccPort
 
@@ -21,6 +26,13 @@ const ccUrn = ccHost + ':' + ccPort
 //   host: 45.174.216.22,
 //   port: 4151
 // }
+
+let jsStatusApi = document.getElementById('js-status-api');
+let jsStatusCc = document.getElementById('js-status-cc');
+
+
+
+
 
 // toggleClass_____Seletor
 let argIconNameOld;
@@ -44,8 +56,15 @@ let sttusInvertArr = [];
 // ///////GATILHOS
 init(); // load page 
 
+
+
+
+
 window.setInterval(processo2, 20000) //LOOP //window.setTimeout(function(){}, 1000) // SLEEP
+// window.setInterval(xhrStatusApi, 14000) //LOOP //window.setTimeout(function(){}, 1000) // SLEEP
+
 function init() { // iniciado no load da pagina
+  xhrStatusCC()
   atualizarObjsArr('patrimonios', patrimonios)
   atualizarObjsArr('kinddevs', kinddevs)
   atualizarObjsArr('kindbtns', kindbtns)
@@ -56,6 +75,7 @@ function init() { // iniciado no load da pagina
 
 //////////////////////   init PROCESSO 1
 function processo1() {
+
   atualizarObjsArrProcesso1('circuits', circuits)
   atualizarJsElementosss()
   atualizarJsElementosssStyleENome()
@@ -85,12 +105,21 @@ function getTObjQtd(recurso) {
 } //     getTObjQtd
 
 function requestHttp(method = 'GET', url, resource = '', id = '', dadosJson = 'null') { //
+  setStatusApi('on', 'off')
+  
   xhr.open(method, url + resource + '/' + id, false);
   xhr.setRequestHeader("Accept", "application/vnd.api+json");
   xhr.setRequestHeader("Content-Type", "application/json");
-
   xhr.send(JSON.stringify(dadosJson));
+
+  // if (xhr.readyState === xhr.DONE) {
+  //   if (xhr.status === 200) {
+  //     // console.log(xhr.responseText);
+  //   }
+  // }
+  
   var obj = JSON.parse(xhr.responseText);
+  setStatusApi('off', 'on')
   return obj
 } //     requestHttp
 
@@ -176,11 +205,13 @@ function btnTemporizado(i, tempo) {
 }
 
 function requestHttpArduino(i, pinSttus) { // ARDUINO
-
+  // setStatusCc('on', 'off')
+  
   xhr.open('GET', 'http://' + ccHost + ':' + ccPort + '?' + i + ':' + pinSttus, false);
   xhr.setRequestHeader("Accept", ccHost);
   xhr.send();
   // alert('XXX => ' + xhr.responseText);
+  // setStatusCc('off', 'on')
   return xhr.responseText
 } //      requestHttpArduino
 
@@ -198,6 +229,8 @@ function atualizarTCircuits(num, sttus) {
 
 //////////////////////    btnOnclick / PROCESSO 2
 function processo2(num) {
+
+  xhrStatusCC()
   atualizarObjsArr('circuits', circuits)
   atualizarJsElementosss()
   atualizarJsElementosssStyleENome()
@@ -245,6 +278,26 @@ function sttus1ElementStyle(i) {
 
 
 
+function setStatusApi(rem, add){
+    jsStatusApi.classList.remove(rem)
+    jsStatusApi.classList.add(add)
+}
+function setStatusCc(rem, add){
+    jsStatusCc.classList.remove(rem)
+    jsStatusCc.classList.add(add)
+}
+
+
+
+
+function xhrStatusCC() { // ARDUINO
+  setStatusCc('on', 'off')
+  xhr.open('GET', 'http://' + ccUrl, false);
+  xhr.setRequestHeader("Accept", ccHost);
+  xhr.send();
+  setStatusCc('off', 'on')
+  // return xhr.responseText
+} //      requestHttpArduino
 
 //   ALERTS
 // alert('circuit id      => '+ circuits[i].data.id );
